@@ -12,9 +12,13 @@ export const FeaturedAboutUs = () => {
 
           <div className="max-w-4xl">
             <h2 className="text-4xl">
-              A web design agency in Manchester that cares about you and your
-              brand, no matter the size or what industry your business is in.
+              Ekspercka nauka pływania z pasją - indywidualne podejście,
+              bezpieczeństwo i radość w każdym zanurzeniu.
             </h2>
+          </div>
+
+          <div className="pt-8">
+            <Button>Poznaj Całą Historie</Button>
           </div>
         </div>
       </div>
@@ -22,30 +26,22 @@ export const FeaturedAboutUs = () => {
       <div className="flex w-full flex-col gap-4 ">
         <div>
           <p className="text-lg">
-            Born in 2010, MadeByShape is an Award-Winning Web Design Agency
-            based in Manchester specialising in Web Design, Branding, eCommerce,
-            Digital Marketing and Organic SEO.
+            Witaj w naszej szkółce pływackiej, gdzie każdy zanurzony moment to
+            unikalna lekcja. Jako jedyny trener stawiam na indywidualne
+            podejście, bezpieczeństwo oraz rozwijanie umiejętności pływania z
+            radością i pewnością siebie. Razem tworzymy atmosferę przyjazną,
+            inspirującą do odkrywania uroku wody i zdobywania nowych
+            umiejętności. Zaufaj nam, a twoja przygoda z pływaniem stanie się
+            niezapomnianą podróżą pełną radości i osiągnięć.
           </p>
         </div>
 
         <div>
           <p className="text-lg">
-            Born in 2010, MadeByShape is an Award-Winning Web Design Agency
-            based in Manchester specialising in Web Design, Branding, eCommerce,
-            Digital Marketing and Organic SEO.
+            Zaufaj naszemu doświadczonemu instruktorowi, który nie tylko
+            kształtuje umiejętności, ale również buduje pewność siebie i pasję
+            do wody.
           </p>
-        </div>
-
-        <div>
-          <p className="text-lg">
-            Born in 2010, MadeByShape is an Award-Winning Web Design Agency
-            based in Manchester specialising in Web Design, Branding, eCommerce,
-            Digital Marketing and Organic SEO.
-          </p>
-        </div>
-
-        <div className="pt-8">
-          <Button>Learn More</Button>
         </div>
       </div>
     </div>

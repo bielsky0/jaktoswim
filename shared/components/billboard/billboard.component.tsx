@@ -24,13 +24,16 @@ export const Billboard = () => {
                   gdzie woda łączy się z
                   <br />
                 </span>
-                <span>
+                <span className="md:hidden">
                   niezapomnianymi emocjami
                   <br />
                 </span>
-
-                <span>
+                <span className="md:hidden">
                   i rozwojem.
+                  <br />
+                </span>
+                <span className="hidden md:flex">
+                  niezapomnianymi emocjami i rozwojem.
                   <br />
                 </span>
               </h1>

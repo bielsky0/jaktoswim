@@ -1,4 +1,4 @@
-import { BlogPreview } from "../blogPreview";
+import { Button, BlogPreview } from "@/shared/components";
 
 export const FeaturedBlog = () => {
   return (
@@ -12,8 +12,12 @@ export const FeaturedBlog = () => {
 
           <div className="max-w-xl">
             <h2 className="text-3xl lg:text-5xl">
-              Najświeższe informacje z naszego bloga
+              Najświeższe informacje, prosto z wody
             </h2>
+          </div>
+
+          <div className="pt-8">
+            <Button>Zobacz Wszystkie Nowości</Button>
           </div>
         </div>
       </div>

@@ -14,3 +14,5 @@ export * from "./blogPreview";
 export * from "./footer";
 export * from "./hamburger";
 export * from "./featuredHero";
+export * from "./featuredReviews";
+export * from "./review";

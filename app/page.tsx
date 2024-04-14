@@ -3,6 +3,7 @@ import {
   FeatureHero,
   FeaturedAboutUs,
   FeaturedBlog,
+  FeaturedReviews,
   FeaturedServices,
   Layout,
 } from "@/shared/components";
@@ -16,6 +17,10 @@ export default function Home() {
 
       <Layout className="py-16">
         <FeatureHero />
+      </Layout>
+
+      <Layout className="py-16">
+        <FeaturedReviews />
       </Layout>
 
       <Layout className="max-w-screen w-full bg-black rounded-2xl py-16">

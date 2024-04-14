@@ -24,7 +24,7 @@ export default function RootLayout({
 
         {children}
 
-        <Layout className="max-w-screen w-full bg-[#1E1E1E] py-12">
+        <Layout className="max-w-screen w-full bg-black rounded-tl-2xl rounded-tr-2xl py-12">
           <Footer />
         </Layout>
       </body>

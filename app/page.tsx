@@ -4,7 +4,6 @@ import {
   FeaturedAboutUs,
   FeaturedBlog,
   FeaturedServices,
-  FeaturedWork,
   Layout,
 } from "@/shared/components";
 
@@ -19,7 +18,7 @@ export default function Home() {
         <FeatureHero />
       </Layout>
 
-      <Layout className="max-w-screen w-full bg-[#1E1E1E] py-16">
+      <Layout className="max-w-screen w-full bg-black rounded-2xl py-16">
         <FeaturedServices />
       </Layout>
 

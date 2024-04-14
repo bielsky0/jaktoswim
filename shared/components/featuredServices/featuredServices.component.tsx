@@ -1,62 +1,145 @@
 import { Button } from "@/shared/components";
 
+import service1Src from "@/public/service1.jpg";
+import service2Src from "@/public/service2.jpg";
+import service3Src from "@/public/service3.jpg";
+
+import Image from "next/image";
+
 export const FeaturedServices = () => {
   return (
     <div className="w-full flex  justify-center flex-col ">
-      <div className="w-full max-w-4xl ">
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-2 items-center">
-            <div className="h-[8px] w-[8px] bg-white rounded-full"></div>
-            <h5 className="text-white text-sm lg:text-md">Nasze Usługi</h5>
-          </div>
+      <div className="flex flex-col lg:flex-row w-full ">
+        <div className="flex w-full">
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-2 items-center">
+              <div className="h-[8px] w-[8px] bg-white rounded-full"></div>
+              <h5 className="text-white">Jak Pracujemy</h5>
+            </div>
 
-          <div className="">
-            <h2 className="text-3xl lg:text-6xl text-white">
-              Cutting-edge Solutions for Modern Websites
-            </h2>
-          </div>
-        </div>
-      </div>
+            <div className="max-w-4xl">
+              <h2 className="text-4xl font-semibold text-white">
+                Jak wyniesiemy twoje umiejętności pływania na wyższy poziom
+              </h2>
+            </div>
 
-      <div className="text-left  py-8 max-w-4xl ">
-        <p className=" text-sm lg:text-md text-white">
-          At Simply Amazing, we utilize responsive design, SEO techniques, and
-          advanced e-commerce features to create websites that are both visually
-          stunning and highly functional. Our innovative technologies ensure
-          that your website stands out from the competition and delivers an
-          exceptional user experience.
-        </p>
-      </div>
-
-      <div className="w-full flex justify-start">
-        <Button>Learn More</Button>
-      </div>
-
-      <div className="w-full flex flex-col gap-12 pt-16 lg:py-8">
-        <div className="w-full flex flex-row items-center gap-8 md:gap-16">
-          <div className="w-20 h-16 md:w-[9rem] md:h-[7rem] lg:w-[21rem] lg:h-[10rem] bg-gray-300 rounded-2xl"></div>
-
-          <div>
-            <h5 className="text-white text-3xl md:text-5xl font-bold">
-              Websites
-            </h5>
-          </div>
-        </div>
-        <div className="w-full flex flex-row items-center gap-8 md:gap-16">
-          <div className="w-20 h-16 md:w-[9rem] md:h-[7rem] lg:w-[21rem] lg:h-[10rem] bg-gray-300 rounded-2xl"></div>
-
-          <div>
-            <h5 className="text-white text-3xl md:text-5xl font-bold">SEO</h5>
+            <div className="hidden lg:flex pt-8">
+              <Button>Zapisz Się na Zajęcia</Button>
+            </div>
           </div>
         </div>
 
-        <div className="w-full flex flex-row items-center gap-8 md:gap-16">
-          <div className="w-20 h-16 md:w-[9rem] md:h-[7rem] lg:w-[21rem] lg:h-[10rem] bg-gray-300 rounded-2xl"></div>
-
+        <div className="flex w-full py-8">
           <div>
-            <h5 className="text-white text-3xl md:text-5xl font-bold">
-              eCommerce
-            </h5>
+            <p className="text-lg text-white text-sm lg:text-base">
+              Nasza szkółka pływacka w Szczecinie oferuje indywidualne podejście
+              i profesjonalne instruktaż. Dzięki skupieniu na technice,
+              poprawiamy umiejętności każdego ucznia. Motywująca atmosfera
+              sprzyja szybkiemu postępowi i budowaniu pewności siebie.
+              Zapewniamy skuteczną naukę, prowadzącą do znaczącej poprawy
+              umiejętności pływackich. Nasza szkółka to miejsce, gdzie każdy
+              czuje się mile widziany i doceniony. Skontaktuj się z nami już
+              dziś, aby dołączyć do naszej pływackiej rodziny!
+            </p>
+          </div>
+        </div>
+
+        <div className="flex lg:hidden ">
+          <Button>Zapisz Się na Zajęcia</Button>
+        </div>
+      </div>
+
+      <div className="w-full flex flex-col gap-12 pt-16 lg:py-32 ">
+        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <div className="w-full">
+            <div className="h-[150px] md:h-[300px]">
+              <Image
+                alt="dasd"
+                src={service1Src}
+                className="object-cover w-full h-full rounded-2xl"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col w-full gap-8">
+            <div>
+              <h5 className="text-white text-2xl lg:text-4xl font-bold">
+                1. Skontaktuj się z nami
+              </h5>
+            </div>
+
+            <div>
+              <p className="text-white text-sm lg:text-base">
+                Chcesz rozpocząć swoją przygodę z pływaniem? Skontaktuj się z
+                nami już dziś, aby uzyskać więcej informacji o naszych
+                zajęciach! Nasz przyjazny zespół odpowie na wszystkie Twoje
+                pytania i pomoże Ci znaleźć idealny program nauki pływania
+                dostosowany do Twoich potrzeb i umiejętności. Nie czekaj dłużej
+                - zgłoś się do nas już teraz i rozpocznij swoją pływacką
+                przygodę z profesjonalnym wsparciem!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <div className="w-full">
+            <div className="h-[150px] md:h-[300px]">
+              <Image
+                alt="dasd"
+                src={service2Src}
+                className="object-cover w-full h-full rounded-2xl"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col w-full gap-8">
+            <div>
+              <h5 className="text-white text-2xl lg:text-4xl font-bold">
+                2. Umów Spotkanie
+              </h5>
+            </div>
+
+            <div>
+              <p className="text-white text-sm lg:text-base">
+                Gotowy na pierwszy krok w stronę doskonalenia swoich
+                umiejętności pływackich? Umów spotkanie z naszym doświadczonym
+                instruktorem, który dostosuje zajęcia do Twoich celów i poziomu
+                zaawansowania. Bez względu na to, czy dopiero zaczynasz swoją
+                przygodę z pływaniem, czy chcesz doskonalić swoje techniki, nasz
+                zespół zapewni Ci spersonalizowane podejście i motywację do
+                osiągnięcia sukcesu. Zarezerwuj swój czas już teraz i rozpocznij
+                swoją pływacką podróż!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <div className="w-full">
+            <div className="h-[150px] md:h-[300px]">
+              <Image
+                alt="dasd"
+                src={service3Src}
+                className="object-cover w-full h-full rounded-2xl"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col w-full gap-8">
+            <div>
+              <h5 className="text-white text-2xl lg:text-4xl font-bold">
+                3. Widzimy się w wodzie
+              </h5>
+            </div>
+
+            <div>
+              <p className="text-white text-sm lg:text-base">
+                Czy jesteś gotowy na emocjonującą podróż po wodzie? Dołącz do
+                naszej pływackiej rodziny i zanurz się w świat nauki pływania
+                pełnej przygód i osiągnięć. Niech nasza motywująca atmosfera i
+                profesjonalne wsparcie naszych instruktorów będą Twoim
+                przewodnikiem w zdobywaniu nowych umiejętności i budowaniu
+                pewności siebie na wodzie. Spotkajmy się na basenie i
+                rozpocznijmy razem tę niezapomnianą podróż!
+              </p>
+            </div>
           </div>
         </div>
       </div>

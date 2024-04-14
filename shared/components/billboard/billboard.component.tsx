@@ -15,7 +15,7 @@ export const Billboard = () => {
             </div>
 
             <div>
-              <h1 className="text-3xl md:text-4xl lg:text-3xl font-bold">
+              <h1 className="text-xl md:text-4xl lg:text-3xl font-bold">
                 <span>
                   Nasza szkółka to miejsce,
                   <br />
@@ -25,7 +25,12 @@ export const Billboard = () => {
                   <br />
                 </span>
                 <span>
-                  niezapomnianymi emocjami i rozwojem.
+                  niezapomnianymi emocjami
+                  <br />
+                </span>
+
+                <span>
+                  i rozwojem.
                   <br />
                 </span>
               </h1>

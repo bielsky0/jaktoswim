@@ -10,3 +10,4 @@ export * from "./footer";
 export * from "./hamburger";
 export * from "./featuredReviews";
 export * from "./review";
+export * from "./contactForm";

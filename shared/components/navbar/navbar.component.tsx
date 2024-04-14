@@ -3,7 +3,7 @@ import { Button, Hamburger, Logo } from "@/shared/components";
 export const Navbar = () => {
   return (
     <div className="w-full h-[100px] flex items-center justify-between">
-      <div>
+      <div className="hidden lg:flex">
         <ul className="flex justify-center items-center gap-16">
           <li className="font-bold cursor-pointer">Aktualności</li>
           <li className="font-bold cursor-pointer">O Nas</li>
@@ -11,19 +11,19 @@ export const Navbar = () => {
         </ul>
       </div>
 
-      <Logo className="w-24" />
+      <Logo className="w-20 lg:w-24" />
 
-      <div>
+      <div className="hidden lg:flex">
         <ul className="flex justify-center items-center gap-16">
           <li className="font-bold cursor-pointer">Zajęcia</li>
           <li className="font-bold cursor-pointer">Kontakt</li>
           <li className="font-bold cursor-pointer">Social</li>
         </ul>
       </div>
-      {/*
+
       <div className="flex lg:hidden">
         <Hamburger />
-      </div> */}
+      </div>
     </div>
   );
 };

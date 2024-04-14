@@ -5,9 +5,9 @@ export const Navbar = () => {
     <div className="w-full h-[100px] flex items-center justify-between">
       <div className="hidden lg:flex">
         <ul className="flex justify-center items-center gap-16">
-          <li className="font-bold cursor-pointer">Aktualności</li>
-          <li className="font-bold cursor-pointer">O Nas</li>
-          <li className="font-bold cursor-pointer">Galeria</li>
+          <li className="cursor-pointer">Aktualności</li>
+          <li className="cursor-pointer">O Nas</li>
+          <li className="cursor-pointer">Galeria</li>
         </ul>
       </div>
 
@@ -15,9 +15,9 @@ export const Navbar = () => {
 
       <div className="hidden lg:flex">
         <ul className="flex justify-center items-center gap-16">
-          <li className="font-bold cursor-pointer">Zajęcia</li>
-          <li className="font-bold cursor-pointer">Kontakt</li>
-          <li className="font-bold cursor-pointer">Social</li>
+          <li className="cursor-pointer">Zajęcia</li>
+          <li className="cursor-pointer">Kontakt</li>
+          <li className="cursor-pointer">Social</li>
         </ul>
       </div>
 

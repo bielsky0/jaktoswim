@@ -2,11 +2,10 @@ import {
   Billboard,
   FeatureHero,
   FeaturedAboutUs,
-  FeaturedBlog,
-  FeaturedReviews,
   FeaturedServices,
-  Layout,
-} from "@/shared/components";
+} from "@/app/(home)/_components";
+
+import { FeaturedBlog, FeaturedReviews, Layout } from "@/shared/components";
 
 export default function Home() {
   return (

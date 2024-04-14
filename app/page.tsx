@@ -1,5 +1,6 @@
 import {
   Billboard,
+  FeatureHero,
   FeaturedAboutUs,
   FeaturedBlog,
   FeaturedServices,
@@ -15,7 +16,7 @@ export default function Home() {
       </Layout>
 
       <Layout className="py-16">
-        <FeaturedWork />
+        <FeatureHero />
       </Layout>
 
       <Layout className="max-w-screen w-full bg-[#1E1E1E] py-16">

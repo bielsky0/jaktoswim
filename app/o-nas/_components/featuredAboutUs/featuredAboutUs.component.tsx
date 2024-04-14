@@ -1,5 +1,3 @@
-import { Button } from "@/shared/components";
-
 export const FeaturedAboutUs = () => {
   return (
     <div className="flex flex-col lg:flex-row w-full gap-8 lg:gap-32">

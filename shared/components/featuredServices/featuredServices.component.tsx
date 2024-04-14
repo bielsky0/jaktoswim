@@ -9,7 +9,7 @@ import Image from "next/image";
 export const FeaturedServices = () => {
   return (
     <div className="w-full flex  justify-center flex-col ">
-      <div className="flex flex-col lg:flex-row w-full ">
+      <div className="flex flex-col lg:flex-row w-full lg:gap-16">
         <div className="flex w-full">
           <div className="flex flex-col gap-4">
             <div className="flex gap-2 items-center">

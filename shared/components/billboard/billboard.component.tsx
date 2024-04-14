@@ -25,11 +25,11 @@ export const Billboard = () => {
                   <br />
                 </span>
                 <span className="md:hidden">
-                  niezapomnianymi emocjami
+                  niezapomnianymi
                   <br />
                 </span>
                 <span className="md:hidden">
-                  i rozwojem.
+                  emocjami i rozwojem.
                   <br />
                 </span>
                 <span className="hidden md:flex">

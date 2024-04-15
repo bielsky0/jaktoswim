@@ -8,7 +8,7 @@ export interface LayoutProps {
 export const Layout = ({ children, className }: LayoutProps) => {
   return (
     <div className={cn("flex w-full items-center flex-col", className)}>
-      <div className="px-2 md:px-8 lg:px-24 w-full">{children}</div>
+      <div className="px-4 md:px-8 lg:px-24 w-full">{children}</div>
     </div>
   );
 };

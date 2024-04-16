@@ -4,22 +4,22 @@ import { Button } from "@/shared/components";
 
 export const FeatureHero = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full ">
+    <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-0">
       <div className="flex w-full">
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-2 items-center">
+        <div className="flex flex-col">
+          <div className="flex gap-2 items-center pb-2">
             <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-            <h5 className="">Kim Jesteśmy</h5>
+            <h5 className="text-sm md:text-base">Kim Jesteśmy</h5>
           </div>
 
-          <div className="max-w-4xl">
-            <h2 className="text-4xl font-semibold">
+          <div className="max-w-4xl pb-3">
+            <h2 className="text-2xl md:text-4xl font-semibold">
               Odkryj Radość Pływania z Profesjonalnym Instruktorem
             </h2>
           </div>
 
-          <div>
-            <p className="text-lg">
+          <div className="pb-4">
+            <p className="text-base md:text-lg">
               Z nami pływanie staje się nie tylko nauką, ale także źródłem
               radości. Profesjonalni instruktorzy, bezpieczna atmosfera i
               indywidualne podejście sprawiają, że każde zanurzenie to nie tylko
@@ -28,13 +28,13 @@ export const FeatureHero = () => {
               kształtujemy miłość do wody.
             </p>
           </div>
-          <div className="pt-8">
+          <div>
             <Button>Poznaj Trenera</Button>
           </div>
         </div>
       </div>
 
-      <div className="flex w-full justify-end">
+      <div className="flex w-full  justify-center lg:justify-end">
         <Image
           src={heroImgSrc}
           className="w-full max-w-96 max-h-[456px]"

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar, Layout, Footer } from "@/shared/components";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

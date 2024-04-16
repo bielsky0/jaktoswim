@@ -4,19 +4,19 @@ export const FeaturedBlog = () => {
   return (
     <div className="flex gap-16 lg:gap-4 lg:flex-row flex-col">
       <div className="w-full max-w-2xl w-fit">
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-2 items-center">
+        <div className="flex flex-col ">
+          <div className="flex gap-2 items-center pb-2">
             <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-            <h5>Nasz Blog</h5>
+            <h5 className="text-sm md:text-base">Nasz Blog</h5>
           </div>
 
-          <div className="max-w-xl">
-            <h2 className="text-3xl lg:text-5xl font-semibold">
+          <div className="max-w-xl pb-3">
+            <h2 className="text-2xl md:text-4xl font-semibold">
               Najświeższe informacje, prosto z wody
             </h2>
           </div>
 
-          <div className="pt-8">
+          <div>
             <Button>Zobacz Wszystkie Nowości</Button>
           </div>
         </div>

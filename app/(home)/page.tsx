@@ -10,27 +10,27 @@ import { FeaturedBlog, FeaturedReviews, Layout } from "@/shared/components";
 export default function Home() {
   return (
     <main>
-      <Layout className="py-8 md:py-12">
+      <Layout className="pt-4 pb-12 md:py-12">
         <Billboard />
       </Layout>
 
-      <Layout className="py-12">
+      <Layout className="pb-24">
         <FeatureHero />
       </Layout>
 
-      <Layout className="py-12">
+      <Layout className="pb-24">
         <FeaturedReviews />
       </Layout>
 
-      <Layout className="max-w-screen w-full bg-black rounded-2xl py-12">
+      <Layout className="max-w-screen w-full bg-black rounded-2xl py-16">
         <FeaturedServices />
       </Layout>
 
-      <Layout className="py-12">
+      <Layout className="py-24">
         <FeaturedAboutUs />
       </Layout>
 
-      <Layout className="py-12">
+      <Layout className="pb-24">
         <FeaturedBlog />
       </Layout>
     </main>

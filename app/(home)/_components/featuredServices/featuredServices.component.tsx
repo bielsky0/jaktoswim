@@ -11,25 +11,25 @@ export const FeaturedServices = () => {
     <div className="w-full flex  justify-center flex-col ">
       <div className="flex flex-col lg:flex-row w-full lg:gap-16">
         <div className="flex w-full">
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-2 items-center">
+          <div className="flex flex-col ">
+            <div className="flex gap-2 items-center pb-2">
               <div className="h-[8px] w-[8px] bg-white rounded-full"></div>
-              <h5 className="text-white">Jak Pracujemy</h5>
+              <h5 className="text-white text-sm md:text-base">Jak Pracujemy</h5>
             </div>
 
-            <div className="max-w-4xl">
-              <h2 className="text-4xl font-semibold text-white">
+            <div className="max-w-4xl pb-3">
+              <h2 className="text-2xl md:text-4xl font-semibold text-white">
                 Jak wyniesiemy twoje umiejętności pływania na wyższy poziom
               </h2>
             </div>
 
-            <div className="hidden lg:flex pt-8">
+            <div className="hidden lg:flex ">
               <Button>Zapisz Się na Zajęcia</Button>
             </div>
           </div>
         </div>
 
-        <div className="flex w-full py-8">
+        <div className="flex w-full pb-4">
           <div>
             <p className="text-lg text-white text-sm lg:text-base">
               Nasza szkółka pływacka w Szczecinie oferuje indywidualne podejście
@@ -49,9 +49,9 @@ export const FeaturedServices = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col gap-12 pt-16 lg:py-32 ">
-        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="w-full">
+      <div className="w-full flex flex-col gap-12 pt-16 ">
+        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16">
+          <div className="w-full pb-2 md:pb-0">
             <div className="h-[150px] md:h-[300px]">
               <Image
                 alt="dasd"
@@ -60,8 +60,8 @@ export const FeaturedServices = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full gap-8">
-            <div>
+          <div className="flex flex-col w-full md:gap-8">
+            <div className="pb-3 md:pb-0">
               <h5 className="text-white text-2xl lg:text-4xl font-bold">
                 1. Skontaktuj się z nami
               </h5>
@@ -80,8 +80,8 @@ export const FeaturedServices = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="w-full">
+        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16">
+          <div className="w-full pb-2 md:pb-0">
             <div className="h-[150px] md:h-[300px]">
               <Image
                 alt="dasd"
@@ -90,8 +90,8 @@ export const FeaturedServices = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full gap-8">
-            <div>
+          <div className="flex flex-col w-full md:gap-8">
+            <div className="pb-3 md:pb-0">
               <h5 className="text-white text-2xl lg:text-4xl font-bold">
                 2. Umów Spotkanie
               </h5>
@@ -112,8 +112,8 @@ export const FeaturedServices = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="w-full">
+        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16">
+          <div className="w-full pb-2 md:pb-0">
             <div className="h-[150px] md:h-[300px]">
               <Image
                 alt="dasd"
@@ -122,8 +122,8 @@ export const FeaturedServices = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full gap-8">
-            <div>
+          <div className="flex flex-col w-full md:gap-8">
+            <div className="pb-3 md:pb-0">
               <h5 className="text-white text-2xl lg:text-4xl font-bold">
                 3. Widzimy się w wodzie
               </h5>

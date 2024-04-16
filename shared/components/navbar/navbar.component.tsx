@@ -1,8 +1,8 @@
-import { Button, Hamburger, Logo } from "@/shared/components";
+import { Hamburger, Logo } from "@/shared/components";
 
 export const Navbar = () => {
   return (
-    <div className="w-full h-[100px] flex items-center justify-between">
+    <div className="w-full h-[70px]  lg:h-[100px] flex items-center justify-between">
       <div className="hidden lg:flex">
         <ul className="flex justify-center items-center gap-16">
           <li className="cursor-pointer">Aktualności</li>
@@ -11,7 +11,7 @@ export const Navbar = () => {
         </ul>
       </div>
 
-      <Logo className="w-20 lg:w-24" />
+      <Logo className="w-16 lg:w-24" />
 
       <div className="hidden lg:flex">
         <ul className="flex justify-center items-center gap-16">

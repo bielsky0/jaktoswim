@@ -11,3 +11,4 @@ export * from "./hamburger";
 export * from "./featuredReviews";
 export * from "./review";
 export * from "./contactForm";
+export * from "./modal";

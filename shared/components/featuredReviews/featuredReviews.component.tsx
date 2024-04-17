@@ -1,7 +1,9 @@
 "use client";
 
 import { Button, Review } from "@/shared/components";
+import { FEATURED_REVIEWS } from "@/shared/utils";
 import Slider from "react-slick";
+
 export const FeaturedReviews = () => {
   return (
     <div className="flex w-full gap-8 lg:gap-4 lg:flex-row flex-col max-w-[100%]  m-auto">
@@ -26,9 +28,13 @@ export const FeaturedReviews = () => {
       <div className="flex w-full items-center justify-center ">
         <div className="max-w-full lg:max-w-2xl ">
           <Slider arrows={false} autoplay infinite speed={500}>
-            <Review key={1} />
-            <Review key={2} />
-            <Review key={3} />
+            {FEATURED_REVIEWS.map(({ name, content }) => (
+              <Review
+                key={`${name}_${Date.now()}`}
+                name={name}
+                content={content}
+              />
+            ))}
           </Slider>
         </div>
       </div>

@@ -14,11 +14,11 @@ export default function Home() {
         <Billboard />
       </Layout>
 
-      <Layout className="pb-24">
+      <Layout className="pb-8 md:pb-24">
         <FeatureHero />
       </Layout>
 
-      <Layout className="pb-24">
+      <Layout className="pb-8 md:pb-24">
         <FeaturedReviews />
       </Layout>
 
@@ -26,11 +26,11 @@ export default function Home() {
         <FeaturedServices />
       </Layout>
 
-      <Layout className="py-24">
+      <Layout className="py-8 md:py-24">
         <FeaturedAboutUs />
       </Layout>
 
-      <Layout className="pb-24">
+      <Layout className="pb-8 md:pb-24">
         <FeaturedBlog />
       </Layout>
     </main>

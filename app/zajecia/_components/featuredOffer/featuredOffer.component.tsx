@@ -10,27 +10,27 @@ export const FeaturedOffer = () => {
     <div className="w-full flex  justify-center flex-col ">
       <div className="flex flex-col lg:flex-row w-full lg:gap-16">
         <div className="flex w-full">
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-2 items-center">
+          <div className="flex flex-col ">
+            <div className="flex gap-2 items-center pb-2">
               <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-              <h5 className="text-black">Co oferujemy</h5>
+              <h5 className="text-sm md:text-base">Co oferujemy</h5>
             </div>
 
-            <div className="max-w-4xl">
-              <h2 className="text-4xl font-semibold text-black">
+            <div className="max-w-4xl pb-3">
+              <h2 className="text-2xl md:text-4xl font-semibold">
                 Rozwijaj Umiejętności z Nami - Zapisz na Lekcję Próbną
               </h2>
             </div>
 
-            <div className="hidden lg:flex pt-8">
+            <div className="hidden lg:flex">
               <Button>Zapisz Się na Zajęcia</Button>
             </div>
           </div>
         </div>
 
-        <div className="flex w-full py-8">
+        <div className="flex w-full pb-4">
           <div>
-            <p className="text-lg text-black text-sm lg:text-base">
+            <p className="text-sm lg:text-base">
               Nasza szkółka pływacka w Szczecinie oferuje indywidualne podejście
               i profesjonalne instruktaż. Dzięki skupieniu na technice,
               poprawiamy umiejętności każdego ucznia. Motywująca atmosfera
@@ -43,14 +43,14 @@ export const FeaturedOffer = () => {
           </div>
         </div>
 
-        <div className="flex lg:hidden ">
+        <div className="flex lg:hidden pb-5">
           <Button>Zapisz Się na Zajęcia</Button>
         </div>
       </div>
 
-      <div className="w-full flex flex-col gap-12 pt-16  ">
-        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="w-full">
+      <div className="w-full flex flex-col py-12 gap-12">
+        <div className="w-full flex flex-col md:flex-row items-center md:gap-16">
+          <div className="w-full pb-2">
             <div className="h-[150px] md:h-[300px]">
               <Image
                 alt="dasd"
@@ -59,14 +59,14 @@ export const FeaturedOffer = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full gap-8">
-            <div>
+          <div className="flex flex-col w-full">
+            <div className=" pb-3">
               <h5 className="text-black text-2xl lg:text-4xl font-bold">
                 Zajęcia dla najmłodszych
               </h5>
             </div>
 
-            <div>
+            <div className="pb-4">
               <p className="text-black text-sm lg:text-base">
                 Zapisz swoją pociechę na lekcję próbną! Lekcja próbna pozwoli
                 nam ocenić obecny poziom twojego malucha, na podstawie którego
@@ -75,15 +75,15 @@ export const FeaturedOffer = () => {
               </p>
             </div>
 
-            <div className="pt-4">
+            <div className="pb-5">
               <p className="text-black text-sm lg:text-base">
                 Cena lekcji próbnej wynosi - 60 zł
               </p>
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="w-full">
+        <div className="w-full flex flex-col md:flex-row items-center md:gap-16">
+          <div className="w-full pb-2">
             <div className="h-[150px] md:h-[300px]">
               <Image
                 alt="dasd"
@@ -92,14 +92,14 @@ export const FeaturedOffer = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full gap-8">
-            <div>
+          <div className="flex flex-col w-full ">
+            <div className="pb-3">
               <h5 className="text-black text-2xl lg:text-4xl font-bold">
                 Zajęcia dla dorosłych
               </h5>
             </div>
 
-            <div>
+            <div className="pb-4">
               <p className="text-black text-sm lg:text-base">
                 Zapisz się na lekcję próbną! Lekcja próbna pozwoli nam ocenić
                 twój obecny poziom, na podstawie którego ustalimy konkretny plan
@@ -108,7 +108,7 @@ export const FeaturedOffer = () => {
               </p>
             </div>
 
-            <div className="pt-4">
+            <div className="pb-5">
               <p className="text-black text-sm lg:text-base">
                 Cena lekcji próbnej wynosi - 60 zł
               </p>

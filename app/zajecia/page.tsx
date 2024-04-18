@@ -8,23 +8,23 @@ import {
 export default function Home() {
   return (
     <main>
-      <Layout className="py-8 md:py-16">
+      <Layout className="pt-4 pb-12 md:py-12">
         <FeaturedHero />
       </Layout>
 
-      <Layout className="py-16">
+      <Layout className="pb-8 md:pb-24">
         <FeaturedOffer />
       </Layout>
 
-      <Layout className="py-16">
+      <Layout className="pb-8 md:pb-24">
         <FeaturedReviews />
       </Layout>
 
-      <Layout className="py-16">
+      <Layout className="pb-8 md:pb-24">
         <FeaturedFAQs />
       </Layout>
 
-      <Layout className="py-16">
+      <Layout className="pb-8 md:pb-24">
         <FeaturedBlog />
       </Layout>
     </main>

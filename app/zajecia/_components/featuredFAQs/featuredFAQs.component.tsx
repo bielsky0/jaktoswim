@@ -1,4 +1,4 @@
-import { Button } from "@/shared/components";
+import { Accordion, Button } from "@/shared/components";
 
 export const FeaturedFAQs = () => {
   return (
@@ -7,7 +7,9 @@ export const FeaturedFAQs = () => {
         <div className="flex flex-col gap-4">
           <div className="max-w-4xl">
             <h2 className="text-4xl font-semibold text-black">
-              Często zadawane pytania
+              <span>Masz pytanie?</span>
+              <br />
+              <span>My mamy odpowiedź!</span>
             </h2>
           </div>
 
@@ -18,65 +20,30 @@ export const FeaturedFAQs = () => {
       </div>
 
       <div className="flex flex-col w-full py-8 gap-4">
-        <div className="flex items-center justify-between w-full  bg-[#F4F4F4] rounded-2xl px-4">
-          <div className="py-4">
-            <h5 className="font-medium">
-              Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?
-            </h5>
-          </div>
+        <Accordion
+          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
+          content="asdsada"
+        />
 
-          <div>
-            <div className="rounded-full bg-[#229ED9] h-8 w-8"></div>
-          </div>
-        </div>
+        <Accordion
+          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
+          content="asdsada"
+        />
 
-        <div className="flex items-center justify-between w-full  bg-[#F4F4F4] rounded-2xl px-4">
-          <div className="py-4">
-            <h5 className="font-medium">
-              Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?
-            </h5>
-          </div>
+        <Accordion
+          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
+          content="asdsada"
+        />
 
-          <div>
-            <div className="rounded-full bg-[#229ED9] h-8 w-8"></div>
-          </div>
-        </div>
+        <Accordion
+          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
+          content="asdsada"
+        />
 
-        <div className="flex items-center justify-between w-full  bg-[#F4F4F4] rounded-2xl px-4">
-          <div className="py-4">
-            <h5 className="font-medium">
-              Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?
-            </h5>
-          </div>
-
-          <div>
-            <div className="rounded-full bg-[#229ED9] h-8 w-8"></div>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between w-full  bg-[#F4F4F4] rounded-2xl px-4">
-          <div className="py-4">
-            <h5 className="font-medium">
-              Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?
-            </h5>
-          </div>
-
-          <div>
-            <div className="rounded-full bg-[#229ED9] h-8 w-8"></div>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between w-full  bg-[#F4F4F4] rounded-2xl px-4">
-          <div className="py-4">
-            <h5 className="font-medium">
-              Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?
-            </h5>
-          </div>
-
-          <div>
-            <div className="rounded-full bg-[#229ED9] h-8 w-8"></div>
-          </div>
-        </div>
+        <Accordion
+          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
+          content="asdsada"
+        />
       </div>
     </div>
   );

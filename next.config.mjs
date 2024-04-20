@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  distDir: "dist",
   webpack: (config, { isServer }) => {
     const prefix = config.assetPrefix ?? config.basePath ?? "";
     config.module.rules.push({

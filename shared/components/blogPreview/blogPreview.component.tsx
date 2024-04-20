@@ -3,7 +3,7 @@ import aboutUs1 from "@/public/about_us-1.jpg";
 
 export const BlogPreview = () => {
   return (
-    <div className="flex flex-col w-[300px] lg:w-[400px]  mb-5">
+    <div className="flex flex-col w-full  mb-5">
       <div className="pb-2 w-full aspect-[16/9] relative after:content group relative block w-full after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight">
         <Image
           alt="dasd"

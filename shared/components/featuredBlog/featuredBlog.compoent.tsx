@@ -57,7 +57,11 @@ export const FeaturedBlog = () => {
       <div className="overflow-hidden relative w-full | lg:w-12/16">
         <Slider
           items={items}
-          renderItem={() => <BlogPreview />}
+          renderItem={() => (
+            <div className="w-[300px] lg:w-[400px]">
+              <BlogPreview />
+            </div>
+          )}
           keyExtractor={({ id }) => id}
         />
       </div>

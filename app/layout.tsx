@@ -3,16 +3,6 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar, Layout, Footer } from "@/shared/components";
 
-import gsap from "gsap";
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger, Flip);
-
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

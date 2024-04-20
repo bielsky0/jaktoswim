@@ -13,3 +13,4 @@ export * from "./review";
 export * from "./contactForm";
 export * from "./modal";
 export * from "./accordion";
+export * from "./slider";

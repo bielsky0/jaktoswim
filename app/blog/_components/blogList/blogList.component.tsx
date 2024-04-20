@@ -2,7 +2,7 @@ import { BlogPreview } from "@/shared/components";
 
 export const BlogList = () => {
   return (
-    <div className="w-full grid grid-cols-2 gap-4">
+    <div className="columns-1 gap-8 sm:columns-2">
       <BlogPreview />
 
       <BlogPreview />

@@ -19,7 +19,7 @@ export const FeatureHero = () => {
           </div>
 
           <div className="pb-4">
-            <p className="text-base md:text-lg">
+            <p className="text-sm lg:text-base">
               Z nami pływanie staje się nie tylko nauką, ale także źródłem
               radości. Profesjonalni instruktorzy, bezpieczna atmosfera i
               indywidualne podejście sprawiają, że każde zanurzenie to nie tylko

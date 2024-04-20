@@ -43,7 +43,7 @@ export const FeaturedAboutUs = () => {
         </div>
 
         <div>
-          <p className="text-lg text-sm lg:text-base">
+          <p className="text-sm lg:text-base">
             Zaufaj naszemu doświadczonemu instruktorowi, który nie tylko
             kształtuje umiejętności, ale również buduje pewność siebie i pasję
             do wody.

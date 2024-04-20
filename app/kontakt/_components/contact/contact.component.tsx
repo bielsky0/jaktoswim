@@ -34,7 +34,7 @@ export const Contact = () => {
                 <h6 className="text-lg font-semibold">Lub Napisz</h6>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col gap-4">
                 <p>Instagram</p>
                 <p>Facebook</p>
               </div>

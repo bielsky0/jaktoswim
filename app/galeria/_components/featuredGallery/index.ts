@@ -1,0 +1,1 @@
+export * from "./featuredGallery.component";

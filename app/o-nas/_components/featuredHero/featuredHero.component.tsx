@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Button } from "@/shared/components";
 
 import aboutUs1 from "@/public/about_us-1.jpg";
@@ -6,7 +8,6 @@ import aboutUs3 from "@/public/about_us-3.jpg";
 import aboutUs4 from "@/public/about_us-4.jpg";
 import aboutUs5 from "@/public/about_us-5.jpg";
 import aboutUs6 from "@/public/about_us-6.jpg";
-import Image from "next/image";
 
 export const FeaturedHero = () => {
   return (

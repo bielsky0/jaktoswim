@@ -1,7 +1,7 @@
 import { Button } from "@/shared/components";
 
 import service1Src from "@/public/service1.jpg";
-import service2Src from "@/public/service2.jpg";
+import service2Src from "@/public/service.jpg";
 import service3Src from "@/public/service3.jpg";
 
 import Image from "next/image";

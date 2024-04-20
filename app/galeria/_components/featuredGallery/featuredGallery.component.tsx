@@ -9,7 +9,7 @@ import aboutUs6 from "@/public/about_us-6.jpg";
 import aboutUs7 from "@/public/featuredHero.png";
 import aboutUs8 from "@/public/service1.jpg";
 import aboutUs9 from "@/public/service3.jpg";
-import aboutUs10 from "@/public/service2.jpg";
+import aboutUs10 from "@/public/service.jpg";
 
 export const FeaturedGallery = () => {
   return (

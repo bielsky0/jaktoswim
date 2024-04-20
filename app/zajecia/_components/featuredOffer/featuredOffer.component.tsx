@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/shared/components";
 
 import service1Src from "@/public/service1.jpg";
-import service2Src from "@/public/service2.jpg";
+import service2Src from "@/public/service.jpg";
 
 export const FeaturedOffer = () => {
   return (

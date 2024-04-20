@@ -8,7 +8,7 @@ import service2Src from "@/public/service2.jpg";
 export const FeaturedOffer = () => {
   return (
     <div className="w-full flex  justify-center flex-col ">
-      <div className="flex flex-col lg:flex-row w-full lg:gap-16">
+      <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
         <div className="flex w-full">
           <div className="flex flex-col ">
             <div className="flex gap-2 items-center pb-2">
@@ -49,7 +49,7 @@ export const FeaturedOffer = () => {
       </div>
 
       <div className="w-full flex flex-col py-12 gap-12">
-        <div className="w-full flex flex-col md:flex-row items-center md:gap-16">
+        <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
           <div className="w-full pb-2">
             <div className="h-[150px] md:h-[300px]">
               <Image
@@ -82,7 +82,7 @@ export const FeaturedOffer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col md:flex-row items-center md:gap-16">
+        <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
           <div className="w-full pb-2">
             <div className="h-[150px] md:h-[300px]">
               <Image

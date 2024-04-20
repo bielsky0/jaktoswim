@@ -2,7 +2,7 @@ import { Button, BlogPreview } from "@/shared/components";
 
 export const FeaturedBlog = () => {
   return (
-    <div className="flex gap-16 lg:gap-4 lg:flex-row flex-col">
+    <div className="flex gap-16  lg:gap-32 lg:flex-row flex-col">
       <div className="w-full max-w-2xl w-fit">
         <div className="flex flex-col ">
           <div className="flex gap-2 items-center pb-2">

@@ -4,9 +4,9 @@ import { Button } from "@/shared/components";
 
 export const FeatureHero = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-0">
-      <div className="flex w-full">
-        <div className="flex flex-col">
+    <div className="flex flex-col lg:flex-row w-full gap-4 ">
+      <div className="flex w-full h-full my-auto">
+        <div className="flex flex-col lg:pr-16">
           <div className="flex gap-2 items-center pb-2">
             <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
             <h5 className="text-sm md:text-base">Kim Jesteśmy</h5>
@@ -34,10 +34,10 @@ export const FeatureHero = () => {
         </div>
       </div>
 
-      <div className="flex w-full  justify-center lg:justify-end">
+      <div className="flex w-full transform-gpu  justify-center lg:justify-end">
         <Image
           src={heroImgSrc}
-          className="w-full max-w-96 max-h-[456px]"
+          className="w-full h-full  max-h-[500px]  object-cover rounded-2xl"
           alt="dasd"
         />
       </div>

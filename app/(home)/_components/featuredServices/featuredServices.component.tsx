@@ -9,7 +9,7 @@ import Image from "next/image";
 export const FeaturedServices = () => {
   return (
     <div className="w-full flex  justify-center flex-col ">
-      <div className="flex flex-col lg:flex-row w-full lg:gap-16">
+      <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
         <div className="flex w-full">
           <div className="flex flex-col ">
             <div className="flex gap-2 items-center pb-2">
@@ -50,7 +50,7 @@ export const FeaturedServices = () => {
       </div>
 
       <div className="w-full flex flex-col gap-12 pt-16 ">
-        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16">
+        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32">
           <div className="w-full pb-2 md:pb-0">
             <div className="h-[150px] md:h-[300px]">
               <Image
@@ -60,7 +60,7 @@ export const FeaturedServices = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full md:gap-8">
+          <div className="flex flex-col w-full md:gap-8 ">
             <div className="pb-3 md:pb-0">
               <h5 className="text-white text-2xl lg:text-4xl font-bold">
                 1. Skontaktuj się z nami
@@ -80,7 +80,7 @@ export const FeaturedServices = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16">
+        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32">
           <div className="w-full pb-2 md:pb-0">
             <div className="h-[150px] md:h-[300px]">
               <Image
@@ -112,7 +112,7 @@ export const FeaturedServices = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16">
+        <div className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32">
           <div className="w-full pb-2 md:pb-0">
             <div className="h-[150px] md:h-[300px]">
               <Image

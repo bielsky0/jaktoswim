@@ -2,7 +2,7 @@ import { Button } from "@/shared/components";
 
 export const FeaturedAboutUs = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full lg:gap-32">
+    <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-32">
       <div className="flex w-full pb-4 md:pb-0">
         <div className="flex flex-col ">
           <div className="flex gap-2 items-center pb-2">
@@ -25,7 +25,7 @@ export const FeaturedAboutUs = () => {
 
       <div className="flex w-full flex-col gap-4 ">
         <div>
-          <p className="text-lg text-sm lg:text-base">
+          <p className="text-sm lg:text-base">
             Witaj w naszej szkółce pływackiej, gdzie każdy zanurzony moment to
             unikalna lekcja. Jako jedyny trener stawiam na indywidualne
             podejście, bezpieczeństwo oraz rozwijanie umiejętności pływania z
@@ -34,7 +34,7 @@ export const FeaturedAboutUs = () => {
         </div>
 
         <div>
-          <p className="text-lg text-sm lg:text-base">
+          <p className="text-sm lg:text-base">
             Razem tworzymy atmosferę przyjazną, inspirującą do odkrywania uroku
             wody i zdobywania nowych umiejętności. Zaufaj nam, a twoja przygoda
             z pływaniem stanie się niezapomnianą podróżą pełną radości i

@@ -12,7 +12,7 @@ export default function Home() {
         <FeaturedHero />
       </Layout>
 
-      <Layout className="py-8 md:py-16">
+      <Layout className="pt-8 md:pt-16">
         <FeaturedAboutUs />
       </Layout>
 
@@ -20,7 +20,7 @@ export default function Home() {
         <FeaturedCoach />
       </Layout>
 
-      <Layout className="py-16">
+      <Layout className="pt-16">
         <FeaturedReviews />
       </Layout>
 

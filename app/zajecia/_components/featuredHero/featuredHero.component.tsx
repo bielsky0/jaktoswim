@@ -3,7 +3,7 @@ import showreelSrc from "@/public/offer_showreel.mp4";
 export const FeaturedHero = () => {
   return (
     <div>
-      <div className="flex flex-col lg:flex-row w-full lg:gap-16">
+      <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
         <div className="flex w-full">
           <div className="flex flex-col pb-2">
             <div className="flex gap-2 items-center">

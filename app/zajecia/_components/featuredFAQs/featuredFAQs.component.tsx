@@ -2,7 +2,7 @@ import { Accordion, Button } from "@/shared/components";
 
 export const FeaturedFAQs = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full lg:gap-16">
+    <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
       <div className="flex w-full">
         <div className="flex flex-col gap-4">
           <div className="max-w-4xl">

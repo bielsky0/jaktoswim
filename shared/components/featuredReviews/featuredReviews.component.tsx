@@ -6,7 +6,7 @@ import Slider from "react-slick";
 
 export const FeaturedReviews = () => {
   return (
-    <div className="flex w-full gap-8 lg:gap-4 lg:flex-row flex-col max-w-[100%]  m-auto">
+    <div className="flex w-full gap-8  lg:gap-32 lg:flex-row flex-col max-w-[100%]  m-auto">
       <div className="w-full max-w-2xl w-fit">
         <div className="flex flex-col ">
           <div className="flex gap-2 items-center pb-2">
@@ -25,8 +25,8 @@ export const FeaturedReviews = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full items-center justify-center ">
-        <div className="max-w-full lg:max-w-2xl ">
+      <div className="flex w-full items-center justify-end ">
+        <div className="max-w-full lg:max-w-md ">
           <Slider arrows={false} autoplay infinite speed={500}>
             {FEATURED_REVIEWS.map(({ name, content }) => (
               <Review

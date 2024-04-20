@@ -9,6 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        slide: {
+          "100%": { transform: "translateX(calc(-50% - 1rem))" },
+        },
+      },
+      animation: {
+        slide: "slide 20s infinite linear",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
 
-import { Button, Modal } from "@/shared/components";
+import { Button, Modal, VideoPlayer } from "@/shared/components";
 
 import showreelSrc from "@/public/showreel.mp4";
 import hero_actionSrc from "@/public/hero_action.mp4";
@@ -111,15 +111,16 @@ export const Billboard = () => {
           }}
         >
           <div className="w-full  transform-gpu overflow-hidden  rounded-2xl aspect-[16/9]">
-            <video
+            <VideoPlayer
+              onClose={() => {
+                setShowModal(false);
+                if (typeof window != "undefined" && window.document) {
+                  document.body.style.overflow = "unset";
+                }
+              }}
               className="w-full h-full rounded-2xl object-cover"
-              loop
-              muted
-              autoPlay
-              playsInline
-            >
-              <source type="video/mp4" src={hero_actionSrc} />
-            </video>
+              src={hero_actionSrc}
+            />
           </div>
         </Modal>
       </div>

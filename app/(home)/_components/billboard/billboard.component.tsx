@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FaPlay } from "react-icons/fa6";
 
 import { Button, Modal } from "@/shared/components";
 
@@ -32,7 +33,9 @@ export const Billboard = () => {
                 <div className="absolute -right-[20px] bottom-0  h-[20px] w-[20px] rounded-full shadow-[-10px_10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
                 <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-                <h5 className="text-base lg:text-lg">Cześć, popływajmy 👋</h5>
+                <h5 className="text-base lg:text-lg">
+                  Cześć, popływajmy <span className="text-xl">👋</span>
+                </h5>
               </div>
             </div>
 
@@ -60,7 +63,7 @@ export const Billboard = () => {
               </h1>
             </div>
 
-            <div className="flex justify-start bg-white block w-fit pb-3 pr-3 rounded-br-2xl items-center gap-4 relative">
+            <div className="flex justify-start bg-white block w-fit pb-3 pr-2 rounded-br-2xl items-center gap-4 relative pt-2">
               <div className="absolute left-0 -bottom-[20px]  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
               <div className="absolute -right-[20px] top-0  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
@@ -72,10 +75,19 @@ export const Billboard = () => {
         <div
           onClick={() => {
             setShowModal(true);
+
+            if (typeof window != "undefined" && window.document) {
+              document.body.style.overflow = "hidden";
+            }
           }}
-          className="absolute bg-white p-2 bottom-4 right-4 rounded-full flex items-center gap-2 cursor-pointer"
+          className="absolute bg-white pl-1 py-1 bottom-4 right-4 rounded-full flex items-center gap-2 cursor-pointer"
         >
-          <div className="bg-[#229ED9] rounded-full h-8 w-8 md:h-12 md:w-12"></div>
+          <div className="bg-[#229ED9] rounded-full h-10 w-10 md:h-12 md:w-12 relative">
+            <FaPlay
+              color="white"
+              className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+            />
+          </div>
 
           <div className="flex flex-col pr-4 ">
             <div>

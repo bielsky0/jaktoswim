@@ -17,7 +17,7 @@ export const FeaturedHero = () => {
           </div>
 
           <div>
-            <Button>Poznaj Całą Historie</Button>
+            <Button>Bądź Ich Częścią</Button>
           </div>
         </div>
       </div>

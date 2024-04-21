@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { ROUTES, cn } from "@/shared/utils";
@@ -9,8 +9,22 @@ export const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((currentState) => !currentState);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      if (typeof window != "undefined" && window.document) {
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+    if (!isOpen) {
+      if (typeof window != "undefined" && window.document) {
+        document.body.style.overflow = "unset";
+      }
+    }
+  }, [isOpen]);
 
   return (
     <>

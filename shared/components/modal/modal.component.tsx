@@ -9,7 +9,12 @@ export interface ModalProps {
 export const Modal = ({ onClose, isOpen, children }: ModalProps) => {
   const ref = useOutside(() => {
     onClose();
+
+    if (typeof window != "undefined" && window.document) {
+      document.body.style.overflow = "unset";
+    }
   });
+
   return (
     <>
       {isOpen ? (

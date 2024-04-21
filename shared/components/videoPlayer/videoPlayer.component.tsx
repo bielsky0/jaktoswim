@@ -58,6 +58,7 @@ export const VideoPlayer = ({
         className={className}
         ref={videoRef}
         muted
+        preload="none"
         autoPlay
         playsInline
         src={src}
@@ -72,7 +73,7 @@ export const VideoPlayer = ({
           }
           if (onClose) onClose();
         }}
-        className="cursor-pointer absolute top-4 right-4 z-20 w-10 h-10 bg-gray-600 bg-opacity-70 text-white rounded-full flex items-center justify-center || xl:hidden"
+        className="cursor-pointer absolute top-4 right-4 z-20 w-10 h-10 bg-gray-600 bg-opacity-70 text-white rounded-full flex items-center justify-center"
       >
         <IoClose color="white" />
       </div>

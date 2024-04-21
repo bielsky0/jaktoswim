@@ -7,6 +7,7 @@ import { Button, Modal, VideoPlayer } from "@/shared/components";
 
 import showreelSrc from "@/public/showreel.mp4";
 import hero_actionSrc from "@/public/hero_action.mp4";
+import showreelPosterSrc from "@/public/showreel_poster.jpg";
 
 export const Billboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,6 +21,7 @@ export const Billboard = () => {
             muted
             autoPlay
             playsInline
+            poster={showreelPosterSrc.src}
           >
             <source type="video/mp4" src={showreelSrc} />
           </video>
@@ -112,6 +114,7 @@ export const Billboard = () => {
         >
           <div className="w-full  transform-gpu overflow-hidden  rounded-2xl aspect-[16/9]">
             <VideoPlayer
+              posterSrc={showreelPosterSrc.src}
               onClose={() => {
                 setShowModal(false);
                 if (typeof window != "undefined" && window.document) {

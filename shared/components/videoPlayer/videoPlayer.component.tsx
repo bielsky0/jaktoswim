@@ -5,11 +5,17 @@ import { useEffect, useRef, useState } from "react";
 
 export interface VideoPlayerProps {
   src: string;
+  posterSrc?: string;
   className?: string;
   onClose?: () => void;
 }
 
-export const VideoPlayer = ({ src, className, onClose }: VideoPlayerProps) => {
+export const VideoPlayer = ({
+  src,
+  className,
+  onClose,
+  posterSrc,
+}: VideoPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [progress, setProgress] = useState<number>(0);
 
@@ -47,6 +53,7 @@ export const VideoPlayer = ({ src, className, onClose }: VideoPlayerProps) => {
   return (
     <div className="relative w-full h-full">
       <video
+        poster={posterSrc}
         onClick={handlePlayPause}
         className={className}
         ref={videoRef}
@@ -54,7 +61,7 @@ export const VideoPlayer = ({ src, className, onClose }: VideoPlayerProps) => {
         autoPlay
         playsInline
         src={src}
-      ></video>
+      />
 
       <div
         onClick={() => {

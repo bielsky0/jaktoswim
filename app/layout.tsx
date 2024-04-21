@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import "./globals.css";
+import { Montserrat, IBM_Plex_Sans_Arabic } from "next/font/google";
+
 import { Navbar, Layout, Footer } from "@/shared/components";
 
-const inter = Montserrat({ subsets: ["latin"] });
+import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-montserrat",
+});
+
+const IBMPlex = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: "600",
+  variable: "--font-IBMPlex",
+});
 
 export const metadata: Metadata = {
   title: "JakToSwim",
@@ -17,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${IBMPlex.variable} ${montserrat.variable} ${montserrat.className}`}
+      >
         <Layout>
           <Navbar />
         </Layout>

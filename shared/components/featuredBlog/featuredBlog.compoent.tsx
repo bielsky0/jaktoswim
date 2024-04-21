@@ -44,7 +44,7 @@ export const FeaturedBlog = () => {
         </div>
 
         <div className="max-w-xl pb-3">
-          <h2 className="text-2xl md:text-4xl font-semibold">
+          <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
             Najświeższe informacje, prosto z wody
           </h2>
         </div>

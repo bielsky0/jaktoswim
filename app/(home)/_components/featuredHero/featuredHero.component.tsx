@@ -13,7 +13,7 @@ export const FeatureHero = () => {
           </div>
 
           <div className="max-w-4xl pb-3">
-            <h2 className="text-2xl md:text-4xl font-semibold">
+            <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
               Odkryj Radość Pływania z Profesjonalnym Instruktorem
             </h2>
           </div>

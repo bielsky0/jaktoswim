@@ -13,7 +13,7 @@ export const FeaturedHero = () => {
   return (
     <div className="flex flex-col w-full items-center">
       <div className="text-center">
-        <h1 className="text-3xl md:text-6xl font-semibold">
+        <h1 className="ibmPlex text-3xl md:text-6xl font-semibold">
           <span>
             Nasz Instruktor,
             <br />
@@ -30,6 +30,7 @@ export const FeaturedHero = () => {
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
               alt="aboutUs1"
+              placeholder="blur"
               src={aboutUs1}
               className="w-full h-full object-fill rounded-2xl"
             />
@@ -37,6 +38,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs2"
               src={aboutUs2}
               className="w-full h-full object-fill rounded-2xl"
@@ -45,6 +47,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs3"
               src={aboutUs3}
               className="w-full h-full object-fill rounded-2xl"
@@ -53,6 +56,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs4"
               src={aboutUs4}
               className="w-full h-full object-fill rounded-2xl"
@@ -61,6 +65,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs5"
               src={aboutUs5}
               className="w-full h-full object-fill rounded-2xl"
@@ -69,6 +74,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs6"
               src={aboutUs6}
               className="w-full h-full object-fill rounded-2xl"
@@ -77,6 +83,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs12"
               src={aboutUs1}
               className="w-full h-full object-fill rounded-2xl"
@@ -85,6 +92,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs22"
               src={aboutUs2}
               className="w-full h-full object-fill rounded-2xl"
@@ -93,6 +101,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs32"
               src={aboutUs3}
               className="w-full h-full object-fill rounded-2xl"
@@ -101,6 +110,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs42"
               src={aboutUs4}
               className="w-full h-full object-fill rounded-2xl"
@@ -117,6 +127,7 @@ export const FeaturedHero = () => {
 
           <div className="rounded-2xl w-[200px] h-[250px]">
             <Image
+              placeholder="blur"
               alt="aboutUs62"
               src={aboutUs6}
               className="w-full h-full object-fill rounded-2xl"

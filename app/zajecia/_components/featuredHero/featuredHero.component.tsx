@@ -1,4 +1,5 @@
-import showreelSrc from "@/public/offer_showreel.mp4";
+import showreelOfferSrc from "@/public/offer_showreel.mp4";
+import showreelPosterSrc from "@/public/showreel_poster.jpg";
 
 export const FeaturedHero = () => {
   return (
@@ -12,7 +13,7 @@ export const FeaturedHero = () => {
             </div>
 
             <div className="max-w-4xl">
-              <h2 className="text-2xl md:text-4xl font-semibold">
+              <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
                 Wspaniała Przygoda w Wodzie
               </h2>
             </div>
@@ -32,16 +33,16 @@ export const FeaturedHero = () => {
           </div>
         </div>
       </div>
-
-      <div className="w-full  rounded-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-2xl lg:aspect-[16/9] pt-8">
+      <div className="w-full  rounded-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-2xl lg:aspect-[16/9] max-h-[640px]">
         <video
           className="w-full h-full rounded-2xl object-cover"
           loop
           muted
           autoPlay
           playsInline
+          poster={showreelPosterSrc.src}
         >
-          <source type="video/mp4" src={showreelSrc} />
+          <source type="video/mp4" src={showreelOfferSrc} />
         </video>
       </div>
     </div>

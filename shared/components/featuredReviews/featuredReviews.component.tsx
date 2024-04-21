@@ -13,7 +13,7 @@ export const FeaturedReviews = () => {
         </div>
 
         <div className="max-w-xl pb-3">
-          <h2 className="text-2xl md:text-4xl font-semibold">
+          <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
             Ludzie nas kochają, a my kochamy ich
           </h2>
         </div>

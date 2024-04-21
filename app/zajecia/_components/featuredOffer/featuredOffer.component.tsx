@@ -17,7 +17,7 @@ export const FeaturedOffer = () => {
             </div>
 
             <div className="max-w-4xl pb-3">
-              <h2 className="text-2xl md:text-4xl font-semibold">
+              <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
                 Rozwijaj Umiejętności z Nami - Zapisz na Lekcję Próbną
               </h2>
             </div>
@@ -61,7 +61,7 @@ export const FeaturedOffer = () => {
           </div>
           <div className="flex flex-col w-full">
             <div className=" pb-3">
-              <h5 className="text-black text-2xl lg:text-4xl font-bold">
+              <h5 className="ibmPlex text-black text-2xl lg:text-4xl font-bold">
                 Zajęcia dla najmłodszych
               </h5>
             </div>
@@ -94,7 +94,7 @@ export const FeaturedOffer = () => {
           </div>
           <div className="flex flex-col w-full ">
             <div className="pb-3">
-              <h5 className="text-black text-2xl lg:text-4xl font-bold">
+              <h5 className="ibmPlex text-black text-2xl lg:text-4xl font-bold">
                 Zajęcia dla dorosłych
               </h5>
             </div>

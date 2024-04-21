@@ -6,7 +6,7 @@ export const Contact = () => {
       <div className="flex w-full">
         <div className="flex flex-col gap-4">
           <div className="max-w-4xl">
-            <h2 className="text-3xl lg:text-4xl font-semibold">
+            <h2 className="ibmPlex text-3xl lg:text-4xl font-semibold">
               Masz Pytania?
             </h2>
           </div>

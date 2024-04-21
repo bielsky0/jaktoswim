@@ -18,7 +18,7 @@ export const FeaturedServices = () => {
             </div>
 
             <div className="max-w-4xl pb-3">
-              <h2 className="text-2xl md:text-4xl font-semibold text-white">
+              <h2 className="ibmPlex text-2xl md:text-4xl font-semibold text-white">
                 Jak wyniesiemy twoje umiejętności pływania na wyższy poziom
               </h2>
             </div>
@@ -62,7 +62,7 @@ export const FeaturedServices = () => {
           </div>
           <div className="flex flex-col w-full md:gap-8 ">
             <div className="pb-3 md:pb-0">
-              <h5 className="text-white text-2xl lg:text-4xl font-bold">
+              <h5 className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
                 1. Skontaktuj się z nami
               </h5>
             </div>
@@ -92,7 +92,7 @@ export const FeaturedServices = () => {
           </div>
           <div className="flex flex-col w-full md:gap-8">
             <div className="pb-3 md:pb-0">
-              <h5 className="text-white text-2xl lg:text-4xl font-bold">
+              <h5 className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
                 2. Umów Spotkanie
               </h5>
             </div>
@@ -124,7 +124,7 @@ export const FeaturedServices = () => {
           </div>
           <div className="flex flex-col w-full md:gap-8">
             <div className="pb-3 md:pb-0">
-              <h5 className="text-white text-2xl lg:text-4xl font-bold">
+              <h5 className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
                 3. Widzimy się w wodzie
               </h5>
             </div>

@@ -9,7 +9,7 @@ export const FeaturedHero = () => {
           </div>
 
           <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-4xl font-semibold">
+            <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
               Najnowsze wiadomości z bloga
             </h2>
           </div>

@@ -6,7 +6,7 @@ export const FeaturedFAQs = () => {
       <div className="flex w-full">
         <div className="flex flex-col gap-4">
           <div className="max-w-4xl">
-            <h2 className="text-4xl font-semibold text-black">
+            <h2 className="ibmPlex text-4xl font-semibold text-black">
               <span>Masz pytanie?</span>
               <br />
               <span>My mamy odpowiedź!</span>

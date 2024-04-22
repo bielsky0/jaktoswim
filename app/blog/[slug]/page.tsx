@@ -1,4 +1,6 @@
-import { FeaturedHero } from "@/app/blog/[slug]/_components";
+import { getBlogPost } from "@/app/actions";
+import { FeaturedBlogBody, FeaturedHero } from "@/app/blog/[slug]/_components";
+import { blogPostMapper } from "@/shared/libs/strapiClient/strapiClient.mapper";
 
 type Params = {
   params: {
@@ -6,12 +8,16 @@ type Params = {
   };
 };
 
-export default function Post({ params }: Params) {
+export default async function Post({ params }: Params) {
+  const blog = await getBlogPost({ id: params.slug });
+
+  const blogUi = blogPostMapper(blog.data);
+
   return (
     <main>
-      <div>
-        <FeaturedHero />
-      </div>
+      <FeaturedHero blogUi={blogUi} />
+
+      <FeaturedBlogBody blogUi={blogUi} />
     </main>
   );
 }

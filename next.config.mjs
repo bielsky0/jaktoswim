@@ -18,6 +18,10 @@ const nextConfig = {
 
     return config;
   },
+  reactStrictMode: true,
+  images: {
+    domains: ["localhost"],
+  },
 };
 
 export default nextConfig;

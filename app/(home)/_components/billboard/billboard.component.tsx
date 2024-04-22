@@ -14,7 +14,7 @@ export const Billboard = () => {
   return (
     <div>
       <div className=" w-full relative">
-        <div className="w-full  rounded-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-2xl lg:aspect-[16/9]">
+        <div className="w-full  rounded-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-2xl lg:aspect-[16/9] max-h-[720px]">
           <video
             className="w-full h-full rounded-2xl object-cover"
             loop

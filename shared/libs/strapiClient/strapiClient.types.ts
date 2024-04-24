@@ -1,5 +1,10 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 
+export interface ImagesReponse {
+  data: ImageResponse[];
+  meta: Record<string, string>;
+}
+
 export interface BlogPostsReponse {
   data: BlogResponse[];
   meta: Record<string, string>;
@@ -9,6 +14,15 @@ export interface BlogPostReponse {
   data: BlogResponse;
   meta: Record<string, string>;
 }
+
+export type ImageResponse = {
+  id: number;
+  attributes: ImageAttributes;
+};
+
+export type ImageAttributes = {
+  image: ImageStrapi;
+};
 
 export type BlogResponse = {
   id: number;
@@ -213,9 +227,20 @@ export interface BlogPageAttributes {
   hero: AboutUsSection;
 }
 
+export interface GalleryPageAttributes {
+  hero: AboutUsSection;
+}
+
 export interface BlogPageResponse {
   data: {
     id: number;
     attributes: BlogPageAttributes;
+  };
+}
+
+export interface GalleryPageResponse {
+  data: {
+    id: number;
+    attributes: GalleryPageAttributes;
   };
 }

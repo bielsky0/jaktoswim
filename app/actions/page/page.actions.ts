@@ -40,3 +40,13 @@ export const getBlogPage = unstable_cache(
   ["blogPage"],
   { revalidate: 1 }
 );
+
+export const getGalleryPage = unstable_cache(
+  async () => {
+    const galleryPage = await strapiClient.getGalleryPage();
+
+    return galleryPage;
+  },
+  ["galleryPage"],
+  { revalidate: 1 }
+);

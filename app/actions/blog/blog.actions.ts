@@ -2,13 +2,24 @@
 
 import { strapiClient } from "@/shared/libs";
 import { BlogParams } from "@/shared/libs/strapiClient/strapiClient.types";
+import { AxiosError } from "axios";
 import { unstable_cache } from "next/cache";
 
 export const getBlogPost = unstable_cache(
   async (params: BlogParams) => {
-    const blogPostData = await strapiClient.getPost(params);
+    try {
+      const blogPostData = await strapiClient.getPost(params);
 
-    return blogPostData;
+      return blogPostData;
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        if (error.response) {
+          if (error.response.status === 404) return null;
+        }
+      }
+
+      throw error;
+    }
   },
   ["blog-post-by-handle"],
   { revalidate: 1 }

@@ -5,12 +5,22 @@ import { FaPlay } from "react-icons/fa6";
 
 import { Button, Modal, VideoPlayer } from "@/shared/components";
 
-import showreelSrc from "@/public/showreel.mp4";
-import hero_actionSrc from "@/public/hero_action.mp4";
 import showreelPosterSrc from "@/public/showreel_poster.jpg";
+import { BillboardSection } from "@/shared/libs/strapiClient/strapiClient.types";
+import { strapiImgToImg } from "@/shared/utils";
 
-export const Billboard = () => {
+export interface BillboardProps {
+  billboard: BillboardSection;
+}
+
+export const Billboard = ({ billboard }: BillboardProps) => {
   const [showModal, setShowModal] = useState(false);
+
+  const { showreel, second_showreel, subtitle, button_cta } = billboard;
+
+  const showreelUi = strapiImgToImg(showreel);
+  const secondShowreelUi = strapiImgToImg(second_showreel);
+
   return (
     <div>
       <div className=" w-full relative">
@@ -23,7 +33,7 @@ export const Billboard = () => {
             playsInline
             poster={showreelPosterSrc.src}
           >
-            <source type="video/mp4" src={showreelSrc} />
+            <source type="video/mp4" src={showreelUi.data.attributes.url} />
           </video>
         </div>
 
@@ -35,9 +45,7 @@ export const Billboard = () => {
                 <div className="absolute -right-[20px] bottom-0  h-[20px] w-[20px] rounded-full shadow-[-10px_10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
                 <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-                <h5 className="text-base lg:text-lg">
-                  Cześć, popływajmy <span className="text-xl">👋</span>
-                </h5>
+                <h5 className="text-base lg:text-lg">{subtitle}</h5>
               </div>
             </div>
 
@@ -69,7 +77,7 @@ export const Billboard = () => {
               <div className="absolute left-0 -bottom-[20px]  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
               <div className="absolute -right-[20px] top-0  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
-              <Button>Zapisz Się!</Button>
+              <Button>{button_cta}</Button>
             </div>
           </div>
         </div>
@@ -122,7 +130,7 @@ export const Billboard = () => {
                 }
               }}
               className="w-full h-full rounded-2xl object-cover"
-              src={hero_actionSrc}
+              src={secondShowreelUi.data.attributes.url}
             />
           </div>
         </Modal>

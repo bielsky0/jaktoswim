@@ -1,3 +1,4 @@
+import { ContentRenderer } from "@/shared/components";
 import { BlogUI } from "@/shared/libs/strapiClient/strapiClient.types";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
@@ -6,7 +7,7 @@ export interface FeaturedBlogProps {
 }
 
 export const FeaturedBlogBody = ({
-  blogUi: { content, title, description },
+  blogUi: { content },
 }: FeaturedBlogProps) => {
   return (
     <div className="w-full py-0">
@@ -23,7 +24,7 @@ export const FeaturedBlogBody = ({
               </div>
             </div>
             <div className="w-full flex flex-col ">
-              <BlocksRenderer content={content} />
+              <ContentRenderer content={content} />
             </div>
           </div>
 

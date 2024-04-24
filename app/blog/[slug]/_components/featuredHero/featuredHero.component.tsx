@@ -43,7 +43,7 @@ export const FeaturedHero = ({
                 {title}
               </h1>
             </div>
-            <div className="pb-4 md:pb-0 w-full  rounded-l-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-l-2xl lg:aspect-[16/9] max-h-[360px] md:max-h-[640px]">
+            <div className="mb-4  w-full  rounded-l-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-l-2xl lg:aspect-[16/9] max-h-[360px] md:max-h-[640px]">
               <Image
                 alt="das"
                 fill

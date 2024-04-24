@@ -1,40 +1,16 @@
 "use client";
 import { Button, BlogPreview, Slider } from "@/shared/components";
+import { blogPostMapper } from "@/shared/libs/strapiClient/strapiClient.mapper";
+import { BlogsSection } from "@/shared/libs/strapiClient/strapiClient.types";
 
-const items = [
-  {
-    id: "1",
-    title:
-      "Nauka Pływania a Rozwój Emocjonalny Dzieci – Jak Wpływa na Samopoczucie",
-    content:
-      "Nauka pływania dla dzieci to nie tylko zdobywanie umiejętności fizycznych, ale także kluczowy element rozwoju emocjonalnego. Woda stwarza niepowtarzalne środowisko, które wpływa na samopoczucie i rozwój psychiczny najmłodszych. W tym artykule przyjrzymy się, jakie korzyści emocjonalne niesie za sobą nauka pływania dla dzieci.",
-  },
-  {
-    id: "2",
-    title:
-      "Nauka Pływania a Rozwój Emocjonalny Dzieci – Jak Wpływa na Samopoczucie",
-    content:
-      "Nauka pływania dla dzieci to nie tylko zdobywanie umiejętności fizycznych, ale także kluczowy element rozwoju emocjonalnego. Woda stwarza niepowtarzalne środowisko, które wpływa na samopoczucie i rozwój psychiczny najmłodszych. W tym artykule przyjrzymy się, jakie korzyści emocjonalne niesie za sobą nauka pływania dla dzieci.",
-  },
+export interface FeaturedBlogProps {
+  blogs: BlogsSection;
+}
 
-  {
-    id: "3",
-    title:
-      "Nauka Pływania a Rozwój Emocjonalny Dzieci – Jak Wpływa na Samopoczucie",
-    content:
-      "Nauka pływania dla dzieci to nie tylko zdobywanie umiejętności fizycznych, ale także kluczowy element rozwoju emocjonalnego. Woda stwarza niepowtarzalne środowisko, które wpływa na samopoczucie i rozwój psychiczny najmłodszych. W tym artykule przyjrzymy się, jakie korzyści emocjonalne niesie za sobą nauka pływania dla dzieci.",
-  },
-
-  {
-    id: "4",
-    title:
-      "Nauka Pływania a Rozwój Emocjonalny Dzieci – Jak Wpływa na Samopoczucie",
-    content:
-      "Nauka pływania dla dzieci to nie tylko zdobywanie umiejętności fizycznych, ale także kluczowy element rozwoju emocjonalnego. Woda stwarza niepowtarzalne środowisko, które wpływa na samopoczucie i rozwój psychiczny najmłodszych. W tym artykule przyjrzymy się, jakie korzyści emocjonalne niesie za sobą nauka pływania dla dzieci.",
-  },
-];
-
-export const FeaturedBlog = () => {
+export const FeaturedBlog = ({ blogs }: FeaturedBlogProps) => {
+  const blogPosts = blogs.blog_posts.data.map((blog) =>
+    blogPostMapper({ blog: blog.attributes.Blog, slug: blog.attributes.slug })
+  );
   return (
     <div className="flex w-full flex-col lg:flex-row gap-8">
       <div className="flex flex-col ">
@@ -56,13 +32,13 @@ export const FeaturedBlog = () => {
 
       <div className="overflow-hidden relative w-full | lg:w-12/16">
         <Slider
-          items={items}
-          renderItem={() => (
+          items={blogPosts}
+          renderItem={(blogUi) => (
             <div className="w-[300px] lg:w-[400px]">
-              <BlogPreview />
+              <BlogPreview blogUi={blogUi} />
             </div>
           )}
-          keyExtractor={({ id }) => id}
+          keyExtractor={({ slug }) => slug}
         />
       </div>
     </div>

@@ -1,26 +1,23 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 
 export interface BlogPostsReponse {
-  data: Blog[];
+  data: BlogResponse[];
   meta: Record<string, string>;
 }
 
 export interface BlogPostReponse {
-  data: Blog;
+  data: BlogResponse;
   meta: Record<string, string>;
 }
 
-export type Blog = {
+export type BlogResponse = {
   id: number;
   attributes: BlogAttributes;
 };
 
 export type BlogAttributes = {
-  description: string;
-  featuredImage: ImageStrapi;
-  createdAt: string;
-  title: string;
-  content: BlocksContent;
+  slug: string;
+  Blog: Blog;
 };
 
 export type ImageStrapi = {
@@ -45,10 +42,17 @@ export type ImageStrapi = {
     };
   };
 };
-
+export type Blog = {
+  description: string;
+  featuredImage: ImageStrapi;
+  createdAt: string;
+  title: string;
+  content: BlocksContent;
+  blog_posts: { data: BlogResponse[] };
+};
 export type BlogUI = {
-  id: number;
   imageUrl: string;
+  slug: string;
   createdAt: Date;
   title: string;
   description: string;
@@ -58,3 +62,91 @@ export type BlogUI = {
 export type BlogParams = {
   id: string;
 };
+
+export type BillboardSection = {
+  id: number;
+  subtitle: string;
+  button_cta: string;
+  showreel: ImageStrapi;
+  second_showreel: ImageStrapi;
+};
+
+export type HeroSection = {
+  id: number;
+  title: string;
+  subtitle: string;
+  button_cta: string;
+  description: string;
+  coverImage: ImageStrapi;
+};
+
+export type Review = {
+  id: number;
+  attributes: {
+    reviews: {
+      id: 1;
+      review: string;
+      name: string;
+    };
+  };
+};
+
+export type ReviewsSection = {
+  id: number;
+  title: string;
+  subtitle: string;
+  button_cta: string;
+  reviews: {
+    data: Review[];
+  };
+};
+
+export type Service = {
+  id: number;
+  title: string;
+  description: string;
+  cover: ImageStrapi;
+};
+
+export type ServicesSection = {
+  id: number;
+  title: string;
+  subtitle: string;
+  button_cta: string;
+  description: string;
+  services: Service[];
+};
+
+export type AboutUsSection = {
+  id: number;
+  title: string;
+  subtitle: string;
+  button_cta: string;
+  description: string;
+};
+
+export type BlogsSection = {
+  id: number;
+  title: string;
+  subtitle: string;
+  button_cta: string;
+  blog_posts: {
+    data: BlogResponse[];
+  };
+};
+
+export interface HomePageAttributes {
+  billboard: BillboardSection;
+  hero: HeroSection;
+  reviews: ReviewsSection;
+  Services: ServicesSection;
+  aboutUs: AboutUsSection;
+  blogs: BlogsSection;
+}
+
+export interface HomePageResponse {
+  data: {
+    id: number;
+    attributes: HomePageAttributes;
+  };
+}

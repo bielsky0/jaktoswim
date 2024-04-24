@@ -4,8 +4,22 @@ import { Button } from "@/shared/components";
 
 import service1Src from "@/public/service1.jpg";
 import service2Src from "@/public/service.jpg";
+import { ServicesSection } from "@/shared/libs/strapiClient/strapiClient.types";
+import { strapiImgToImg } from "@/shared/utils";
 
-export const FeaturedOffer = () => {
+export interface FeaturedOfferProps {
+  services: ServicesSection;
+}
+
+export const FeaturedOffer = ({ services }: FeaturedOfferProps) => {
+  const {
+    title,
+    subtitle,
+    description,
+    button_cta,
+    services: featuredServices,
+  } = services;
+
   return (
     <div className="w-full flex  justify-center flex-col ">
       <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
@@ -13,12 +27,12 @@ export const FeaturedOffer = () => {
           <div className="flex flex-col ">
             <div className="flex gap-2 items-center pb-2">
               <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-              <h5 className="text-sm md:text-base">Co oferujemy</h5>
+              <h5 className="text-sm md:text-base">{subtitle}</h5>
             </div>
 
             <div className="max-w-4xl pb-3">
               <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
-                Rozwijaj Umiejętności z Nami - Zapisz na Lekcję Próbną
+                {title}
               </h2>
             </div>
 
@@ -30,91 +44,47 @@ export const FeaturedOffer = () => {
 
         <div className="flex w-full pb-4">
           <div>
-            <p className="text-sm lg:text-base">
-              Nasza szkółka pływacka w Szczecinie oferuje indywidualne podejście
-              i profesjonalne instruktaż. Dzięki skupieniu na technice,
-              poprawiamy umiejętności każdego ucznia. Motywująca atmosfera
-              sprzyja szybkiemu postępowi i budowaniu pewności siebie.
-              Zapewniamy skuteczną naukę, prowadzącą do znaczącej poprawy
-              umiejętności pływackich. Nasza szkółka to miejsce, gdzie każdy
-              czuje się mile widziany i doceniony. Skontaktuj się z nami już
-              dziś, aby dołączyć do naszej pływackiej rodziny!
-            </p>
+            <p className="text-sm lg:text-base">{description}</p>
           </div>
         </div>
 
         <div className="flex lg:hidden pb-5">
-          <Button>Zapisz Się na Zajęcia</Button>
+          <Button>{button_cta}</Button>
         </div>
       </div>
 
       <div className="w-full flex flex-col py-12 gap-12">
-        <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
-          <div className="w-full pb-2">
-            <div className="h-[150px] md:h-[300px]">
-              <Image
-                alt="dasd"
-                src={service1Src}
-                className="object-cover w-full h-full rounded-2xl"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col w-full">
-            <div className=" pb-3">
-              <h5 className="ibmPlex text-black text-2xl lg:text-4xl font-bold">
-                Zajęcia dla najmłodszych
-              </h5>
-            </div>
+        {featuredServices.map(({ cover, title, description }) => {
+          const imageUi = strapiImgToImg(cover);
+          return (
+            <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
+              <div className="w-full pb-2">
+                <div className="h-[150px] md:h-[300px]">
+                  <Image
+                    alt="dasd"
+                    width={500}
+                    height={300}
+                    src={imageUi.data.attributes.url}
+                    className="object-cover w-full h-full rounded-2xl"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col w-full">
+                <div className=" pb-3">
+                  <h5 className="ibmPlex text-black text-2xl lg:text-4xl font-bold">
+                    {title}
+                  </h5>
+                </div>
 
-            <div className="pb-4">
-              <p className="text-black text-sm lg:text-base">
-                Zapisz swoją pociechę na lekcję próbną! Lekcja próbna pozwoli
-                nam ocenić obecny poziom twojego malucha, na podstawie którego
-                ustalimy konkretny plan działania. Dostosujemy grupę dla jego
-                potrzeb, aby skutecznie rozwiązać jego problem i osiągnąć cele.
-              </p>
+                <div className="pb-4">
+                  <p className="text-black text-sm lg:text-base">
+                    {description}
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <div className="pb-5">
-              <p className="text-black text-sm lg:text-base">
-                Cena lekcji próbnej wynosi - 60 zł
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
-          <div className="w-full pb-2">
-            <div className="h-[150px] md:h-[300px]">
-              <Image
-                alt="dasd"
-                src={service2Src}
-                className="object-cover w-full h-full rounded-2xl"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col w-full ">
-            <div className="pb-3">
-              <h5 className="ibmPlex text-black text-2xl lg:text-4xl font-bold">
-                Zajęcia dla dorosłych
-              </h5>
-            </div>
-
-            <div className="pb-4">
-              <p className="text-black text-sm lg:text-base">
-                Zapisz się na lekcję próbną! Lekcja próbna pozwoli nam ocenić
-                twój obecny poziom, na podstawie którego ustalimy konkretny plan
-                działania. Dostosujemy grupę do twoich potrzeb, aby skutecznie
-                rozwiązać twój problem i osiągnąć twój cel.
-              </p>
-            </div>
-
-            <div className="pb-5">
-              <p className="text-black text-sm lg:text-base">
-                Cena lekcji próbnej wynosi - 60 zł
-              </p>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

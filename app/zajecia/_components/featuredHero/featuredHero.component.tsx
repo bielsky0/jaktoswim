@@ -1,7 +1,16 @@
-import showreelOfferSrc from "@/public/offer_showreel.mp4";
 import showreelPosterSrc from "@/public/showreel_poster.jpg";
+import { HeroSection } from "@/shared/libs/strapiClient/strapiClient.types";
+import { strapiImgToImg } from "@/shared/utils";
 
-export const FeaturedHero = () => {
+export interface FeaturedHeroProps {
+  hero: HeroSection;
+}
+
+export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
+  const { title, description, coverImage, subtitle } = hero;
+
+  const coverUi = strapiImgToImg(coverImage);
+
   return (
     <div>
       <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
@@ -9,12 +18,12 @@ export const FeaturedHero = () => {
           <div className="flex flex-col pb-2">
             <div className="flex gap-2 items-center">
               <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-              <h5 className="text-sm md:text-base">Zajęcia</h5>
+              <h5 className="text-sm md:text-base">{subtitle}</h5>
             </div>
 
             <div className="max-w-4xl">
               <h2 className="ibmPlex text-2xl md:text-4xl font-semibold">
-                Wspaniała Przygoda w Wodzie
+                {title}
               </h2>
             </div>
           </div>
@@ -22,14 +31,7 @@ export const FeaturedHero = () => {
 
         <div className="flex w-full pb-4">
           <div>
-            <p className="text-lg  text-sm lg:text-base">
-              Oferujemy różnorodne zajęcia dostosowane do wszystkich grup
-              wiekowych. Dla najmłodszych proponujemy dynamiczne lekcje, które
-              nie tylko uczą umiejętności pływania, ale także rozwijają
-              zdolności motoryczne i budują pewność siebie. Dla dorosłych
-              przygotowaliśmy zajęcia dopasowane do różnych poziomów
-              zaawansowania, stawiając na komfort i skuteczność nauki.
-            </p>
+            <p className="text-lg  text-sm lg:text-base">{description}</p>
           </div>
         </div>
       </div>
@@ -42,7 +44,7 @@ export const FeaturedHero = () => {
           playsInline
           poster={showreelPosterSrc.src}
         >
-          <source type="video/mp4" src={showreelOfferSrc} />
+          <source type="video/mp4" src={coverUi.data.attributes.url} />
         </video>
       </div>
     </div>

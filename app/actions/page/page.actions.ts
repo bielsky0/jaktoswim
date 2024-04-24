@@ -13,10 +13,20 @@ export const getHomepage = unstable_cache(
 
 export const getAboutUsPage = unstable_cache(
   async () => {
-    const aboutUsPage = await strapiClient.getAbouUsPage();
+    const aboutUsPage = await strapiClient.getAboutUsPage();
 
     return aboutUsPage;
   },
   ["aboutUsPage"],
+  { revalidate: 1 }
+);
+
+export const getOfferPage = unstable_cache(
+  async () => {
+    const offerPage = await strapiClient.getOfferPage();
+
+    return offerPage;
+  },
+  ["offerPage"],
   { revalidate: 1 }
 );

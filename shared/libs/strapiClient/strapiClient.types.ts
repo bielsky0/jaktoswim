@@ -194,3 +194,17 @@ export interface AboutUsResponse {
     attributes: AboutUsAttributes;
   };
 }
+
+export interface OfferAttributes {
+  hero: HeroSection;
+  services: ServicesSection;
+  reviews: ReviewsSection;
+  blogs: BlogsSection;
+}
+
+export interface OfferPageResponse {
+  data: {
+    id: number;
+    attributes: OfferAttributes;
+  };
+}

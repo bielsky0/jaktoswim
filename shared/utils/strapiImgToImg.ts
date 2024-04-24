@@ -1,4 +1,7 @@
-import { ImageStrapi } from "@/shared/libs/strapiClient/strapiClient.types";
+import {
+  ImageStrapi,
+  MultiImageStrapi,
+} from "@/shared/libs/strapiClient/strapiClient.types";
 
 export const strapiImgToImg = (strapiImg: ImageStrapi): ImageStrapi => {
   return {
@@ -12,4 +15,18 @@ export const strapiImgToImg = (strapiImg: ImageStrapi): ImageStrapi => {
       },
     },
   };
+};
+
+export const strapiMultiImgToMutliImg = (
+  imgs: MultiImageStrapi
+): MultiImageStrapi => {
+  const img = imgs.data.map((strapiImg) => ({
+    ...strapiImg,
+    attributes: {
+      ...strapiImg.attributes,
+      url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${strapiImg.attributes.url}`,
+      previewUrl: `${process.env.NEXT_PUBLIC_STRAPI_URL}${strapiImg.attributes.previewUrl}`,
+    },
+  }));
+  return { data: img };
 };

@@ -4,6 +4,7 @@ import {
   BlogPostReponse,
   BlogParams,
   HomePageResponse,
+  AboutUsResponse,
 } from "./strapiClient.types";
 import { buildPath } from "@/shared/utils";
 
@@ -29,5 +30,13 @@ export class StrapiClient {
     );
 
     return uncheckHomepage;
+  }
+
+  public async getAbouUsPage() {
+    const uncheckedAboutUsPage = await axiosClient.get<AboutUsResponse>(
+      "about-us?populate=deep"
+    );
+
+    return uncheckedAboutUsPage;
   }
 }

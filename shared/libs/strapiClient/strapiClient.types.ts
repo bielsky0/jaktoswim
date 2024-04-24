@@ -20,6 +20,29 @@ export type BlogAttributes = {
   Blog: Blog;
 };
 
+export type MultiImageStrapi = {
+  data: {
+    id: number;
+    attributes: {
+      name: string;
+      alternativeText: string | null;
+      caption: string | null;
+      width: number;
+      height: number;
+      formats: [object];
+      hash: string;
+      ext: string;
+      mime: string;
+      size: number;
+      url: string;
+      previewUrl: string | null;
+      provider: string;
+      createdAt: string;
+      updatedAt: string;
+    };
+  }[];
+};
+
 export type ImageStrapi = {
   data: {
     id: number;
@@ -148,5 +171,26 @@ export interface HomePageResponse {
   data: {
     id: number;
     attributes: HomePageAttributes;
+  };
+}
+
+export type ImageCarouselSection = {
+  id: number;
+  button_cta: string;
+  images: MultiImageStrapi;
+};
+
+export interface AboutUsAttributes {
+  hero: ImageCarouselSection;
+  aboutUs: AboutUsSection;
+  instructor: HeroSection;
+  reviews: ReviewsSection;
+  blogs: BlogsSection;
+}
+
+export interface AboutUsResponse {
+  data: {
+    id: number;
+    attributes: AboutUsAttributes;
   };
 }

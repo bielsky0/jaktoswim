@@ -10,3 +10,13 @@ export const getHomepage = unstable_cache(
   ["homepage"],
   { revalidate: 1 }
 );
+
+export const getAboutUsPage = unstable_cache(
+  async () => {
+    const aboutUsPage = await strapiClient.getAbouUsPage();
+
+    return aboutUsPage;
+  },
+  ["aboutUsPage"],
+  { revalidate: 1 }
+);

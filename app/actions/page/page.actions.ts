@@ -30,3 +30,13 @@ export const getOfferPage = unstable_cache(
   ["offerPage"],
   { revalidate: 1 }
 );
+
+export const getBlogPage = unstable_cache(
+  async () => {
+    const blogPage = await strapiClient.getBlogPage();
+
+    return blogPage;
+  },
+  ["blogPage"],
+  { revalidate: 1 }
+);

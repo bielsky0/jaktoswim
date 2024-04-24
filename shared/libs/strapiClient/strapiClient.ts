@@ -6,6 +6,7 @@ import {
   HomePageResponse,
   AboutUsResponse,
   OfferPageResponse,
+  BlogPageResponse,
 } from "./strapiClient.types";
 import { buildPath } from "@/shared/utils";
 
@@ -47,5 +48,13 @@ export class StrapiClient {
     );
 
     return unchekdOfferPage;
+  }
+
+  public async getBlogPage() {
+    const uncheckedBlogPage = await axiosClient.get<BlogPageResponse>(
+      "blog?populate=deep"
+    );
+
+    return uncheckedBlogPage;
   }
 }

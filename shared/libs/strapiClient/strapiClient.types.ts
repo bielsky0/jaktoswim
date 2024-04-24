@@ -208,3 +208,14 @@ export interface OfferPageResponse {
     attributes: OfferAttributes;
   };
 }
+
+export interface BlogPageAttributes {
+  hero: AboutUsSection;
+}
+
+export interface BlogPageResponse {
+  data: {
+    id: number;
+    attributes: BlogPageAttributes;
+  };
+}

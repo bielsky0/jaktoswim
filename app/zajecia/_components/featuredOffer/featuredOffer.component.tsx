@@ -35,7 +35,7 @@ export const FeaturedOffer = ({ services }: FeaturedOfferProps) => {
             </div>
 
             <div className="hidden lg:flex">
-              <Button>Zapisz Się na Zajęcia</Button>
+              <Button>{button_cta}</Button>
             </div>
           </div>
         </div>

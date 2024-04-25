@@ -11,5 +11,5 @@ export const getImages = unstable_cache(
     return images;
   },
   ["images"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );

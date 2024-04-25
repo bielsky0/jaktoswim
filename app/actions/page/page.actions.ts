@@ -8,7 +8,7 @@ export const getHomepage = unstable_cache(
     return homepage;
   },
   ["homepage"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );
 
 export const getAboutUsPage = unstable_cache(
@@ -18,7 +18,7 @@ export const getAboutUsPage = unstable_cache(
     return aboutUsPage;
   },
   ["aboutUsPage"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );
 
 export const getOfferPage = unstable_cache(
@@ -28,7 +28,7 @@ export const getOfferPage = unstable_cache(
     return offerPage;
   },
   ["offerPage"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );
 
 export const getBlogPage = unstable_cache(
@@ -38,7 +38,7 @@ export const getBlogPage = unstable_cache(
     return blogPage;
   },
   ["blogPage"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );
 
 export const getGalleryPage = unstable_cache(
@@ -48,5 +48,5 @@ export const getGalleryPage = unstable_cache(
     return galleryPage;
   },
   ["galleryPage"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );

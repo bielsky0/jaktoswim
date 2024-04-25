@@ -22,7 +22,7 @@ export const getBlogPost = unstable_cache(
     }
   },
   ["blog-post-by-handle"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );
 
 export const getBlogPosts = unstable_cache(
@@ -32,5 +32,5 @@ export const getBlogPosts = unstable_cache(
     return blogPostsData;
   },
   ["blog-post-by-handle"],
-  { revalidate: 1 }
+  { revalidate: 3600 }
 );

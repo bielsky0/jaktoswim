@@ -9,6 +9,10 @@ import { FeaturedBlog, FeaturedReviews, Layout } from "@/shared/components";
 import { getHomepage } from "../actions";
 import { blogPostMapper } from "@/shared/libs/strapiClient/strapiClient.mapper";
 
+export const revalidate = 3600;
+
+export const dynamic = "force-static";
+
 export default async function Home() {
   const homePageResponse = await getHomepage();
   const { billboard, hero, reviews, Services, aboutUs, blogs } =

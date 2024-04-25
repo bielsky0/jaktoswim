@@ -7,7 +7,7 @@ import { Button, Modal, VideoPlayer } from "@/shared/components";
 
 import showreelPosterSrc from "@/public/showreel_poster.jpg";
 import { BillboardSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export interface BillboardProps {
   billboard: BillboardSection;
@@ -18,8 +18,8 @@ export const Billboard = ({ billboard }: BillboardProps) => {
 
   const { showreel, second_showreel, subtitle, button_cta } = billboard;
 
-  const showreelUi = strapiImgToImg(showreel);
-  const secondShowreelUi = strapiImgToImg(second_showreel);
+  const showreelUi = strapiMediaToUi(showreel);
+  const secondShowreelUi = strapiMediaToUi(second_showreel);
 
   return (
     <div>

@@ -1,12 +1,8 @@
 import { Button } from "@/shared/components";
 
-import service1Src from "@/public/service1.jpg";
-import service2Src from "@/public/service.jpg";
-import service3Src from "@/public/service3.jpg";
-
 import Image from "next/image";
 import { ServicesSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export interface FeaturedServicesProps {
   services: ServicesSection;
@@ -58,7 +54,7 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
 
       <div className="w-full flex flex-col gap-12 pt-16 ">
         {featuredServices.map(({ title, description, cover }) => {
-          const imageUi = strapiImgToImg(cover);
+          const imageUi = strapiMediaToUi(cover);
           return (
             <div className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32">
               <div className="w-full pb-2 md:pb-0">

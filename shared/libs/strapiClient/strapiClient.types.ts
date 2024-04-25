@@ -1,40 +1,26 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 
-export interface ImagesReponse {
-  data: ImageResponse[];
-  meta: Record<string, string>;
-}
-
-export interface BlogPostsReponse {
-  data: BlogResponse[];
-  meta: Record<string, string>;
-}
-
-export interface BlogPostReponse {
-  data: BlogResponse;
-  meta: Record<string, string>;
-}
-
-export type ImageResponse = {
-  id: number;
-  attributes: ImageAttributes;
+export type ImageFormat = {
+  name: string;
+  hash: string;
+  ext: string;
+  mime: string;
+  path: null | string;
+  width: number;
+  height: number;
+  size: number;
+  sizeInBytes: number;
+  url: string;
 };
 
-export type ImageAttributes = {
-  image: ImageStrapi;
+export type ImageFormats = {
+  thumbnail: ImageFormat | null;
+  small: ImageFormat | null;
+  large: ImageFormat | null;
+  medium: ImageFormat | null;
 };
 
-export type BlogResponse = {
-  id: number;
-  attributes: BlogAttributes;
-};
-
-export type BlogAttributes = {
-  slug: string;
-  Blog: Blog;
-};
-
-export type MultiImageStrapi = {
+export type StrapiMedia = {
   data: {
     id: number;
     attributes: {
@@ -43,7 +29,30 @@ export type MultiImageStrapi = {
       caption: string | null;
       width: number;
       height: number;
-      formats: [object];
+      formats: ImageFormats;
+      hash: string;
+      ext: string;
+      mime: string;
+      size: number;
+      url: string;
+      previewUrl: string | null;
+      provider: string;
+      createdAt: string;
+      updatedAt: string;
+    };
+  };
+};
+
+export type MultiStrapiMedia = {
+  data: {
+    id: number;
+    attributes: {
+      name: string;
+      alternativeText: string | null;
+      caption: string | null;
+      width: number;
+      height: number;
+      formats: ImageFormats;
       hash: string;
       ext: string;
       mime: string;
@@ -57,71 +66,28 @@ export type MultiImageStrapi = {
   }[];
 };
 
-export type ImageStrapi = {
-  data: {
-    id: number;
-    attributes: {
-      name: string;
-      alternativeText: string | null;
-      caption: string | null;
-      width: number;
-      height: number;
-      formats: [object];
-      hash: string;
-      ext: string;
-      mime: string;
-      size: number;
-      url: string;
-      previewUrl: string | null;
-      provider: string;
-      createdAt: string;
-      updatedAt: string;
-    };
-  };
-};
-export type Blog = {
-  description: string;
-  featuredImage: ImageStrapi;
-  createdAt: string;
-  title: string;
-  content: BlocksContent;
-  blog_posts: { data: BlogResponse[] };
-};
-export type BlogUI = {
-  imageUrl: string;
-  slug: string;
-  createdAt: Date;
-  title: string;
-  description: string;
-  content: BlocksContent;
-};
-
-export type BlogParams = {
-  id: string;
-};
-
 export type BillboardSection = {
   id: number;
   subtitle: string;
   button_cta: string;
-  showreel: ImageStrapi;
-  second_showreel: ImageStrapi;
+  showreel: StrapiMedia;
+  second_showreel: StrapiMedia;
 };
 
 export type HeroSection = {
   id: number;
   title: string;
   subtitle: string;
-  button_cta: string;
+  button_cta: string | null;
   description: string;
-  coverImage: ImageStrapi;
+  coverImage: StrapiMedia | StrapiMedia;
 };
 
 export type Review = {
   id: number;
   attributes: {
     reviews: {
-      id: 1;
+      id: number;
       review: string;
       name: string;
     };
@@ -142,7 +108,7 @@ export type Service = {
   id: number;
   title: string;
   description: string;
-  cover: ImageStrapi;
+  cover: StrapiMedia;
 };
 
 export type ServicesSection = {
@@ -154,11 +120,17 @@ export type ServicesSection = {
   services: Service[];
 };
 
+export type ImageCarouselSection = {
+  id: number;
+  button_cta: string;
+  images: MultiStrapiMedia;
+};
+
 export type AboutUsSection = {
   id: number;
   title: string;
   subtitle: string;
-  button_cta: string;
+  button_cta: string | null;
   description: string;
 };
 
@@ -168,8 +140,12 @@ export type BlogsSection = {
   subtitle: string;
   button_cta: string;
   blog_posts: {
-    data: BlogResponse[];
+    data: StrapiBlog[];
   };
+};
+
+export type StrapiResponse<T> = {
+  data: T;
 };
 
 export interface HomePageAttributes {
@@ -181,18 +157,10 @@ export interface HomePageAttributes {
   blogs: BlogsSection;
 }
 
-export interface HomePageResponse {
-  data: {
-    id: number;
-    attributes: HomePageAttributes;
-  };
-}
-
-export type ImageCarouselSection = {
+export type HomePageResponse = StrapiResponse<{
   id: number;
-  button_cta: string;
-  images: MultiImageStrapi;
-};
+  attributes: HomePageAttributes;
+}>;
 
 export interface AboutUsAttributes {
   hero: ImageCarouselSection;
@@ -202,12 +170,10 @@ export interface AboutUsAttributes {
   blogs: BlogsSection;
 }
 
-export interface AboutUsResponse {
-  data: {
-    id: number;
-    attributes: AboutUsAttributes;
-  };
-}
+export type AboutUsPageResponse = StrapiResponse<{
+  id: number;
+  attributes: AboutUsAttributes;
+}>;
 
 export interface OfferAttributes {
   hero: HeroSection;
@@ -216,31 +182,80 @@ export interface OfferAttributes {
   blogs: BlogsSection;
 }
 
-export interface OfferPageResponse {
-  data: {
-    id: number;
-    attributes: OfferAttributes;
-  };
-}
-
-export interface BlogPageAttributes {
-  hero: AboutUsSection;
-}
+export type OfferPageResponse = StrapiResponse<{
+  id: number;
+  attributes: OfferAttributes;
+}>;
 
 export interface GalleryPageAttributes {
   hero: AboutUsSection;
 }
 
-export interface BlogPageResponse {
-  data: {
-    id: number;
-    attributes: BlogPageAttributes;
-  };
+export type GalleryPageResponse = StrapiResponse<{
+  id: number;
+  attributes: GalleryPageAttributes;
+}>;
+
+export interface BlogPageAttributes {
+  hero: AboutUsSection;
 }
 
-export interface GalleryPageResponse {
-  data: {
-    id: number;
-    attributes: GalleryPageAttributes;
-  };
+export type BlogPageResponse = StrapiResponse<{
+  id: number;
+  attributes: BlogPageAttributes;
+}>;
+
+export type ImageResponse = {
+  id: number;
+  attributes: ImageAttributes;
+};
+
+export type ImageAttributes = {
+  image: StrapiMedia;
+};
+
+export interface ImagesReponse {
+  data: ImageResponse[];
+  meta: Record<string, string>;
 }
+
+export interface BlogPostsReponse {
+  data: StrapiBlog[];
+  meta: Record<string, string>;
+}
+
+export interface BlogPostReponse {
+  data: StrapiBlog;
+  meta: Record<string, string>;
+}
+
+export type BlogAttributes = {
+  slug: string;
+  Blog: Blog;
+};
+
+export type StrapiBlog = {
+  id: number;
+  attributes: BlogAttributes;
+};
+
+export type BlogParams = {
+  id: string;
+};
+
+export type Blog = {
+  description: string;
+  featuredImage: StrapiMedia;
+  createdAt: string;
+  title: string;
+  content: BlocksContent;
+  blog_posts: { data: StrapiBlog[] };
+};
+export type BlogUI = {
+  imageUrl: string;
+  slug: string;
+  createdAt: Date;
+  title: string;
+  description: string;
+  content: BlocksContent;
+};

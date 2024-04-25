@@ -1,6 +1,6 @@
 import showreelPosterSrc from "@/public/showreel_poster.jpg";
 import { HeroSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export interface FeaturedHeroProps {
   hero: HeroSection;
@@ -9,7 +9,7 @@ export interface FeaturedHeroProps {
 export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
   const { title, description, coverImage, subtitle } = hero;
 
-  const coverUi = strapiImgToImg(coverImage);
+  const coverUi = strapiMediaToUi(coverImage);
 
   return (
     <div>

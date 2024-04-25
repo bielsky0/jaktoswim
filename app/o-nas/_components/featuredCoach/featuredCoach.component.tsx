@@ -1,8 +1,7 @@
 import Image from "next/image";
-import heroImgSrc from "@/public/featuredHero.png";
 import { Button } from "@/shared/components";
 import { HeroSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export interface FeaturedCoachProps {
   instructor: HeroSection;
@@ -11,7 +10,7 @@ export interface FeaturedCoachProps {
 export const FeaturedCoach = ({ instructor }: FeaturedCoachProps) => {
   const { title, subtitle, button_cta, description, coverImage } = instructor;
 
-  const imageUi = strapiImgToImg(coverImage);
+  const imageUi = strapiMediaToUi(coverImage);
   return (
     <div className="flex flex-col lg:flex-row w-full gap-4 ">
       <div className="flex w-full transform-gpu  justify-center lg:justify-end">

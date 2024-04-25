@@ -1,7 +1,7 @@
 import { Layout } from "@/shared/components";
 import { FeaturedGallery, FeaturedHero } from "@/app/galeria/_components";
 import { getGalleryPage, getImages } from "@/app/actions";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export default async function Gallery() {
   const galleryResponse = await getGalleryPage();
@@ -10,7 +10,7 @@ export default async function Gallery() {
   const { hero } = galleryResponse.data.attributes;
 
   const images = imagesResponse.data.map(({ attributes }) =>
-    strapiImgToImg(attributes.image)
+    strapiMediaToUi(attributes.image)
   );
 
   return (

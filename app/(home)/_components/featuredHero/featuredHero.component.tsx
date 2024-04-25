@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/shared/components";
 import { HeroSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export interface FeaturedHeroProps {
   hero: HeroSection;
@@ -10,7 +10,7 @@ export interface FeaturedHeroProps {
 export const FeatureHero = ({ hero }: FeaturedHeroProps) => {
   const { title, subtitle, button_cta, coverImage, description } = hero;
 
-  const cover = strapiImgToImg(coverImage);
+  const cover = strapiMediaToUi(coverImage);
 
   return (
     <div className="flex flex-col lg:flex-row w-full gap-4 ">

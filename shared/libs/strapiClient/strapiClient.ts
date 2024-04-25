@@ -4,7 +4,7 @@ import {
   BlogPostReponse,
   BlogParams,
   HomePageResponse,
-  AboutUsResponse,
+  AboutUsPageResponse,
   OfferPageResponse,
   BlogPageResponse,
   ImagesReponse,
@@ -45,7 +45,7 @@ export class StrapiClient {
   }
 
   public async getAboutUsPage() {
-    const uncheckedAboutUsPage = await axiosClient.get<AboutUsResponse>(
+    const uncheckedAboutUsPage = await axiosClient.get<AboutUsPageResponse>(
       "about-us?populate=deep"
     );
 

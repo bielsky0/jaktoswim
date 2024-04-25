@@ -2,10 +2,8 @@ import Image from "next/image";
 
 import { Button } from "@/shared/components";
 
-import service1Src from "@/public/service1.jpg";
-import service2Src from "@/public/service.jpg";
 import { ServicesSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiImgToImg } from "@/shared/utils";
+import { strapiMediaToUi } from "@/shared/utils";
 
 export interface FeaturedOfferProps {
   services: ServicesSection;
@@ -55,7 +53,7 @@ export const FeaturedOffer = ({ services }: FeaturedOfferProps) => {
 
       <div className="w-full flex flex-col py-12 gap-12">
         {featuredServices.map(({ cover, title, description }) => {
-          const imageUi = strapiImgToImg(cover);
+          const imageUi = strapiMediaToUi(cover);
           return (
             <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
               <div className="w-full pb-2">

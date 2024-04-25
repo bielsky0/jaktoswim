@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/shared/components";
 
 import { ImageCarouselSection } from "@/shared/libs/strapiClient/strapiClient.types";
-import { strapiMultiImgToMutliImg } from "@/shared/utils";
+import { strapiMultiImgtoUiMultiImg } from "@/shared/utils";
 
 export interface FeaturedHeroProps {
   hero: ImageCarouselSection;
@@ -12,7 +12,7 @@ export interface FeaturedHeroProps {
 export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
   const { images, button_cta } = hero;
 
-  const imagesUi = strapiMultiImgToMutliImg(images);
+  const imagesUi = strapiMultiImgtoUiMultiImg(images);
 
   return (
     <div className="flex flex-col w-full items-center">

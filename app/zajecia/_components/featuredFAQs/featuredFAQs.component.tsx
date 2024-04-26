@@ -7,6 +7,7 @@ export interface FeaturedFAQSProps {
 
 export const FeaturedFAQs = ({ faqs }: FeaturedFAQSProps) => {
   const { button_cta, faqs: faq } = faqs;
+
   return (
     <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
       <div className="flex w-full">

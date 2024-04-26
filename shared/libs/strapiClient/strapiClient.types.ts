@@ -200,6 +200,16 @@ export type OfferPageResponse = StrapiResponse<{
   attributes: OfferAttributes;
 }>;
 
+export type ContactPageAttributes = {
+  hero: HeroSection;
+  faqs: FAQsSection;
+};
+
+export type ContactPageResponse = StrapiResponse<{
+  id: number;
+  attributes: ContactPageAttributes;
+}>;
+
 export interface GalleryPageAttributes {
   hero: AboutUsSection;
 }

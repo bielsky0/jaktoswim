@@ -9,6 +9,7 @@ import {
   BlogPageResponse,
   ImagesReponse,
   GalleryPageResponse,
+  ContactPageResponse,
 } from "./strapiClient.types";
 import { buildPath } from "@/shared/utils";
 
@@ -69,10 +70,18 @@ export class StrapiClient {
   }
 
   public async getGalleryPage() {
-    const uncheckedBlogPage = await axiosClient.get<GalleryPageResponse>(
+    const uncheckGalleryPage = await axiosClient.get<GalleryPageResponse>(
       "gallery?populate=deep"
     );
 
-    return uncheckedBlogPage;
+    return uncheckGalleryPage;
+  }
+
+  public async getContactPage() {
+    const uncheckecContactPage = await axiosClient.get<ContactPageResponse>(
+      "contact?populate=deep"
+    );
+
+    return uncheckecContactPage;
   }
 }

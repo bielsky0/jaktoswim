@@ -1,16 +1,23 @@
-import { Layout } from "@/shared/components";
-import { FeaturedHero, Contact } from "@/app/kontakt/_components";
+import { Layout, Marquee } from "@/shared/components";
+import { FeaturedHero } from "@/app/kontakt/_components";
+import { getContactPage } from "../actions";
+import { FeaturedFAQs } from "../zajecia/_components";
 
-export default function Home() {
+export default async function Contact() {
+  const contactResponse = await getContactPage();
+
+  const { hero, faqs } = contactResponse.data.attributes;
+
   return (
     <main>
       <Layout className="pt-4 pb-12 md:py-12">
-        <FeaturedHero />
+        <FeaturedHero hero={hero} />
       </Layout>
 
-      <Layout className="pb-8 md:pb-24">
-        <Contact />
+      <Layout className="pt-4 pb-12 md:py-12">
+        <FeaturedFAQs faqs={faqs} />
       </Layout>
+      <Marquee />
     </main>
   );
 }

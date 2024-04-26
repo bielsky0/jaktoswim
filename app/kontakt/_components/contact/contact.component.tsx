@@ -1,4 +1,6 @@
 import { ContactForm } from "@/shared/components";
+import Link from "next/link";
+import { FaInstagram } from "react-icons/fa6";
 
 export const Contact = () => {
   return (
@@ -34,8 +36,7 @@ export const Contact = () => {
                 <h6 className="text-lg font-semibold">Lub Napisz</h6>
               </div>
 
-              <div className="flex flex-col gap-4">
-                <p>Instagram</p>
+              <div className="flex  gap-4">
                 <p>Facebook</p>
               </div>
             </div>

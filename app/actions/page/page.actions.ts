@@ -50,3 +50,13 @@ export const getGalleryPage = unstable_cache(
   ["galleryPage"],
   { revalidate: 1 }
 );
+
+export const getContactPage = unstable_cache(
+  async () => {
+    const contactPage = await strapiClient.getContactPage();
+
+    return contactPage;
+  },
+  ["contactPage"],
+  { revalidate: 1 }
+);

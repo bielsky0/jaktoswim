@@ -104,6 +104,17 @@ export type ReviewsSection = {
   };
 };
 
+export type FAQ = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+export type FAQsSection = {
+  id: number;
+  button_cta: string;
+  faqs: FAQ[];
+};
 export type Service = {
   id: number;
   title: string;
@@ -118,6 +129,7 @@ export type ServicesSection = {
   button_cta: string;
   description: string;
   services: Service[];
+  cover: StrapiMedia;
 };
 
 export type ImageCarouselSection = {
@@ -179,6 +191,7 @@ export interface OfferAttributes {
   hero: HeroSection;
   services: ServicesSection;
   reviews: ReviewsSection;
+  faqs: FAQsSection;
   blogs: BlogsSection;
 }
 

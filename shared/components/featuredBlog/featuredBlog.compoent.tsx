@@ -34,7 +34,7 @@ export const FeaturedBlog = ({
         </div>
 
         <div>
-          <Button>{button_cta}</Button>
+          <Button href="/blog">{button_cta}</Button>
         </div>
       </div>
 

@@ -5,13 +5,14 @@ import {
   FeaturedServices,
 } from "@/app/(home)/_components";
 
-import { FeaturedBlog, FeaturedReviews, Layout } from "@/shared/components";
+import {
+  FeaturedBlog,
+  FeaturedReviews,
+  Layout,
+  Marquee,
+} from "@/shared/components";
 import { getHomepage } from "../actions";
 import { blogPostMapper } from "@/shared/libs/strapiClient/strapiClient.mapper";
-
-export const revalidate = 3600;
-
-export const dynamic = "force-static";
 
 export default async function Home() {
   const homePageResponse = await getHomepage();
@@ -45,9 +46,11 @@ export default async function Home() {
         <FeaturedServices services={Services} />
       </Layout>
 
-      <Layout className="py-8 md:py-24">
+      <Layout className="py-8 md:pb-16  pt-96">
         <FeaturedAboutUs aboutUs={aboutUs} />
       </Layout>
+
+      <Marquee />
 
       <Layout className="pb-8 md:pb-24">
         <FeaturedBlog

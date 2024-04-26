@@ -1,4 +1,9 @@
-import { FeaturedBlog, FeaturedReviews, Layout } from "@/shared/components";
+import {
+  FeaturedBlog,
+  FeaturedReviews,
+  Layout,
+  Marquee,
+} from "@/shared/components";
 import {
   FeaturedHero,
   FeaturedOffer,
@@ -10,7 +15,8 @@ import { blogPostMapper } from "@/shared/libs/strapiClient/strapiClient.mapper";
 export default async function Offer() {
   const offerPageReponse = await getOfferPage();
 
-  const { hero, services, reviews, blogs } = offerPageReponse.data.attributes;
+  const { hero, services, reviews, blogs, faqs } =
+    offerPageReponse.data.attributes;
   const {
     title: blogsTitle,
     subtitle: blogsSubtitle,
@@ -36,8 +42,10 @@ export default async function Offer() {
       </Layout>
 
       <Layout className="pb-8 md:pb-24">
-        <FeaturedFAQs />
+        <FeaturedFAQs faqs={faqs} />
       </Layout>
+
+      <Marquee />
 
       <Layout className="pb-8 md:pb-24">
         <FeaturedBlog

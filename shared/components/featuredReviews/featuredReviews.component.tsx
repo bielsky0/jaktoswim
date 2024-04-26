@@ -24,7 +24,9 @@ export const FeaturedReviews = ({ reviews }: FeaturedReviewsProps) => {
         </div>
 
         <div>
-          <Button>{button_cta}</Button>
+          <Button href="https://www.facebook.com/JaktoSwim/reviews">
+            {button_cta}
+          </Button>
         </div>
       </div>
 

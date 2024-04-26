@@ -1,4 +1,4 @@
-import showreelPosterSrc from "@/public/showreel_poster.jpg";
+import { VideoPlayer2 } from "@/shared/components";
 import { HeroSection } from "@/shared/libs/strapiClient/strapiClient.types";
 import { strapiMediaToUi } from "@/shared/utils";
 
@@ -36,16 +36,7 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
         </div>
       </div>
       <div className="w-full  rounded-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-2xl lg:aspect-[16/9] max-h-[640px]">
-        <video
-          className="w-full h-full rounded-2xl object-cover"
-          loop
-          muted
-          autoPlay
-          playsInline
-          poster={showreelPosterSrc.src}
-        >
-          <source type="video/mp4" src={coverUi.data.attributes.url} />
-        </video>
+        <VideoPlayer2 src={coverUi.data.attributes.url} />
       </div>
     </div>
   );

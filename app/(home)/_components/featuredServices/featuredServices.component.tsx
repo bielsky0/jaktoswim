@@ -1,5 +1,4 @@
-import { Button } from "@/shared/components";
-
+import { Button, VideoPlayer2 } from "@/shared/components";
 import Image from "next/image";
 import { ServicesSection } from "@/shared/libs/strapiClient/strapiClient.types";
 import { strapiMediaToUi } from "@/shared/utils";
@@ -14,8 +13,11 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
     description,
     button_cta,
     subtitle,
+    cover,
     services: featuredServices,
   } = services;
+
+  const coverVideoUi = strapiMediaToUi(cover);
 
   return (
     <div className="w-full flex  justify-center flex-col ">
@@ -34,7 +36,7 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
             </div>
 
             <div className="hidden lg:flex ">
-              <Button>{button_cta}</Button>
+              <Button href="/kontakt">{button_cta}</Button>
             </div>
           </div>
         </div>
@@ -48,7 +50,7 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
         </div>
 
         <div className="flex lg:hidden ">
-          <Button>{button_cta}</Button>
+          <Button href="/kontakt">{button_cta}</Button>
         </div>
       </div>
 
@@ -84,6 +86,14 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
             </div>
           );
         })}
+      </div>
+
+      <div className="w-full relative">
+        <div className="rounded-t-2xl h-80 w-full "></div>
+
+        <div className="absolute w-full h-[550px] bg-red-300 top-24 rounded-2xl">
+          <VideoPlayer2 src={coverVideoUi.data.attributes.url} />
+        </div>
       </div>
     </div>
   );

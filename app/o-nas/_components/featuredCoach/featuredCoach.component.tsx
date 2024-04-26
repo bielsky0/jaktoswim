@@ -39,7 +39,7 @@ export const FeaturedCoach = ({ instructor }: FeaturedCoachProps) => {
             <p className="text-sm lg:text-base">{description}</p>
           </div>
           <div>
-            <Button>{button_cta}</Button>
+            <Button href="/kontakt">{button_cta}</Button>
           </div>
         </div>
       </div>

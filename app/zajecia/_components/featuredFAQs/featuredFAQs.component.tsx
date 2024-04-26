@@ -1,6 +1,12 @@
 import { Accordion, Button } from "@/shared/components";
+import { FAQsSection } from "@/shared/libs/strapiClient/strapiClient.types";
 
-export const FeaturedFAQs = () => {
+export interface FeaturedFAQSProps {
+  faqs: FAQsSection;
+}
+
+export const FeaturedFAQs = ({ faqs }: FeaturedFAQSProps) => {
+  const { button_cta, faqs: faq } = faqs;
   return (
     <div className="flex flex-col lg:flex-row w-full  lg:gap-32">
       <div className="flex w-full">
@@ -14,36 +20,15 @@ export const FeaturedFAQs = () => {
           </div>
 
           <div className="">
-            <Button>Bądźmy w Kontakcie</Button>
+            <Button href="/kontakt">{button_cta}</Button>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col w-full py-8 gap-4">
-        <Accordion
-          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
-          content="asdsada"
-        />
-
-        <Accordion
-          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
-          content="asdsada"
-        />
-
-        <Accordion
-          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
-          content="asdsada"
-        />
-
-        <Accordion
-          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
-          content="asdsada"
-        />
-
-        <Accordion
-          title="Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie Pytanie?"
-          content="asdsada"
-        />
+        {faq.map(({ id, question, answer }) => (
+          <Accordion key={id} title={question} content={answer} />
+        ))}
       </div>
     </div>
   );

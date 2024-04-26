@@ -24,7 +24,7 @@ export const FeaturedHero = ({ hero }: FeaturedHero) => {
           </div>
 
           <div>
-            <Button>{button_cta}</Button>
+            <Button href="/kontakt">{button_cta}</Button>
           </div>
         </div>
       </div>

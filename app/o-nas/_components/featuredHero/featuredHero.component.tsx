@@ -62,7 +62,7 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
       </div>
 
       <div>
-        <Button>{button_cta}</Button>
+        <Button href="/kontakt">{button_cta}</Button>
       </div>
     </div>
   );

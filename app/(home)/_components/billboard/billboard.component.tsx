@@ -51,11 +51,11 @@ export const Billboard = ({ billboard }: BillboardProps) => {
 
             <div>
               <h1 className="ibmPlex text-2xl md:text-4xl block  lg:text-5xl font-bold">
-                <span className="bg-white block rounded-r-xl w-fit md:py-1 pr-4">
+                <span className="bg-white block rounded-r-xl w-fit md:py-1 pr-3">
                   Nasza szkółka to miejsce,
                   <br />
                 </span>
-                <span className="bg-white block w-fit rounded-br-xl md:pb-1  pr-4 relative">
+                <span className="bg-white block w-fit rounded-br-xl md:pb-1  pr-3 relative">
                   <div className="absolute -right-[15px] top-0  h-[15px] w-[15px] rounded-full shadow-[-5px_-5px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
                   gdzie woda łączy się z
                   <br />
@@ -66,18 +66,18 @@ export const Billboard = ({ billboard }: BillboardProps) => {
                   niezapomnianymi
                   <br />
                 </span>
-                <span className="bg-white block rounded-r-xl w-fit pb-2  pr-4">
+                <span className="bg-white block rounded-r-xl w-fit pb-1  pr-3">
                   emocjami i rozwojem.
                   <br />
                 </span>
               </h1>
             </div>
 
-            <div className="flex justify-start bg-white block w-fit pb-3 pr-2 rounded-br-2xl items-center gap-4 relative pt-2">
+            <div className="flex justify-start bg-white block w-fit pb-2 pr-1 rounded-br-2xl items-center gap-4 relative ">
               <div className="absolute left-0 -bottom-[20px]  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
               <div className="absolute -right-[20px] top-0  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
-              <Button>{button_cta}</Button>
+              <Button href="/kontakt">{button_cta}</Button>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export const Billboard = ({ billboard }: BillboardProps) => {
               document.body.style.overflow = "hidden";
             }
           }}
-          className="absolute bg-white pl-1 py-1 bottom-4 right-4 rounded-full flex items-center gap-2 cursor-pointer"
+          className="absolute bg-white pl-1 py-1 bottom-4 right-4 rounded-full flex items-center gap-2 cursor-pointer "
         >
           <div className="bg-[#229ED9] rounded-full h-10 w-10 md:h-12 md:w-12 relative">
             <FaPlay

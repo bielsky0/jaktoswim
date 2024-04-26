@@ -23,7 +23,7 @@ export const FeaturedAboutUs = ({ aboutUs }: FeaturedAboutUsProps) => {
           </div>
 
           <div>
-            <Button>{button_cta}</Button>
+            <Button href="/o-nas">{button_cta}</Button>
           </div>
         </div>
       </div>

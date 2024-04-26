@@ -1,4 +1,5 @@
 import { Hamburger, Logo } from "@/shared/components";
+import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 import { ROUTES } from "@/shared/utils";
 import Link from "next/link";
@@ -32,7 +33,15 @@ export const Navbar = () => {
           <li className="cursor-pointer">
             <Link href={ROUTES.contact}>Kontakt</Link>
           </li>
-          <li className="cursor-pointer">Social</li>
+          <li className="cursor-pointer flex gap-4">
+            <Link href="https://www.instagram.com/jaktoswim">
+              <FaInstagram className="w-8 h-8" />
+            </Link>
+
+            <Link href="https://www.facebook.com/jaktoswim">
+              <FaFacebook className="w-8 h-8" />
+            </Link>
+          </li>
         </ul>
       </div>
 

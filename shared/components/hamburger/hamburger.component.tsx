@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { ROUTES, cn } from "@/shared/utils";
+import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 export const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,6 +105,15 @@ export const Hamburger = () => {
             <li className="cursor-pointer">
               <Link className="text-white" href={ROUTES.contact}>
                 Kontakt
+              </Link>
+            </li>
+            <li className="cursor-pointer flex gap-4">
+              <Link href="https://www.instagram.com/jaktoswim">
+                <FaInstagram color="white" className="w-8 h-8" />
+              </Link>
+
+              <Link href="https://www.facebook.com/jaktoswim">
+                <FaFacebook color="white" className="w-8 h-8" />
               </Link>
             </li>
           </ul>

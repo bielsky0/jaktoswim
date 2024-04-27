@@ -73,7 +73,7 @@ export const Billboard = ({ billboard }: BillboardProps) => {
               </h1>
             </div>
 
-            <div className="flex justify-start bg-white block w-fit pb-2 pr-1 rounded-br-2xl items-center gap-4 relative ">
+            <div className="pt-2 flex justify-start bg-white block w-fit pb-2 pr-1 rounded-br-2xl items-center gap-4 relative ">
               <div className="absolute left-0 -bottom-[20px]  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
               <div className="absolute -right-[20px] top-0  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 

@@ -1,1 +1,1 @@
-export * from "./blog.actions";
+export { getBlogPosts, getBlogPost } from "./blog.actions";

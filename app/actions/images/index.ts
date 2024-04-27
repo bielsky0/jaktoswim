@@ -1,1 +1,1 @@
-export * from "./images.actions";
+export { getImages } from "./images.actions";

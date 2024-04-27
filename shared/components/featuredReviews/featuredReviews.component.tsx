@@ -10,7 +10,7 @@ export interface FeaturedReviewsProps {
 export const FeaturedReviews = ({ reviews }: FeaturedReviewsProps) => {
   const { reviews: featuredReviews, title, subtitle, button_cta } = reviews;
   return (
-    <div className="flex w-full flex-col lg:flex-row gap-8">
+    <div className="flex w-full flex-col lg:flex-row gap-4">
       <div className="flex flex-col ">
         <div className="flex gap-2 items-center pb-2">
           <div className="h-[8px] w-[8px] bg-black rounded-full"></div>

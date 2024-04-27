@@ -14,12 +14,14 @@ export default function GlobalError({
       <body>
         <div className="flex min-h-screen flex-col items-center justify-center gap-10 bg-neutral-100 dark:bg-neutral-900">
           <h1 className="text-6xl font-bold text-neutral-800 dark:text-neutral-200">
-            Something went wrong!
+            Coś poszło nie tak
           </h1>
           <pre className="mt-2 text-lg text-neutral-500 dark:text-neutral-300">
             {JSON.stringify(error, null, 2)}
           </pre>
-          <Button>Try again</Button>
+          <Button onClick={reset} variant="button">
+            Spróbuj Ponowanie
+          </Button>
         </div>
       </body>
     </html>

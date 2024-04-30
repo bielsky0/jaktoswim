@@ -15,3 +15,6 @@ export * from "./modal";
 export * from "./accordion";
 export * from "./slider";
 export * from "./videoPlayer";
+export * from "./contentRenderer";
+export * from "./videoPlayer2";
+export * from "./marquee";

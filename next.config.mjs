@@ -18,6 +18,10 @@ const nextConfig = {
 
     return config;
   },
+  reactStrictMode: true,
+  images: {
+    domains: ["localhost", "cdn.sanity.io"],
+  },
 };
 
 export default nextConfig;

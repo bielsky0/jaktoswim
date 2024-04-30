@@ -15,7 +15,8 @@ const config: Config = {
         },
       },
       animation: {
-        slide: "slide 20s infinite linear",
+        slide: "slide 40s infinite  linear",
+        slideReverse: "slide 40s infinite reverse  linear",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

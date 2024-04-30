@@ -24,14 +24,14 @@ export const Modal = ({ onClose, isOpen, children }: ModalProps) => {
               {/*content*/}
               <div
                 ref={ref}
-                className="border-0 rounded-2xl shadow-lg relative flex flex-col w-full"
+                className="border-0 rounded-2xl shadow-lg relative flex flex-col w-full px-4"
               >
                 {/*body*/}
                 {children}
               </div>
             </div>
           </div>
-          <div className=" fixed inset-0 z-40  backdrop-blur-md "></div>
+          <div className="fixed inset-0 z-40 bg-opacity-70  bg-black w-screen h-screen"></div>
         </div>
       ) : null}
     </>

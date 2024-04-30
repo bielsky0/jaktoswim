@@ -1,19 +1,49 @@
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+
+export type ButtonVariants = "link" | "button";
 
 export interface ButtonProps {
   children: React.ReactNode;
+  variant?: ButtonVariants;
+  href?: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ children }: ButtonProps) => {
-  return (
-    <div className="flex">
-      <button
-        className="py-2 text-sm md:text-base lg:text-lg px-4 bg-[#229ED9] text-white font-semibold
-     rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-      >
-        {children}
-      </button>
+export const Button = ({
+  children,
+  onClick,
+  href,
+  variant = "link",
+}: ButtonProps) => {
+  const renderVariant = () => {
+    switch (variant) {
+      case "button":
+        return (
+          <button
+            onClick={onClick}
+            className="py-2 text-sm md:text-base lg:text-lg px-4 bg-[#229ED9] text-white font-semibold
+     rounded-full shadow-md outline-none "
+          >
+            {children}
+          </button>
+        );
 
+      case "link":
+        return (
+          <Link
+            href={href || "/"}
+            className="py-2 text-sm md:text-base lg:text-lg px-4 bg-[#229ED9] text-white font-semibold flex items-center
+       rounded-full shadow-md outline-none "
+          >
+            {children}
+          </Link>
+        );
+    }
+  };
+  return (
+    <div className="flex cursor-pointer">
+      {renderVariant()}
       <div className="bg-[#229ED9] rounded-full h-10 w-10 md:h-12 md:w-12 relative -translate-x-2">
         <FaArrowRight
           color="white"

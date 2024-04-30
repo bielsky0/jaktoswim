@@ -14,16 +14,19 @@ export default async function Gallery() {
 
   return (
     <main>
-      {pageBuilder.map((section) => {
+      {pageBuilder.map((section, idx) => {
         if (section._type === "hero")
           return (
-            <Layout className="pt-4 pb-12 md:py-12">
+            <Layout
+              key={`${section._type}-${idx}`}
+              className="pt-4 pb-12 md:py-12"
+            >
               <SectionRenderer section={section} />
             </Layout>
           );
 
         return (
-          <Layout className="pb-8 md:pb-24">
+          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
             <SectionRenderer section={section} />
           </Layout>
         );

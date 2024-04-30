@@ -11,10 +11,10 @@ export default async function AboutUs() {
 
   return (
     <main>
-      {pageBuilder.map((section) => {
+      {pageBuilder.map((section, idx) => {
         if (section._type === "imageCarousel")
           return (
-            <Layout className="py-8 md:py-16">
+            <Layout key={`${section._type}-${idx}`} className="py-8 md:py-16">
               <SectionRenderer section={section} />
             </Layout>
           );
@@ -22,7 +22,7 @@ export default async function AboutUs() {
         if (section._type === "marquee")
           return <SectionRenderer section={section} />;
         return (
-          <Layout className="pb-8 md:pb-24">
+          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
             <SectionRenderer section={section} />
           </Layout>
         );

@@ -13,32 +13,46 @@ export default async function Home() {
 
   return (
     <main>
-      {pageBuilder.map((section) => {
+      {pageBuilder.map((section, idx) => {
         if (section._type === "billboard")
           return (
-            <Layout className="pt-4 pb-12 md:py-12">
+            <Layout
+              key={`${section._type}-${idx}`}
+              className="pt-4 pb-12 md:py-12"
+            >
               <SectionRenderer section={section} />
             </Layout>
           );
 
         if (section._type === "services")
           return (
-            <Layout className="max-w-screen w-full bg-black rounded-2xl py-16">
+            <Layout
+              key={`${section._type}-${idx}`}
+              className="max-w-screen w-full bg-black rounded-2xl py-16"
+            >
               <SectionRenderer section={section} />
             </Layout>
           );
 
         if (section._type === "hero")
           return (
-            <Layout className="py-8 md:pb-16  pt-96">
+            <Layout
+              key={`${section._type}-${idx}`}
+              className="py-8 md:pb-16  pt-96"
+            >
               <SectionRenderer section={section} />
             </Layout>
           );
 
         if (section._type === "marquee")
-          return <SectionRenderer section={section} />;
+          return (
+            <SectionRenderer
+              key={`${section._type}-${idx}`}
+              section={section}
+            />
+          );
         return (
-          <Layout className="pb-8 md:pb-24">
+          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
             <SectionRenderer section={section} />
           </Layout>
         );

@@ -20,7 +20,12 @@ export default async function AboutUs() {
           );
 
         if (section._type === "marquee")
-          return <SectionRenderer section={section} />;
+          return (
+            <SectionRenderer
+              key={`${section._type}-${idx}`}
+              section={section}
+            />
+          );
         return (
           <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
             <SectionRenderer section={section} />

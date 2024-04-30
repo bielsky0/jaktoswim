@@ -20,7 +20,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "cdn.sanity.io"],
   },
 };
 

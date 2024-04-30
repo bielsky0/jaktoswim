@@ -1,24 +1,13 @@
 "use client";
 import { Button, BlogPreview, Slider } from "@/shared/components";
-import { blogPostMapper } from "@/shared/libs/strapiClient/strapiClient.mapper";
-import {
-  BlogUI,
-  BlogsSection,
-} from "@/shared/libs/strapiClient/strapiClient.types";
+import { FeaturedBlogsSection } from "@/shared/libs/sanity/types";
 
 export interface FeaturedBlogProps {
-  title: string;
-  subtitle: string;
-  button_cta: string;
-  blogs: BlogUI[];
+  featuredBlogs: FeaturedBlogsSection;
 }
 
-export const FeaturedBlog = ({
-  blogs,
-  title,
-  subtitle,
-  button_cta,
-}: FeaturedBlogProps) => {
+export const FeaturedBlog = ({ featuredBlogs }: FeaturedBlogProps) => {
+  const { subtitle, title, button_cta, featuredBlogs: blogs } = featuredBlogs;
   return (
     <div className="flex w-full flex-col lg:flex-row gap-8">
       <div className="flex flex-col ">
@@ -41,12 +30,12 @@ export const FeaturedBlog = ({
       <div className="overflow-hidden relative w-full | lg:w-12/16">
         <Slider
           items={blogs}
-          renderItem={(blogUi) => (
+          renderItem={(blog) => (
             <div className="w-[300px] lg:w-[400px]">
-              <BlogPreview blogUi={blogUi} />
+              <BlogPreview blog={blog} />
             </div>
           )}
-          keyExtractor={({ slug }) => slug}
+          keyExtractor={({ slug }) => slug.current}
         />
       </div>
     </div>

@@ -1,11 +1,5 @@
-import axios, {
-  AxiosInstance,
-  AxiosResponse,
-  AxiosRequestConfig,
-  AxiosError,
-} from "axios";
+import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from "axios";
 import { HttpMethod } from "./types";
-import { buildPath } from "@/shared/utils";
 
 export class AxiosService {
   private http: AxiosInstance;

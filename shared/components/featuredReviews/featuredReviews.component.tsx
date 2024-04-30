@@ -1,14 +1,14 @@
 "use client";
 
 import { Button, Review, Slider } from "@/shared/components";
-import { ReviewsSection } from "@/shared/libs/strapiClient/strapiClient.types";
+import { ReviewsSection } from "@/shared/libs/sanity/types";
 
 export interface FeaturedReviewsProps {
   reviews: ReviewsSection;
 }
 
 export const FeaturedReviews = ({ reviews }: FeaturedReviewsProps) => {
-  const { reviews: featuredReviews, title, subtitle, button_cta } = reviews;
+  const { featuredReviews, title, subtitle, button_cta } = reviews;
   return (
     <div className="flex w-full flex-col lg:flex-row gap-4">
       <div className="flex flex-col ">
@@ -32,14 +32,11 @@ export const FeaturedReviews = ({ reviews }: FeaturedReviewsProps) => {
 
       <div className="overflow-hidden relative w-full | lg:w-12/16">
         <Slider
-          items={featuredReviews.data}
+          items={featuredReviews}
           renderItem={(review) => (
-            <Review
-              name={review.attributes.reviews.name}
-              content={review.attributes.reviews.review}
-            />
+            <Review name={review.author} content={review.content} />
           )}
-          keyExtractor={({ id }) => id.toString()}
+          keyExtractor={({ author }) => author}
         />
       </div>
     </div>

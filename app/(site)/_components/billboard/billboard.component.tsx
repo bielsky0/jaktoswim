@@ -32,6 +32,7 @@ export const Billboard = ({ billboard }: BillboardProps) => {
             muted
             autoPlay
             playsInline
+            controls={false}
             poster={showreelPosterSrc.src}
           >
             <source type="video/mp4" src={sanityShowreel.url} />

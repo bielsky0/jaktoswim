@@ -6,13 +6,12 @@ import Link from "next/link";
 import { ROUTES, cn } from "@/shared/utils";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
-export const Hamburger = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export interface HamburgerProps {
+  isOpen: boolean;
+  handleClick: () => void;
+}
 
-  const handleClick = () => {
-    setIsOpen((currentState) => !currentState);
-  };
-
+export const Hamburger = ({ isOpen, handleClick }: HamburgerProps) => {
   useEffect(() => {
     if (isOpen) {
       if (typeof window != "undefined" && window.document) {
@@ -35,40 +34,41 @@ export const Hamburger = () => {
       >
         <span
           className={`block transition-all duration-300 ease-out 
-                      h-0.5 w-6 rounded-sm ${
+                      h-0.5 w-6 rounded-sm bg-black ${
                         isOpen
-                          ? "rotate-45 translate-y-1 bg-white"
-                          : "-translate-y-0.5  bg-black"
+                          ? "rotate-45 translate-y-1"
+                          : "-translate-y-0.5  "
                       }`}
         ></span>
 
         <span
-          className={`block transition-all duration-300 ease-out 
+          className={`block transition-all bg-black duration-300 ease-out 
                       h-0.5 w-6 rounded-sm my-0.5 ${
-                        isOpen ? "opacity-0 bg-white" : "opacity-100 bg-black"
+                        isOpen ? "opacity-0" : "opacity-100 "
                       }`}
         ></span>
         <span
-          className={`block transition-all duration-300 ease-out 
+          className={`block transition-all bg-black duration-300 ease-out 
                       h-0.5 w-6 rounded-sm ${
                         isOpen
-                          ? "-rotate-45 -translate-y-1 bg-white"
-                          : "translate-y-0.5 bg-black"
+                          ? "-rotate-45 -translate-y-1"
+                          : "translate-y-0.5 "
                       }`}
         ></span>
       </button>
 
-      <div
+      {/* <div
         id="sideBar"
         className={cn(
-          "fixed top-0 right-0 bg-transparent w-0 h-full overflow-x-hidden duration-500 z-10",
+          "w-full flex flex-col overflow-x-hidden z-10 bg-slate-100 backdrop-blur-md bg-opacity-80 ",
           {
-            "w-0": !isOpen,
-            "w-100": isOpen,
+            "h-[27rem]": isOpen,
+            "h-[0rem]": !isOpen,
           }
         )}
-      >
-        <div
+        > */}
+
+      {/* <div
           id="sideNav"
           className={cn(
             "fixed top-0 right-0 bg-[#229ED9] h-full flex justify-center items-center overflow-x-hidden duration-500 font-bold z-50",
@@ -117,8 +117,8 @@ export const Hamburger = () => {
               </Link>
             </li>
           </ul>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </>
   );
 };

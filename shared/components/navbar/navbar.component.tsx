@@ -26,21 +26,15 @@ export const Navbar = () => {
   const { y, lastY } = useScrollListener();
 
   const [initialHeader, setIntialheader] = useState(false);
-  const [hideHeader, setHideheader] = useState(false);
+  const [navClassList, setNavClassList] = useState<string[]>([]);
 
   useEffect(() => {
-    if (y <= 0) {
-      setIntialheader(false);
-    } else {
-      setIntialheader(true);
-    }
+    const _classList = [];
+    setIntialheader(!(y <= 0));
 
-    // //TODO: FIX
-    if (y > 150 && y - lastY > 0) {
-      setHideheader(true);
-    } else {
-      setHideheader(false);
-    }
+    if (y > 200 && y - lastY > 0) _classList.push("-translate-y-48");
+
+    setNavClassList(_classList);
   }, [y, lastY]);
 
   return (
@@ -48,9 +42,7 @@ export const Navbar = () => {
       ref={ref}
       className={cn(
         "w-full transition-all transform-gpu flex flex-col items-center justify-center fixed z-50",
-        {
-          "-translate-y-48": hideHeader,
-        }
+        navClassList
       )}
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">

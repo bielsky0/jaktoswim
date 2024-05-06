@@ -3,6 +3,7 @@ import { Blog } from "@/shared/libs/sanity/types/blog.types";
 import { getImageAsset } from "@sanity/asset-utils";
 import Image from "next/image";
 import Link from "next/link";
+import { TransitionLink } from "../transitionLink";
 
 export interface BlogPreviewProps {
   blog: Blog;
@@ -23,14 +24,14 @@ export const BlogPreview = ({
         />
       </div>
 
-      <Link href={`/blog/${slug.current}`}>
+      <TransitionLink href={`/blog/${slug.current}`}>
         <div className="pb-3 max-w-full">
           <h3 className="font-bold text-2xl truncate">{title}</h3>
         </div>
         <div className="max-w-full truncate">
           <p className="text-base">{description}</p>
         </div>
-      </Link>
+      </TransitionLink>
     </div>
   );
 };

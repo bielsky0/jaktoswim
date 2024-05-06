@@ -1,6 +1,12 @@
 "use client";
-import { Button, BlogPreview, Slider } from "@/shared/components";
+import {
+  Button,
+  BlogPreview,
+  Slider,
+  TransitionLink,
+} from "@/shared/components";
 import { FeaturedBlogsSection } from "@/shared/libs/sanity/types";
+import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedBlogProps {
   featuredBlogs: FeaturedBlogsSection;
@@ -22,9 +28,9 @@ export const FeaturedBlog = ({ featuredBlogs }: FeaturedBlogProps) => {
           </h2>
         </div>
 
-        <div>
-          <Button href="/blog">{button_cta}</Button>
-        </div>
+        <TransitionLink href={ROUTES.blog}>
+          <Button>{button_cta}</Button>
+        </TransitionLink>
       </div>
 
       <div className="overflow-hidden relative w-full | lg:w-12/16">

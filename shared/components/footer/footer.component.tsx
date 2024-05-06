@@ -1,4 +1,5 @@
-import { Logo } from "@/shared/components";
+import { Logo, TransitionLink } from "@/shared/components";
+import { ROUTES } from "@/shared/utils";
 import Link from "next/link";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
@@ -18,27 +19,27 @@ export const Footer = () => {
               </div>
 
               <div>
-                <Link className="text-white" href="/o-nas">
-                  O Nas
-                </Link>
+                <TransitionLink href={ROUTES.blog}>
+                  <p className="text-white">Blog</p>
+                </TransitionLink>
               </div>
 
               <div>
-                <Link className="text-white" href="/blog">
-                  Blog
-                </Link>
+                <TransitionLink href={ROUTES.about}>
+                  <p className="text-white">O Nas</p>
+                </TransitionLink>
               </div>
 
               <div>
-                <Link className="text-white" href="/zajecia">
-                  Zajęcia
-                </Link>
+                <TransitionLink href={ROUTES.offer}>
+                  <p className="text-white">Zajęcia</p>
+                </TransitionLink>
               </div>
 
               <div>
-                <Link className="text-white" href="/galeria">
-                  Galeria
-                </Link>
+                <TransitionLink href={ROUTES.gallery}>
+                  <p className="text-white">Galeria</p>
+                </TransitionLink>
               </div>
             </div>
             <div className="flex flex-col gap-2">
@@ -58,11 +59,8 @@ export const Footer = () => {
               </div>
 
               <div>
-                <Link
-                  className="text-white"
-                  href="https://instagram.com/jaktoswim"
-                >
-                  <div className="flex gap-2 items-center">
+                <Link href="https://instagram.com/jaktoswim">
+                  <div className="flex gap-2 items-center text-white">
                     <FaInstagram /> <span>Instagram</span>
                   </div>
                 </Link>

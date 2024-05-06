@@ -1,4 +1,5 @@
-import { Button } from "@/shared/components";
+import { Button, TransitionLink } from "@/shared/components";
+import { ROUTES } from "@/shared/utils";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -15,9 +16,9 @@ export default function NotFound() {
       </p>
 
       <div className="pt-6">
-        <Button variant="link" href="/">
-          Wróć
-        </Button>
+        <TransitionLink href={ROUTES.home}>
+          <Button>Wróć</Button>
+        </TransitionLink>
       </div>
     </div>
   );

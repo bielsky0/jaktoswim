@@ -3,12 +3,18 @@
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
 
-import { Button, Modal, VideoPlayer } from "@/shared/components";
+import {
+  Button,
+  Modal,
+  TransitionLink,
+  VideoPlayer,
+} from "@/shared/components";
 
 import showreelPosterSrc from "@/public/showreel_poster.jpg";
 import { BillboardSection } from "@/shared/libs/sanity/types";
 import { getFileAsset } from "@sanity/asset-utils";
 import { config } from "@/shared/libs/sanity/config";
+import { ROUTES } from "@/shared/utils";
 
 export interface BillboardProps {
   billboard: BillboardSection;
@@ -78,7 +84,9 @@ export const Billboard = ({ billboard }: BillboardProps) => {
               <div className="absolute left-0 -bottom-[20px]  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
               <div className="absolute -right-[20px] top-0  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
-              <Button href="/kontakt">{button_cta}</Button>
+              <TransitionLink href={ROUTES.contact}>
+                <Button>{button_cta}</Button>
+              </TransitionLink>
             </div>
           </div>
         </div>

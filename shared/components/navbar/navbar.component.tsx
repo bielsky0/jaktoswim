@@ -1,6 +1,6 @@
 "use client";
 
-import { Hamburger, Logo } from "@/shared/components";
+import { Hamburger, Logo, TransitionLink } from "@/shared/components";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 import { ROUTES, cn } from "@/shared/utils";
@@ -61,28 +61,30 @@ export const Navbar = () => {
             <div className="hidden lg:flex">
               <ul className="flex justify-center items-center gap-16">
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.blog}>Aktualności</Link>
+                  <TransitionLink href={ROUTES.blog}>
+                    Aktualności
+                  </TransitionLink>
                 </li>
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.about}>O Nas</Link>
+                  <TransitionLink href={ROUTES.about}>O Nas</TransitionLink>
                 </li>
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.gallery}>Galeria</Link>
+                  <TransitionLink href={ROUTES.gallery}>Galeria</TransitionLink>
                 </li>
               </ul>
             </div>
 
-            <Link href={ROUTES.home}>
-              <Logo className="w-16 lg:w-24" />
-            </Link>
+            <TransitionLink href={ROUTES.home}>
+              <Logo className="w-16 lg:w-24 cursor-pointer" />
+            </TransitionLink>
 
             <div className="hidden lg:flex">
               <ul className="flex justify-center items-center gap-16">
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.offer}>Zajęcia</Link>
+                  <TransitionLink href={ROUTES.offer}>Zajęcia</TransitionLink>
                 </li>
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.contact}>Kontakt</Link>
+                  <TransitionLink href={ROUTES.contact}>Kontakt</TransitionLink>
                 </li>
                 <li className="cursor-pointer flex gap-4">
                   <Link href="https://www.instagram.com/jaktoswim">
@@ -112,29 +114,19 @@ export const Navbar = () => {
               className="flex flex-col text-2xl py-8 sm:text-3xl gap-4"
             >
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.blog}>
-                  Aktualności
-                </Link>
+                <TransitionLink href={ROUTES.blog}>Aktualności</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.about}>
-                  O Nas
-                </Link>
+                <TransitionLink href={ROUTES.about}>O Nas</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.gallery}>
-                  Galeria
-                </Link>
+                <TransitionLink href={ROUTES.gallery}>Galeria</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.offer}>
-                  Zajęcia
-                </Link>
+                <TransitionLink href={ROUTES.offer}>Zajęcia</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.contact}>
-                  Kontakt
-                </Link>
+                <TransitionLink href={ROUTES.contact}>Kontakt</TransitionLink>
               </li>
               <li className="cursor-pointer flex gap-4">
                 <Link href="https://www.instagram.com/jaktoswim">

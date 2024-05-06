@@ -1,5 +1,6 @@
-import { Button } from "@/shared/components";
+import { Button, TransitionLink } from "@/shared/components";
 import { HeroSection } from "@/shared/libs/sanity/types";
+import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedHero {
   hero: HeroSection;
@@ -23,9 +24,9 @@ export const FeaturedHero = ({ hero }: FeaturedHero) => {
             </h2>
           </div>
 
-          <div>
-            <Button href="/kontakt">{button_cta}</Button>
-          </div>
+          <TransitionLink href={ROUTES.contact}>
+            <Button>{button_cta}</Button>
+          </TransitionLink>
         </div>
       </div>
 

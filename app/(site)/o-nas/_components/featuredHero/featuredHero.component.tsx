@@ -1,10 +1,11 @@
 import Image from "next/image";
 
-import { Button } from "@/shared/components";
+import { Button, TransitionLink } from "@/shared/components";
 
 import { ImageCarouselSection } from "@/shared/libs/sanity/types";
 import { getImageAsset } from "@sanity/asset-utils";
 import { config } from "@/shared/libs/sanity/config";
+import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedHeroProps {
   hero: ImageCarouselSection;
@@ -68,9 +69,9 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
         </div>
       </div>
 
-      <div>
-        <Button href="/kontakt">{button_cta}</Button>
-      </div>
+      <TransitionLink href={ROUTES.contact}>
+        <Button>{button_cta}</Button>
+      </TransitionLink>
     </div>
   );
 };

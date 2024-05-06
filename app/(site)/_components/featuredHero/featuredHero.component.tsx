@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "@/shared/components";
+import { Button, TransitionLink } from "@/shared/components";
 import { ImageHeroSection } from "@/shared/libs/sanity/types";
 import { getImageAsset } from "@sanity/asset-utils";
 import { config } from "@/shared/libs/sanity/config";
@@ -31,9 +31,9 @@ export const FeatureHero = ({ hero }: FeaturedHeroProps) => {
           <div className="pb-4">
             <p className="text-sm lg:text-base">{description}</p>
           </div>
-          <div>
-            <Button href="/o-nas">{button_cta}</Button>
-          </div>
+          <TransitionLink href="/o-nas">
+            <Button>{button_cta}</Button>
+          </TransitionLink>
         </div>
       </div>
 

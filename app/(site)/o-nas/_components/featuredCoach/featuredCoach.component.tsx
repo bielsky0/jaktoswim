@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { Button } from "@/shared/components";
+import { Button, TransitionLink } from "@/shared/components";
 
 import { ImageHeroSection } from "@/shared/libs/sanity/types";
 import { getImageAsset } from "@sanity/asset-utils";
 import { config } from "@/shared/libs/sanity/config";
+import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedCoachProps {
   instructor: ImageHeroSection;
@@ -40,9 +41,9 @@ export const FeaturedCoach = ({ instructor }: FeaturedCoachProps) => {
           <div className="pb-4">
             <p className="text-sm lg:text-base">{description}</p>
           </div>
-          <div>
-            <Button href="/kontakt">{button_cta}</Button>
-          </div>
+          <TransitionLink href={ROUTES.contact}>
+            <Button>{button_cta}</Button>
+          </TransitionLink>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
-import { Button, VideoPlayer2 } from "@/shared/components";
+import { Button, TransitionLink, VideoPlayer2 } from "@/shared/components";
 import { config } from "@/shared/libs/sanity/config";
 import { ServicesSection } from "@/shared/libs/sanity/types";
+import { ROUTES } from "@/shared/utils";
 import { getFileAsset, getImageAsset } from "@sanity/asset-utils";
 import Image from "next/image";
 
@@ -37,7 +38,9 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
             </div>
 
             <div className="hidden lg:flex ">
-              <Button href="/kontakt">{button_cta}</Button>
+              <TransitionLink href={ROUTES.contact}>
+                <Button>{button_cta}</Button>
+              </TransitionLink>
             </div>
           </div>
         </div>
@@ -51,7 +54,9 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
         </div>
 
         <div className="flex lg:hidden ">
-          <Button href="/kontakt">{button_cta}</Button>
+          <TransitionLink href={ROUTES.contact}>
+            <Button>{button_cta}</Button>
+          </TransitionLink>
         </div>
       </div>
 

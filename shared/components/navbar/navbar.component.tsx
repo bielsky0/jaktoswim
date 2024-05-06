@@ -1,6 +1,6 @@
 "use client";
 
-import { Hamburger, Logo } from "@/shared/components";
+import { Hamburger, Logo, TransitionLink } from "@/shared/components";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 import { ROUTES, cn } from "@/shared/utils";
@@ -26,38 +26,29 @@ export const Navbar = () => {
   const { y, lastY } = useScrollListener();
 
   const [initialHeader, setIntialheader] = useState(false);
-  const [hideHeader, setHideheader] = useState(false);
+  const [navClassList, setNavClassList] = useState<string[]>([]);
 
   useEffect(() => {
-    if (y > 0) {
-      setIntialheader(true);
-    }
-    if (y <= 0) {
-      setIntialheader(false);
-    }
+    const _classList = [];
+    setIntialheader(!(y <= 0));
 
-    if (y > 400 && y - lastY > 0) {
-      setHideheader(true);
-    } else {
-      setHideheader(false);
-    }
+    if (y > 200 && y - lastY > 0) _classList.push("-translate-y-48");
+
+    setNavClassList(_classList);
   }, [y, lastY]);
 
   return (
     <div
       ref={ref}
       className={cn(
-        "w-full transition-all flex flex-col items-center justify-center fixed z-50",
-        {
-          "-translate-y-48": hideHeader,
-          "translate-y-0": !hideHeader,
-        }
+        "w-full transition-all transform-gpu flex flex-col items-center justify-center fixed z-50",
+        navClassList
       )}
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">
         <div
           className={cn(
-            "w-full  transition-all py-4   flex flex-col items-center justify-between",
+            "w-full  transition-all py-2 lg:py-4   flex flex-col items-center justify-between",
             {
               "bg-slate-100 backdrop-blur-md bg-opacity-80 px-8 rounded-3xl w-[16rem] lg:w-[60rem]":
                 initialHeader,
@@ -70,28 +61,30 @@ export const Navbar = () => {
             <div className="hidden lg:flex">
               <ul className="flex justify-center items-center gap-16">
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.blog}>Aktualności</Link>
+                  <TransitionLink href={ROUTES.blog}>
+                    Aktualności
+                  </TransitionLink>
                 </li>
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.about}>O Nas</Link>
+                  <TransitionLink href={ROUTES.about}>O Nas</TransitionLink>
                 </li>
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.gallery}>Galeria</Link>
+                  <TransitionLink href={ROUTES.gallery}>Galeria</TransitionLink>
                 </li>
               </ul>
             </div>
 
-            <Link href={ROUTES.home}>
-              <Logo className="w-16 lg:w-24" />
-            </Link>
+            <TransitionLink href={ROUTES.home}>
+              <Logo className="w-16 lg:w-24 cursor-pointer" />
+            </TransitionLink>
 
             <div className="hidden lg:flex">
               <ul className="flex justify-center items-center gap-16">
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.offer}>Zajęcia</Link>
+                  <TransitionLink href={ROUTES.offer}>Zajęcia</TransitionLink>
                 </li>
                 <li className="cursor-pointer">
-                  <Link href={ROUTES.contact}>Kontakt</Link>
+                  <TransitionLink href={ROUTES.contact}>Kontakt</TransitionLink>
                 </li>
                 <li className="cursor-pointer flex gap-4">
                   <Link href="https://www.instagram.com/jaktoswim">
@@ -112,9 +105,8 @@ export const Navbar = () => {
 
           <div
             id="sideBar"
-            className={cn("w-full transition-[height] flex flex-col z-10", {
-              "h-fit opacity-100 flex": isOpen,
-              "h-[0px] opacity-0 hidden": !isOpen,
+            className={cn("w-full h-fit transition-all flex flex-col z-10", {
+              "h-[0px] hidden": !isOpen,
             })}
           >
             <ul
@@ -122,29 +114,19 @@ export const Navbar = () => {
               className="flex flex-col text-2xl py-8 sm:text-3xl gap-4"
             >
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.blog}>
-                  Aktualności
-                </Link>
+                <TransitionLink href={ROUTES.blog}>Aktualności</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.about}>
-                  O Nas
-                </Link>
+                <TransitionLink href={ROUTES.about}>O Nas</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.gallery}>
-                  Galeria
-                </Link>
+                <TransitionLink href={ROUTES.gallery}>Galeria</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.offer}>
-                  Zajęcia
-                </Link>
+                <TransitionLink href={ROUTES.offer}>Zajęcia</TransitionLink>
               </li>
               <li className="cursor-pointer">
-                <Link className="text-black" href={ROUTES.contact}>
-                  Kontakt
-                </Link>
+                <TransitionLink href={ROUTES.contact}>Kontakt</TransitionLink>
               </li>
               <li className="cursor-pointer flex gap-4">
                 <Link href="https://www.instagram.com/jaktoswim">

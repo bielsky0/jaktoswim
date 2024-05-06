@@ -1,10 +1,11 @@
 import Image from "next/image";
 
-import { Button } from "@/shared/components";
+import { Button, TransitionLink } from "@/shared/components";
 
 import { ServicesSection } from "@/shared/libs/sanity/types";
 import { getImageAsset } from "@sanity/asset-utils";
 import { config } from "@/shared/libs/sanity/config";
+import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedOfferProps {
   services: ServicesSection;
@@ -36,7 +37,9 @@ export const FeaturedOffer = ({ services }: FeaturedOfferProps) => {
             </div>
 
             <div className="hidden lg:flex">
-              <Button href="/kontakt">{button_cta}</Button>
+              <TransitionLink href={ROUTES.contact}>
+                <Button>{button_cta}</Button>
+              </TransitionLink>
             </div>
           </div>
         </div>
@@ -48,7 +51,9 @@ export const FeaturedOffer = ({ services }: FeaturedOfferProps) => {
         </div>
 
         <div className="flex lg:hidden pb-5">
-          <Button href="/kontakt">{button_cta}</Button>
+          <TransitionLink href={ROUTES.contact}>
+            <Button>{button_cta}</Button>
+          </TransitionLink>
         </div>
       </div>
 

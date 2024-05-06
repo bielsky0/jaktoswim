@@ -1,5 +1,6 @@
-import { Accordion, Button } from "@/shared/components";
+import { Accordion, Button, TransitionLink } from "@/shared/components";
 import { FAQsSection } from "@/shared/libs/sanity/types";
+import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedFAQSProps {
   faqs: FAQsSection;
@@ -20,9 +21,9 @@ export const FeaturedFAQs = ({ faqs }: FeaturedFAQSProps) => {
             </h2>
           </div>
 
-          <div className="">
-            <Button href="/kontakt">{button_cta}</Button>
-          </div>
+          <TransitionLink href={ROUTES.contact}>
+            <Button>{button_cta}</Button>
+          </TransitionLink>
         </div>
       </div>
 

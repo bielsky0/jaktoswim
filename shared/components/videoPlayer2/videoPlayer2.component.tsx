@@ -46,7 +46,7 @@ export const VideoPlayer2 = ({ src }: VideoPlayer2Props) => {
 
           <div onClick={handlePlayPause} className="flex cursor-pointer">
             <div
-              className="py-2 text-sm md:text-base lg:text-lg px-4 bg-[#229ED9] text-white font-semibold
+              className="py-2 flex items-center text-sm md:text-base lg:text-lg px-4 bg-[#229ED9] text-white font-semibold
      rounded-full shadow-md outline-none "
             >
               {!isPlaying ? "Włącz Video" : "Wyłącz Video"}

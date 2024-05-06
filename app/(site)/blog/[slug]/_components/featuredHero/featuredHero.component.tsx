@@ -13,7 +13,7 @@ export const FeaturedHero = ({
 }: FeaturedHeroProps) => {
   const sanityImage = getImageAsset(coverImage, config);
   return (
-    <div className="w-full pt-4 pb-12">
+    <div className="w-full pt-8 pb-12">
       <div className="pl-2 | sm:pl-6 | xl:pl-12 | 2xl:pl-20 | 3xl:pl-40 | 4xl:pl-60">
         <div className="flex flex-col-reverse md:flex-row">
           <div className="w-full md:w-[30%]">

@@ -28,13 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body
         className={`${IBMPlex.variable} ${montserrat.variable} ${montserrat.className}`}
       >
-        <Layout>
+        <div className="pt-2 pb-20">
           <Navbar />
-        </Layout>
+        </div>
 
         {children}
 

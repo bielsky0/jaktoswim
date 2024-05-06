@@ -29,14 +29,14 @@ export const Navbar = () => {
   const [hideHeader, setHideheader] = useState(false);
 
   useEffect(() => {
-    if (y > 0) {
-      setIntialheader(true);
-    }
     if (y <= 0) {
       setIntialheader(false);
+    } else {
+      setIntialheader(true);
     }
 
-    if (y > 400 && y - lastY > 0) {
+    // //TODO: FIX
+    if (y > 150 && y - lastY > 0) {
       setHideheader(true);
     } else {
       setHideheader(false);
@@ -47,17 +47,16 @@ export const Navbar = () => {
     <div
       ref={ref}
       className={cn(
-        "w-full transition-all flex flex-col items-center justify-center fixed z-50",
+        "w-full transition-all transform-gpu flex flex-col items-center justify-center fixed z-50",
         {
           "-translate-y-48": hideHeader,
-          "translate-y-0": !hideHeader,
         }
       )}
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">
         <div
           className={cn(
-            "w-full  transition-all py-4   flex flex-col items-center justify-between",
+            "w-full  transition-all py-2 lg:py-4   flex flex-col items-center justify-between",
             {
               "bg-slate-100 backdrop-blur-md bg-opacity-80 px-8 rounded-3xl w-[16rem] lg:w-[60rem]":
                 initialHeader,
@@ -112,9 +111,8 @@ export const Navbar = () => {
 
           <div
             id="sideBar"
-            className={cn("w-full transition-[height] flex flex-col z-10", {
-              "h-fit opacity-100 flex": isOpen,
-              "h-[0px] opacity-0 hidden": !isOpen,
+            className={cn("w-full h-fit transition-all flex flex-col z-10", {
+              "h-[0px] hidden": !isOpen,
             })}
           >
             <ul

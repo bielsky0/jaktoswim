@@ -64,7 +64,10 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
         {featuredServices.map(({ title, description, coverIamge }) => {
           const imageUi = getImageAsset(coverIamge, config);
           return (
-            <div className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32">
+            <div
+              key={imageUi._id}
+              className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32"
+            >
               <div className="w-full pb-2 md:pb-0">
                 <div className="h-[150px] md:h-[300px]">
                   <Image
@@ -97,7 +100,7 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
       <div className="w-full relative">
         <div className="rounded-t-2xl h-80 w-full "></div>
 
-        <div className="absolute w-full h-[550px] bg-red-300 top-24 rounded-2xl">
+        <div className="absolute w-full h-[550px] aspect-[9/16] md:aspect-[1/1] lg:rounded-2xl lg:aspect-[16/9]  top-24 rounded-2xl ">
           <VideoPlayer2 src={coverVideoUi.url} />
         </div>
       </div>

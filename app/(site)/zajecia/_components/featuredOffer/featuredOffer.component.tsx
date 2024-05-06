@@ -61,7 +61,10 @@ export const FeaturedOffer = ({ services }: FeaturedOfferProps) => {
         {featuredServices.map(({ coverIamge, title, description }) => {
           const imageUi = getImageAsset(coverIamge, config);
           return (
-            <div className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32">
+            <div
+              key={imageUi._id}
+              className="w-full flex flex-col md:flex-row items-center md:gap-16  lg:gap-32"
+            >
               <div className="w-full pb-2">
                 <div className="h-[150px] md:h-[300px]">
                   <Image

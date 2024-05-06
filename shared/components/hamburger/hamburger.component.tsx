@@ -56,69 +56,6 @@ export const Hamburger = ({ isOpen, handleClick }: HamburgerProps) => {
                       }`}
         ></span>
       </button>
-
-      {/* <div
-        id="sideBar"
-        className={cn(
-          "w-full flex flex-col overflow-x-hidden z-10 bg-slate-100 backdrop-blur-md bg-opacity-80 ",
-          {
-            "h-[27rem]": isOpen,
-            "h-[0rem]": !isOpen,
-          }
-        )}
-        > */}
-
-      {/* <div
-          id="sideNav"
-          className={cn(
-            "fixed top-0 right-0 bg-[#229ED9] h-full flex justify-center items-center overflow-x-hidden duration-500 font-bold z-50",
-            {
-              "w-0": !isOpen,
-              "w-full": isOpen,
-            }
-          )}
-        >
-          <ul
-            onClick={handleClick}
-            className="flex flex-col text-2xl sm:text-3xl gap-4"
-          >
-            <li className="cursor-pointer">
-              <Link className="text-white" href={ROUTES.blog}>
-                Aktualności
-              </Link>
-            </li>
-            <li className="cursor-pointer">
-              <Link className="text-white" href={ROUTES.about}>
-                O Nas
-              </Link>
-            </li>
-            <li className="cursor-pointer">
-              <Link className="text-white" href={ROUTES.gallery}>
-                Galeria
-              </Link>
-            </li>
-            <li className="cursor-pointer">
-              <Link className="text-white" href={ROUTES.offer}>
-                Zajęcia
-              </Link>
-            </li>
-            <li className="cursor-pointer">
-              <Link className="text-white" href={ROUTES.contact}>
-                Kontakt
-              </Link>
-            </li>
-            <li className="cursor-pointer flex gap-4">
-              <Link href="https://www.instagram.com/jaktoswim">
-                <FaInstagram color="white" className="w-8 h-8" />
-              </Link>
-
-              <Link href="https://www.facebook.com/jaktoswim">
-                <FaFacebook color="white" className="w-8 h-8" />
-              </Link>
-            </li>
-          </ul>
-        </div> */}
-      {/* </div> */}
     </>
   );
 };

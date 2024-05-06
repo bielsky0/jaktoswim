@@ -1,6 +1,6 @@
 "use client";
 
-import { Hamburger, Layout, Logo } from "@/shared/components";
+import { Hamburger, Logo } from "@/shared/components";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 import { ROUTES, cn } from "@/shared/utils";
@@ -25,21 +25,34 @@ export const Navbar = () => {
 
   const { y, lastY } = useScrollListener();
 
-  const [test, setTest] = useState(false);
+  const [initialHeader, setIntialheader] = useState(false);
+  const [hideHeader, setHideheader] = useState(false);
 
   useEffect(() => {
     if (y > 0) {
-      setTest(true);
+      setIntialheader(true);
     }
     if (y <= 0) {
-      setTest(false);
+      setIntialheader(false);
     }
-  }, [y]);
+
+    if (y > 400 && y - lastY > 0) {
+      setHideheader(true);
+    } else {
+      setHideheader(false);
+    }
+  }, [y, lastY]);
 
   return (
     <div
       ref={ref}
-      className="w-full transition-all flex flex-col items-center justify-center fixed z-50"
+      className={cn(
+        "w-full transition-all flex flex-col items-center justify-center fixed z-50",
+        {
+          "-translate-y-48": hideHeader,
+          "translate-y-0": !hideHeader,
+        }
+      )}
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">
         <div
@@ -47,7 +60,7 @@ export const Navbar = () => {
             "w-full  transition-all py-4   flex flex-col items-center justify-between",
             {
               "bg-slate-100 backdrop-blur-md bg-opacity-80 px-8 rounded-3xl w-[16rem] lg:w-[60rem]":
-                test,
+                initialHeader,
               "bg-slate-100 backdrop-blur-md bg-opacity-1 px-8 rounded-3xl w-full":
                 isOpen,
             }

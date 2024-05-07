@@ -10,7 +10,6 @@ export default async function Offer() {
 
   const { pageBuilder } = classes;
 
-  console.log(pageBuilder[3]);
   return (
     <main>
       {pageBuilder.map((section) => {

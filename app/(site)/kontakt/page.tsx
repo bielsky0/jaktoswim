@@ -15,30 +15,30 @@ export default async function Contact() {
   const { pageBuilder } = contactResponse;
   return (
     <main>
-      {pageBuilder.map((section) => {
+      {pageBuilder.map((section, idx) => {
         if (section._type === "contact")
           return (
-            <Layout className="pt-4 pb-12 md:py-12">
+            <Layout
+              key={`${section._type}-${idx}`}
+              className="pt-4 pb-12 md:py-12"
+            >
               <SectionRenderer section={section} />
             </Layout>
           );
 
         if (section._type === "marquee")
-          return <SectionRenderer section={section} />;
+          return (
+            <SectionRenderer
+              key={`${section._type}-${idx}`}
+              section={section}
+            />
+          );
         return (
-          <Layout className="pb-8 md:pb-24">
+          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
             <SectionRenderer section={section} />
           </Layout>
         );
       })}
-      {/* <Layout className="pt-4 pb-12 md:py-12">
-        <FeaturedHero hero={hero} />
-      </Layout>
-
-      <Layout className="pt-4 pb-12 md:py-12">
-        <FeaturedFAQs faqs={faqs} />
-      </Layout>
-      <Marquee /> */}
     </main>
   );
 }

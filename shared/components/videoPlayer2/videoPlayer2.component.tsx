@@ -33,6 +33,8 @@ export const VideoPlayer2 = ({ src }: VideoPlayer2Props) => {
         ref={videoRef}
         className="w-full h-full rounded-2xl object-cover"
         muted
+        playsInline
+        controls={false}
         autoPlay={false}
         src={src}
       />

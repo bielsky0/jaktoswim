@@ -33,19 +33,6 @@ export default async function Post({ params }: Params) {
           }}
         />
       </Layout>
-
-      {/* <FeaturedHero blogUi={blogUi} />
-
-      <FeaturedBlogBody blogUi={blogUi} />
-
-      <Layout className="py-8">
-        <FeaturedBlog
-          blogs={featuredBlogs}
-          title="Najświeższe informacje, prosto z wody"
-          subtitle=" Nasz Blog"
-          button_cta="Zobacz Wszystkie Nowości!"
-        />
-      </Layout> */}
     </main>
   );
 }

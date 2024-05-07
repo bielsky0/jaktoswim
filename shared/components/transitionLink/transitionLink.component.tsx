@@ -2,7 +2,6 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { animatePageOut } from "@/shared/utils";
-import { Button } from "../button";
 
 interface TransitionLinkProps {
   href: string;

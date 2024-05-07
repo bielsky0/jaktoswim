@@ -256,6 +256,7 @@ export async function getBlog(slug: string): Promise<Blog | null> {
     keywords,
     content,
     coverImage,
+    _createdAt,
     "featuredBlogs": featuredBlogs[]-> {
       _id,
       title,

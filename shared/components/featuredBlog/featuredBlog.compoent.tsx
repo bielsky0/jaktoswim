@@ -29,7 +29,7 @@ export const FeaturedBlog = ({ featuredBlogs }: FeaturedBlogProps) => {
         </div>
 
         <TransitionLink href={ROUTES.blog}>
-          <div>{button_cta}</div>
+          <Button>{button_cta}</Button>
         </TransitionLink>
       </div>
 

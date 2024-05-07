@@ -7,5 +7,6 @@ export type Blog = {
   title: string;
   content: object[];
   coverImage: Image;
+  _createdAt: string;
   featuredBlogs: Blog[];
 };

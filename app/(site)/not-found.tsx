@@ -1,6 +1,5 @@
 import { Button, TransitionLink } from "@/shared/components";
 import { ROUTES } from "@/shared/utils";
-import Link from "next/link";
 
 export default function NotFound() {
   return (

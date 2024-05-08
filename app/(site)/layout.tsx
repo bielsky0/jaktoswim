@@ -18,6 +18,14 @@ const IBMPlex = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
+  openGraph: {
+    type: "website",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}`,
+    title: "JakToSwim",
+    description:
+      "Odkryj radość pływania w Szczecinie z naszą szkółką! Nauka bezpiecznych umiejętności, doświadczeni instruktorzy, indywidualne podejście. Zapisz się już dziś i zanurz się w fascynującym świecie wody!",
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],
+  },
   title: "JakToSwim",
   description:
     "Odkryj radość pływania w Szczecinie z naszą szkółką! Nauka bezpiecznych umiejętności, doświadczeni instruktorzy, indywidualne podejście. Zapisz się już dziś i zanurz się w fascynującym świecie wody!",

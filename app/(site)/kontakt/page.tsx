@@ -1,9 +1,5 @@
-import { Layout, Marquee } from "@/shared/components";
-import {
-  FeaturedHero,
-  SectionRenderer,
-} from "@/app/(site)/kontakt/_components";
-import { FeaturedFAQs } from "../zajecia/_components";
+import { Layout } from "@/shared/components";
+import { SectionRenderer } from "@/app/(site)/kontakt/_components";
 import { getPage } from "@/shared/libs/sanity/client";
 import { notFound } from "next/navigation";
 
@@ -19,10 +15,12 @@ export default async function Contact() {
         if (section._type === "contact")
           return (
             <Layout
+              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
               key={`${section._type}-${idx}`}
-              className="pt-4 pb-12 md:py-12"
             >
-              <SectionRenderer section={section} />
+              <Layout className="pt-4 pb-12 md:py-12">
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
@@ -34,8 +32,13 @@ export default async function Contact() {
             />
           );
         return (
-          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
-            <SectionRenderer section={section} />
+          <Layout
+            className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+            key={`${section._type}-${idx}`}
+          >
+            <Layout className="pb-8 md:pb-24">
+              <SectionRenderer section={section} />
+            </Layout>
           </Layout>
         );
       })}

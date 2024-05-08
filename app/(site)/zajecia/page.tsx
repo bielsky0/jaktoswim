@@ -16,10 +16,12 @@ export default async function Offer() {
         if (section._type === "videoHero")
           return (
             <Layout
+              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
               key={`${section._type}-${idx}`}
-              className="pt-4 pb-12 md:py-12"
             >
-              <SectionRenderer section={section} />
+              <Layout className="pt-4 pb-12 md:py-12">
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
@@ -31,8 +33,13 @@ export default async function Offer() {
             />
           );
         return (
-          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
-            <SectionRenderer section={section} />
+          <Layout
+            className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+            key={`${section._type}-${idx}`}
+          >
+            <Layout className="pb-8 md:pb-24">
+              <SectionRenderer section={section} />
+            </Layout>
           </Layout>
         );
       })}

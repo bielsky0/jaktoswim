@@ -1,6 +1,4 @@
-import { config } from "@/shared/libs/sanity/config";
 import { GalleryImage } from "@/shared/libs/sanity/types/gallery.types";
-import { getImageAsset } from "@sanity/asset-utils";
 import Image from "next/image";
 
 export interface FeaturedGalleryProps {
@@ -9,7 +7,7 @@ export interface FeaturedGalleryProps {
 
 export const FeaturedGallery = ({ images }: FeaturedGalleryProps) => {
   return (
-    <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
+    <div className="columns-1 gap-4 sm:columns-2  2xl:columns-4">
       {images.map(({ coverImage }) => {
         return (
           <div
@@ -21,8 +19,8 @@ export const FeaturedGallery = ({ images }: FeaturedGalleryProps) => {
                 coverImage.alt ||
                 "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
               }
-              width={720}
-              height={480}
+              width={1280}
+              height={720}
               placeholder="blur"
               blurDataURL={coverImage.asset.metadata.lqip}
               loading="lazy"

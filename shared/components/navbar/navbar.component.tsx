@@ -41,7 +41,7 @@ export const Navbar = () => {
     <div
       ref={ref}
       className={cn(
-        "w-full transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]",
+        "w-full max-w-[2560px] transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]",
         navClassList
       )}
     >

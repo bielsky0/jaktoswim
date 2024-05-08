@@ -111,15 +111,15 @@ export const Billboard = ({ billboard }: BillboardProps) => {
 
           <div className="flex flex-col pr-4 ">
             <div>
-              <h5 className="font-bold text-sm md:text-base">
+              <p className="font-bold text-sm md:text-base">
                 Zobacz Kacpra w akcji!
-              </h5>
+              </p>
             </div>
 
             <div>
-              <h6 className="text-[12px] md:text-sm">
+              <p className="text-[12px] md:text-sm">
                 Instruktor pływania JakToSwim
-              </h6>
+              </p>
             </div>
           </div>
         </div>

@@ -28,7 +28,9 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
           <div className="flex flex-col ">
             <div className="flex gap-2 items-center pb-2">
               <div className="h-[8px] w-[8px] bg-white rounded-full"></div>
-              <h5 className="text-white text-sm md:text-base">{subtitle}</h5>
+              <span className="text-white text-sm md:text-base">
+                {subtitle}
+              </span>
             </div>
 
             <div className="max-w-4xl pb-3">
@@ -62,28 +64,32 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
 
       <div className="w-full flex flex-col gap-12 pt-16 ">
         {featuredServices.map(({ title, description, coverIamge }) => {
-          const imageUi = getImageAsset(coverIamge, config);
           return (
             <div
-              key={imageUi._id}
+              key={coverIamge.asset.url}
               className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32"
             >
               <div className="w-full pb-2 md:pb-0">
                 <div className="h-[150px] md:h-[300px]">
                   <Image
-                    alt="dasd"
                     width={520}
                     height={300}
-                    src={imageUi.url}
+                    loading="lazy"
+                    src={coverIamge.asset.url}
                     className="object-cover w-full h-full rounded-2xl"
+                    blurDataURL={coverIamge.asset.metadata.lqip}
+                    alt={
+                      coverIamge.alt ||
+                      "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+                    }
                   />
                 </div>
               </div>
               <div className="flex flex-col w-full md:gap-8 ">
                 <div className="pb-3 md:pb-0">
-                  <h5 className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
+                  <span className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
                     {title}
-                  </h5>
+                  </span>
                 </div>
 
                 <div>

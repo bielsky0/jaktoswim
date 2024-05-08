@@ -12,14 +12,20 @@ export interface BlogPreviewProps {
 export const BlogPreview = ({
   blog: { coverImage, title, description, slug },
 }: BlogPreviewProps) => {
-  const sanityImage = getImageAsset(coverImage, config);
   return (
     <div className="flex flex-col w-full  mb-5">
       <div className="mb-4 w-full aspect-[16/9] relative after:content group relative block w-full after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight">
         <Image
-          alt="dasd"
-          src={sanityImage.url}
-          fill
+          src={coverImage.asset.url}
+          width={1280}
+          height={500}
+          placeholder="blur"
+          loading="lazy"
+          alt={
+            coverImage.alt ||
+            "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+          }
+          blurDataURL={coverImage.asset.metadata.lqip}
           className="transform w-full h-full aspect-[16/9] rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 object-cover"
         />
       </div>

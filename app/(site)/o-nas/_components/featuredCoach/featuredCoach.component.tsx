@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Button, TransitionLink } from "@/shared/components";
 
 import { ImageHeroSection } from "@/shared/libs/sanity/types";
-import { getImageAsset } from "@sanity/asset-utils";
-import { config } from "@/shared/libs/sanity/config";
 import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedCoachProps {
@@ -13,16 +11,21 @@ export interface FeaturedCoachProps {
 export const FeaturedCoach = ({ instructor }: FeaturedCoachProps) => {
   const { title, subtitle, button_cta, description, coverImage } = instructor;
 
-  const imageUi = getImageAsset(coverImage, config);
   return (
     <div className="flex flex-col lg:flex-row w-full gap-4 ">
       <div className="flex w-full transform-gpu  justify-center lg:justify-end">
         <Image
-          src={imageUi.url}
-          width={720}
+          src={coverImage.asset.url}
+          width={1280}
           height={500}
+          placeholder="blur"
+          loading="lazy"
+          alt={
+            coverImage.alt ||
+            "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+          }
+          blurDataURL={coverImage.asset.metadata.lqip}
           className="w-full h-full  max-h-[500px]  object-cover rounded-2xl"
-          alt="dasd"
         />
       </div>
       <div className="flex w-full h-full my-auto">

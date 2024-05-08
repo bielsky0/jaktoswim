@@ -1,11 +1,8 @@
 import Image from "next/image";
 
-import imgSrc from "@/public/showreel_poster.jpg";
 import Link from "next/link";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
 import { ContactSection } from "@/shared/libs/sanity/types";
-import { getImageAsset } from "@sanity/asset-utils";
-import { config } from "@/shared/libs/sanity/config";
 
 export interface FeaturedHeroProps {
   hero: ContactSection;
@@ -18,8 +15,6 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
     subtitle,
     contact: { title: contactTitle, description, phoneNumber },
   } = hero;
-
-  const coverImageUi = getImageAsset(coverIamge, config);
 
   return (
     <div className="flex flex-col lg:flex-row w-full  gap-8 lg:gap-0">
@@ -49,7 +44,7 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
               <p className="text">{description}</p>
             </div>
 
-            <div className="flex gap-8">
+            <div className="flex gap-8 ">
               <div className="flex flex-col gap-4">
                 <div>
                   <h6 className="text-lg font-semibold">Zadzwoń</h6>
@@ -65,7 +60,7 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
                   <h6 className="text-lg font-semibold">Lub Napisz</h6>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-col">
                   <Link href="https://instagram.com/jaktoswim">
                     <div className="flex gap-2 items-center">
                       <FaInstagram /> <span>Instagram</span>
@@ -86,11 +81,17 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
       <div className="flex w-full lg:w-1/2 flex-col gap-4 ">
         <div className="flex w-full transform-gpu  justify-center lg:justify-end ">
           <Image
-            src={coverImageUi.url}
+            src={coverIamge.asset.url}
             width={720}
             height={500}
+            placeholder="blur"
+            loading="lazy"
+            blurDataURL={coverIamge.asset.metadata.lqip}
             className="max-h-[350px] lg:max-h-[500px] w-full h-full  max-h-[500px]  object-cover rounded-2xl"
-            alt="dasd"
+            alt={
+              coverIamge.alt ||
+              "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+            }
           />
         </div>
       </div>

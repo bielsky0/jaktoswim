@@ -3,8 +3,6 @@ import Image from "next/image";
 import { Button, TransitionLink } from "@/shared/components";
 
 import { ImageCarouselSection } from "@/shared/libs/sanity/types";
-import { getImageAsset } from "@sanity/asset-utils";
-import { config } from "@/shared/libs/sanity/config";
 import { ROUTES } from "@/shared/utils";
 
 export interface FeaturedHeroProps {
@@ -13,7 +11,6 @@ export interface FeaturedHeroProps {
 
 export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
   const { images, button_cta } = hero;
-
   return (
     <div className="flex flex-col w-full items-center">
       <div className="text-center">
@@ -32,17 +29,22 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
       <div className="overflow-hidden py-8 my-2 bg-white max-w-full">
         <div className=" flex gap-8 flex-nowrap animate-slide w-max">
           {images.map((image) => {
-            const sanityImage = getImageAsset(image, config);
             return (
               <div
-                key={sanityImage._id}
+                key={image.asset.url}
                 className="rounded-2xl w-[200px] h-[250px]"
               >
                 <Image
-                  alt="aboutUs1"
-                  width={200}
-                  height={250}
-                  src={sanityImage.url}
+                  src={image.asset.url}
+                  width={1280}
+                  height={500}
+                  placeholder="blur"
+                  loading="lazy"
+                  alt={
+                    image.alt ||
+                    "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+                  }
+                  blurDataURL={image.asset.metadata.lqip}
                   className="w-full h-full object-fill rounded-2xl"
                 />
               </div>
@@ -50,17 +52,22 @@ export const FeaturedHero = ({ hero }: FeaturedHeroProps) => {
           })}
 
           {images.map((image) => {
-            const sanityImage = getImageAsset(image, config);
             return (
               <div
-                key={`${sanityImage._id}-2`}
+                key={image.asset.url}
                 className="rounded-2xl w-[200px] h-[250px]"
               >
                 <Image
-                  alt="aboutUs1"
-                  width={200}
-                  height={250}
-                  src={sanityImage.url}
+                  src={image.asset.url}
+                  width={1280}
+                  height={500}
+                  placeholder="blur"
+                  loading="lazy"
+                  alt={
+                    image.alt ||
+                    "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+                  }
+                  blurDataURL={image.asset.metadata.lqip}
                   className="w-full h-full object-fill rounded-2xl"
                 />
               </div>

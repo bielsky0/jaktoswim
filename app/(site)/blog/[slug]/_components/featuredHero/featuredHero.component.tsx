@@ -1,7 +1,5 @@
 import { Logo } from "@/shared/components";
-import { config } from "@/shared/libs/sanity/config";
 import { Blog } from "@/shared/libs/sanity/types";
-import { getImageAsset } from "@sanity/asset-utils";
 import Image from "next/image";
 
 export interface FeaturedHeroProps {
@@ -11,7 +9,6 @@ export interface FeaturedHeroProps {
 export const FeaturedHero = ({
   blog: { coverImage, title },
 }: FeaturedHeroProps) => {
-  const sanityImage = getImageAsset(coverImage, config);
   return (
     <div className="w-full pt-8 pb-12">
       <div className="pl-2 | sm:pl-6 | xl:pl-12 | 2xl:pl-20 | 3xl:pl-40 | 4xl:pl-60">
@@ -48,10 +45,16 @@ export const FeaturedHero = ({
             </div>
             <div className="mb-4  w-full  rounded-l-2xl transform-gpu overflow-hidden aspect-[9/16] md:aspect-[1/1] lg:rounded-l-2xl lg:aspect-[16/9] max-h-[360px] md:max-h-[640px]">
               <Image
-                alt="das"
-                fill
+                alt={
+                  coverImage.alt ||
+                  "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+                }
+                placeholder="blur"
+                width={1280}
+                height={520}
+                blurDataURL={coverImage.asset.metadata.lqip}
                 loading="lazy"
-                src={sanityImage.url}
+                src={coverImage.asset.url}
                 className="w-full h-full rounded-l-2xl object-cover"
               />
             </div>

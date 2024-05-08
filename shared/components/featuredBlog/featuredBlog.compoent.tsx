@@ -19,7 +19,7 @@ export const FeaturedBlog = ({ featuredBlogs }: FeaturedBlogProps) => {
       <div className="flex flex-col ">
         <div className="flex gap-2 items-center pb-2">
           <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-          <h5 className="text-sm md:text-base">{subtitle}</h5>
+          <span className="text-sm md:text-base">{subtitle}</span>
         </div>
 
         <div className="max-w-xl pb-3">

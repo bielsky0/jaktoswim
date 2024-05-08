@@ -24,9 +24,12 @@ export type File = {
 
 export type Image = {
   _type: "image";
+  alt: string | null;
   asset: {
-    _ref: string;
-    _type: string;
+    url: string;
+    metadata: {
+      lqip: string;
+    };
   };
 };
 

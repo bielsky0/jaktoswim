@@ -11,8 +11,6 @@ export interface FeaturedHeroProps {
 export const FeatureHero = ({ hero }: FeaturedHeroProps) => {
   const { title, subtitle, button_cta, coverImage, description } = hero;
 
-  const sanityCoverImage = getImageAsset(coverImage, config);
-
   return (
     <div className="flex flex-col lg:flex-row w-full gap-4 ">
       <div className="flex w-full h-full my-auto">
@@ -39,11 +37,17 @@ export const FeatureHero = ({ hero }: FeaturedHeroProps) => {
 
       <div className="flex w-full transform-gpu  justify-center lg:justify-end">
         <Image
-          src={sanityCoverImage.url}
+          src={coverImage.asset.url}
           width={720}
           height={500}
-          className="w-full h-full  max-h-[500px]  object-cover rounded-2xl"
-          alt="dasd"
+          className="w-full h-full max-h-[500px] object-cover rounded-2xl"
+          placeholder="blur"
+          loading="lazy"
+          blurDataURL={coverImage.asset.metadata.lqip}
+          alt={
+            coverImage.alt ||
+            "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+          }
         />
       </div>
     </div>

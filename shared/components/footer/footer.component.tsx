@@ -15,7 +15,7 @@ export const Footer = () => {
           <div className="flex flex-col px-4  sm:flex-row w-full justify-center gap-8 md:justify-between max-w-4xl">
             <div className="flex flex-col gap-2">
               <div className="mb-4">
-                <h4 className="text-white text-lg font-bold">Eskploruj</h4>
+                <span className="text-white text-lg font-bold">Eskploruj</span>
               </div>
 
               <div>
@@ -44,18 +44,20 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
               <div className="mb-4">
-                <h4 className="text-white text-lg font-bold">
+                <span className="text-white text-lg font-bold">
                   Bądźmy w Kontakcie
-                </h4>
+                </span>
               </div>
 
               <div>
-                <h6 className="text-white">+48 724 652 213</h6>
+                <span className="text-white">+48 724 652 213</span>
               </div>
             </div>
             <div className="flex flex-col gap-2">
               <div className="mb-4">
-                <h4 className="text-white text-lg font-bold">Zaobserwuj Nas</h4>
+                <span className="text-white text-lg font-bold">
+                  Zaobserwuj Nas
+                </span>
               </div>
 
               <div>

@@ -16,11 +16,11 @@ export default async function Home() {
       {pageBuilder.map((section, idx) => {
         if (section._type === "billboard")
           return (
-            <Layout className="max-w-screen w-full px-0 md:px-0 lg:px-0">
-              <Layout
-                key={`${section._type}-${idx}`}
-                className="pt-4 pb-12 md:py-12"
-              >
+            <Layout
+              key={`${section._type}-${idx}`}
+              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+            >
+              <Layout className="pt-4 pb-12 md:py-12">
                 <SectionRenderer section={section} />
               </Layout>
             </Layout>

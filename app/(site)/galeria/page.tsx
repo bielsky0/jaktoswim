@@ -38,6 +38,7 @@ export default async function Gallery() {
           </Layout>
         );
       })}
+
       <Layout className="max-w-screen w-full px-0 md:px-0 lg:px-0">
         <Layout className="py-8 md:py-16">
           <FeaturedGallery images={images} />

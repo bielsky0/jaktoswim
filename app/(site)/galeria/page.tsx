@@ -19,20 +19,29 @@ export default async function Gallery() {
           return (
             <Layout
               key={`${section._type}-${idx}`}
-              className="pt-4 pb-12 md:py-12"
+              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
             >
-              <SectionRenderer section={section} />
+              <Layout className="pt-4 pb-12 md:py-12">
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
         return (
-          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
-            <SectionRenderer section={section} />
+          <Layout
+            key={`${section._type}-${idx}`}
+            className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+          >
+            <Layout className="pb-8 md:pb-24">
+              <SectionRenderer section={section} />
+            </Layout>
           </Layout>
         );
       })}
-      <Layout className="py-8 md:py-16">
-        <FeaturedGallery images={images} />
+      <Layout className="max-w-screen w-full px-0 md:px-0 lg:px-0">
+        <Layout className="py-8 md:py-16">
+          <FeaturedGallery images={images} />
+        </Layout>
       </Layout>
     </main>
   );

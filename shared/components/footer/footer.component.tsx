@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col gap-32">
+    <footer className="flex flex-col gap-32 w-full">
       <div className="flex flex-col md:flex-row w-full items-center gap-16 justify-between">
         <div>
           <Logo variant="white" className="w-[200px]" />

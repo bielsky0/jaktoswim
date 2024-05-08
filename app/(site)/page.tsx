@@ -12,15 +12,17 @@ export default async function Home() {
   const { pageBuilder } = home;
 
   return (
-    <main>
+    <main className="mx-auto">
       {pageBuilder.map((section, idx) => {
         if (section._type === "billboard")
           return (
-            <Layout
-              key={`${section._type}-${idx}`}
-              className="pt-4 pb-12 md:py-12"
-            >
-              <SectionRenderer section={section} />
+            <Layout className="max-w-screen w-full px-0 md:px-0 lg:px-0">
+              <Layout
+                key={`${section._type}-${idx}`}
+                className="pt-4 pb-12 md:py-12"
+              >
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
@@ -28,32 +30,41 @@ export default async function Home() {
           return (
             <Layout
               key={`${section._type}-${idx}`}
-              className="max-w-screen w-full bg-black rounded-2xl py-16"
+              className="max-w-screen w-full bg-black rounded-2xl py-16 px-0 md:px-0 lg:px-0"
             >
-              <SectionRenderer section={section} />
+              <Layout>
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
         if (section._type === "hero")
           return (
             <Layout
+              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
               key={`${section._type}-${idx}`}
-              className="py-8 md:pb-16  pt-96"
             >
-              <SectionRenderer section={section} />
+              <Layout className="py-8 md:pb-16  pt-96">
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
         if (section._type === "marquee")
           return (
             <SectionRenderer
-              key={`${section._type}-${idx}`}
               section={section}
+              key={`${section._type}-${idx}`}
             />
           );
         return (
-          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
-            <SectionRenderer section={section} />
+          <Layout
+            className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+            key={`${section._type}-${idx}`}
+          >
+            <Layout className="pb-8 md:pb-24">
+              <SectionRenderer section={section} />
+            </Layout>
           </Layout>
         );
       })}

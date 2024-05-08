@@ -15,21 +15,33 @@ export default async function Blog() {
         if (section._type === "hero")
           return (
             <Layout
+              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
               key={`${section._type}-${idx}`}
-              className="pt-4 pb-12 md:py-12"
             >
-              <SectionRenderer section={section} />
+              <Layout
+                key={`${section._type}-${idx}`}
+                className="pt-4 pb-12 md:py-12"
+              >
+                <SectionRenderer section={section} />
+              </Layout>
             </Layout>
           );
 
         return (
-          <Layout key={`${section._type}-${idx}`} className="pb-8 md:pb-24">
-            <SectionRenderer section={section} />
+          <Layout
+            className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+            key={`${section._type}-${idx}`}
+          >
+            <Layout className="pb-8 md:pb-24">
+              <SectionRenderer section={section} />
+            </Layout>
           </Layout>
         );
       })}
-      <Layout className="pb-8 md:pb-24">
-        <BlogList blogPosts={blogs} />
+      <Layout className="max-w-screen w-full px-0 md:px-0 lg:px-0">
+        <Layout className="pb-8 md:pb-24">
+          <BlogList blogPosts={blogs} />
+        </Layout>
       </Layout>
     </main>
   );

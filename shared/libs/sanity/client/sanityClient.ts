@@ -52,7 +52,14 @@ export async function getPage(page: string): Promise<PageType | null> {
         subtitle,
         button_cta,
         description,
-        coverImage
+        coverImage {
+          _type,
+          alt,
+          asset -> {
+            url,
+            metadata
+          }
+        },
       },
       _type == "hero" => {
         _type,
@@ -72,14 +79,28 @@ export async function getPage(page: string): Promise<PageType | null> {
           _type,
           title,
           description,
-          coverIamge
+          coverIamge {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
         }
       },
       _type == "contact" => {
         _type,
         title,
         subtitle,
-        coverIamge,
+        coverIamge {
+          _type,
+          alt,
+          asset -> {
+            url,
+            metadata
+          }
+        },
         contact {
           title,
           description,
@@ -90,7 +111,14 @@ export async function getPage(page: string): Promise<PageType | null> {
         _type,
         title,
         button_cta,
-        images
+        images[] {
+          _type,
+          alt,
+          asset -> {
+            url,
+            metadata
+          }
+        },
       },
       _type == "marquee" => {
         _type,
@@ -107,7 +135,14 @@ export async function getPage(page: string): Promise<PageType | null> {
           slug,
           description,
           keywords,
-          coverImage
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
         }
       }
     }
@@ -127,13 +162,27 @@ export async function getBlogs(): Promise<BlogPage> {
       description,
       keywords,
       content,
-      coverImage,
+      coverImage {
+        _type,
+        alt,
+        asset -> {
+          url,
+          metadata
+        }
+      },
       "featuredBlogs": featuredBlogs[]-> {
         _id,
         title,
         slug,
         description,
-        coverImage
+        coverImage {
+          _type,
+          alt,
+          asset -> {
+            url,
+            metadata
+          }
+        },
       }
     },
     "blogPage": *[_type == "page" && title == "Blog"][0] {
@@ -177,7 +226,14 @@ export async function getBlogs(): Promise<BlogPage> {
           subtitle,
           button_cta,
           description,
-          coverImage
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
         },
         _type == "hero" => {
           _type,
@@ -197,14 +253,28 @@ export async function getBlogs(): Promise<BlogPage> {
             _type,
             title,
             description,
-            coverIamge
+            coverIamge {
+              _type,
+              alt,
+              asset -> {
+                url,
+                metadata
+              }
+            },
           }
         },
         _type == "contact" => {
           _type,
           title,
           subtitle,
-          coverIamge,
+          coverIamge {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
           contact {
             title,
             description,
@@ -228,7 +298,14 @@ export async function getBlogs(): Promise<BlogPage> {
           description,
           keywords,
           content,
-          coverImage,
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
           "featuredBlogs": featuredBlogs[]-> {
           _id,
           title,
@@ -236,7 +313,14 @@ export async function getBlogs(): Promise<BlogPage> {
           description,
           keywords,
           content,
-          coverImage,
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
           }
         }
       }
@@ -255,7 +339,14 @@ export async function getBlog(slug: string): Promise<Blog | null> {
     description,
     keywords,
     content,
-    coverImage,
+    coverImage {
+      _type,
+      alt,
+      asset -> {
+        url,
+        metadata
+      }
+    },
     _createdAt,
     "featuredBlogs": featuredBlogs[]-> {
       _id,
@@ -264,7 +355,14 @@ export async function getBlog(slug: string): Promise<Blog | null> {
       description,
       keywords,
       content,
-      coverImage,
+      coverImage {
+        _type,
+        alt,
+        asset -> {
+          url,
+          metadata
+        }
+      },
     }
   }`,
     { slug }
@@ -278,7 +376,14 @@ export async function getGalleries(): Promise<GalleryPage> {
     "images": *[_type == "galleryImage"] {
       _id,
       title,
-      coverImage,
+      coverImage {
+        _type,
+        alt,
+        asset -> {
+          url,
+          metadata
+        }
+      },
     },
     "galleryPage": *[_type == "page" && title == "Gallery"][0] {
       _id,
@@ -321,7 +426,14 @@ export async function getGalleries(): Promise<GalleryPage> {
           subtitle,
           button_cta,
           description,
-          coverImage
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
         },
         _type == "hero" => {
           _type,
@@ -341,14 +453,28 @@ export async function getGalleries(): Promise<GalleryPage> {
             _type,
             title,
             description,
-            coverIamge
+            coverIamge {
+              _type,
+              alt,
+              asset -> {
+                url,
+                metadata
+              }
+            },
           }
         },
         _type == "contact" => {
           _type,
           title,
           subtitle,
-          coverIamge,
+          coverIamge {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
           contact {
             title,
             description,
@@ -372,7 +498,14 @@ export async function getGalleries(): Promise<GalleryPage> {
           description,
           keywords,
           content,
-          coverImage,
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
           "featuredBlogs": featuredBlogs[]-> {
           _id,
           title,
@@ -380,10 +513,39 @@ export async function getGalleries(): Promise<GalleryPage> {
           description,
           keywords,
           content,
-          coverImage,
+          coverImage {
+            _type,
+            alt,
+            asset -> {
+              url,
+              metadata
+            }
+          },
           }
         }
       }
     }
+  }`);
+}
+
+export async function getAllBlogs(): Promise<Omit<Blog, "featuredBlogs">[]> {
+  const client = createClient(config);
+
+  return client.fetch(groq`*[_type == "blog"] {
+    _id,
+    title,
+    slug,
+    description,
+    keywords,
+    content,
+    coverImage {
+      _type,
+      alt,
+      asset -> {
+        url,
+        metadata
+      }
+    },
+    _createdAt
   }`);
 }

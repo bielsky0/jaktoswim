@@ -14,7 +14,7 @@ export const Button = ({
   children,
   onClick,
   href,
-  variant = "link",
+  variant = "button",
 }: ButtonProps) => {
   const renderVariant = () => {
     switch (variant) {

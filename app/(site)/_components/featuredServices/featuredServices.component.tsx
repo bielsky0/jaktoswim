@@ -62,20 +62,24 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
 
       <div className="w-full flex flex-col gap-12 pt-16 ">
         {featuredServices.map(({ title, description, coverIamge }) => {
-          const imageUi = getImageAsset(coverIamge, config);
           return (
             <div
-              key={imageUi._id}
+              key={coverIamge.asset.url}
               className="w-full flex flex-col md:flex-row items-center  md:gap-16  lg:gap-32"
             >
               <div className="w-full pb-2 md:pb-0">
                 <div className="h-[150px] md:h-[300px]">
                   <Image
-                    alt="dasd"
                     width={520}
                     height={300}
-                    src={imageUi.url}
+                    loading="lazy"
+                    src={coverIamge.asset.url}
                     className="object-cover w-full h-full rounded-2xl"
+                    blurDataURL={coverIamge.asset.metadata.lqip}
+                    alt={
+                      coverIamge.alt ||
+                      "nauka pływania dla dorosłych szczecin, nauka pływania dla dzieci szczecin"
+                    }
                   />
                 </div>
               </div>

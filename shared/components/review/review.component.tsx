@@ -19,7 +19,7 @@ export const Review = ({ name, content }: ReviewProps) => {
           </div>
 
           <div>
-            <h6 className="font-semibold">{name}</h6>
+            <span className="font-semibold">{name}</span>
           </div>
         </div>
       </div>

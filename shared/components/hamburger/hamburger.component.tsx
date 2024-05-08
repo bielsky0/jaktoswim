@@ -30,6 +30,7 @@ export const Hamburger = ({ isOpen, handleClick }: HamburgerProps) => {
     <>
       <button
         onClick={handleClick}
+        aria-label="menu button"
         className="flex flex-col justify-center items-center z-20"
       >
         <span

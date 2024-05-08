@@ -28,7 +28,9 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
           <div className="flex flex-col ">
             <div className="flex gap-2 items-center pb-2">
               <div className="h-[8px] w-[8px] bg-white rounded-full"></div>
-              <h5 className="text-white text-sm md:text-base">{subtitle}</h5>
+              <span className="text-white text-sm md:text-base">
+                {subtitle}
+              </span>
             </div>
 
             <div className="max-w-4xl pb-3">
@@ -85,9 +87,9 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
               </div>
               <div className="flex flex-col w-full md:gap-8 ">
                 <div className="pb-3 md:pb-0">
-                  <h5 className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
+                  <span className="ibmPlex text-white text-2xl lg:text-4xl font-bold">
                     {title}
-                  </h5>
+                  </span>
                 </div>
 
                 <div>

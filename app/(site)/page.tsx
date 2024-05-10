@@ -62,7 +62,7 @@ export default async function Home() {
             className="max-w-screen w-full px-0 md:px-0 lg:px-0"
             key={`${section._type}-${idx}`}
           >
-            <Layout className="pb-8 md:pb-24">
+            <Layout className="py-8 md:pb-24">
               <SectionRenderer section={section} />
             </Layout>
           </Layout>

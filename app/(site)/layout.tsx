@@ -41,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${IBMPlex.variable} ${montserrat.variable} ${montserrat.className}`}
       >
-        <div className="pt-2 pb-20 flex w-full justify-center">
+        <div className="pt-2 pb-12 lg:pb-20 flex w-full justify-center">
           <Navbar />
         </div>
 

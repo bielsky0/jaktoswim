@@ -48,12 +48,17 @@ export const Billboard = ({ billboard }: BillboardProps) => {
         <div className="absolute -top-8 -left-8">
           <div className="flex flex-col  pt-8 pl-8  relative ">
             <div className="flex gap-2  items-center">
-              <div className="bg-white lg:pr-8 pr-4 py-2 lg:py-4 flex  items-center gap-2 relative">
+              <div className="bg-white lg:pr-4 pr-2 py-2 lg:py-4 flex  items-center gap-2 relative">
                 <div className="absolute -right-[20px] top-0  h-[20px] w-[20px] rounded-full shadow-[-10px_-10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
                 <div className="absolute -right-[20px] bottom-0  h-[20px] w-[20px] rounded-full shadow-[-10px_10px_0_0_rgba(255,255,255,1)] bg-transparent"></div>
 
                 <div className="h-[8px] w-[8px] bg-black rounded-full"></div>
-                <h5 className="text-base lg:text-lg">{subtitle}</h5>
+                <h5 className="text-base lg:text-lg flex items-center">
+                  {subtitle}
+                  <span className="pl-2 text-2xl lg:text-4xl animate-wave">
+                    👋
+                  </span>
+                </h5>
               </div>
             </div>
 

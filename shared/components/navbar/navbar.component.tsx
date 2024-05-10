@@ -74,9 +74,22 @@ export const Navbar = () => {
               </ul>
             </div>
 
-            <TransitionLink href={ROUTES.home}>
-              <Logo className="w-16 lg:w-24 cursor-pointer" />
-            </TransitionLink>
+            <div className="hidden lg:block">
+              <TransitionLink href={ROUTES.home}>
+                <Logo className="w-12 lg:w-20 cursor-pointer" />
+              </TransitionLink>
+            </div>
+
+            <div
+              onClick={() => {
+                if (isOpen) handleClick();
+              }}
+              className="block lg:hidden"
+            >
+              <TransitionLink href={ROUTES.home}>
+                <Logo className="w-12 lg:w-20 cursor-pointer" />
+              </TransitionLink>
+            </div>
 
             <div className="hidden lg:flex">
               <ul className="flex justify-center items-center gap-16">

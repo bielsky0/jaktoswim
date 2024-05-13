@@ -72,8 +72,8 @@ export const FeaturedServices = ({ services }: FeaturedServicesProps) => {
               <div className="w-full pb-2 md:pb-0">
                 <div className="h-[150px] md:h-[300px]">
                   <Image
-                    width={520}
-                    height={300}
+                    width={300}
+                    height={150}
                     loading="lazy"
                     src={coverIamge.asset.url}
                     className="object-cover w-full h-full rounded-2xl"

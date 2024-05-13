@@ -4,6 +4,8 @@ import { getPage } from "@/shared/libs/sanity/client";
 import { notFound } from "next/navigation";
 import { SectionRenderer } from "@/app/(site)/_components";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 export default async function Home() {
   const home = await getPage("Home");
 

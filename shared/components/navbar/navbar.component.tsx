@@ -6,7 +6,8 @@ import { FaInstagram, FaFacebook } from "react-icons/fa6";
 import { ROUTES, cn } from "@/shared/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useOutside, useScrollListener } from "@/shared/hooks";
+import { useOutside } from "@/shared/hooks";
+import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,26 +24,34 @@ export const Navbar = () => {
     }
   });
 
-  const { y, lastY } = useScrollListener();
-
   const [initialHeader, setIntialheader] = useState(false);
-  const [navClassList, setNavClassList] = useState<string[]>([]);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    setIntialheader(!(currentScrollPos <= 0));
+
+    if (currentScrollPos > prevScrollPos && currentScrollPos > 150) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
 
   useEffect(() => {
-    const _classList = [];
-    setIntialheader(!(y <= 0));
+    window.addEventListener("scroll", handleScroll);
 
-    if (y > 200 && y - lastY > 0) _classList.push("-translate-y-48");
-
-    setNavClassList(_classList);
-  }, [y, lastY]);
-
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   return (
-    <div
+    <motion.div
       ref={ref}
       className={cn(
         "w-full max-w-[2560px] transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]",
-        navClassList
+        { "-translate-y-48": !visible }
       )}
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">
@@ -154,6 +163,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

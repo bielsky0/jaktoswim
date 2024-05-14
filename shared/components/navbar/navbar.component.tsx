@@ -5,8 +5,9 @@ import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 import { ROUTES, cn } from "@/shared/utils";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useOutside, useScrollListener } from "@/shared/hooks";
+import { useState } from "react";
+import { useOutside } from "@/shared/hooks";
+import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,27 +24,32 @@ export const Navbar = () => {
     }
   });
 
-  const { y, lastY } = useScrollListener();
+  const { scrollY } = useScroll();
 
   const [initialHeader, setIntialheader] = useState(false);
-  const [navClassList, setNavClassList] = useState<string[]>([]);
+  const [hidden, setHidden] = useState(false);
 
-  useEffect(() => {
-    const _classList = [];
-    setIntialheader(!(y <= 0));
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    setIntialheader(!(scrollY.get() <= 30));
 
-    if (y > 200 && y - lastY > 0) _classList.push("-translate-y-48");
-
-    setNavClassList(_classList);
-  }, [y, lastY]);
+    if (previous && latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={cn(
-        "w-full max-w-[2560px] transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]",
-        navClassList
-      )}
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-130%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.25, ease: "linear" }}
+      className="w-full max-w-[2560px] transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]"
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">
         <div
@@ -154,6 +160,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

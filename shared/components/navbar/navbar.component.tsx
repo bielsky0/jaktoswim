@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook } from "react-icons/fa6";
 
 import { ROUTES, cn } from "@/shared/utils";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useOutside } from "@/shared/hooks";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 
@@ -24,32 +24,35 @@ export const Navbar = () => {
     }
   });
 
-  const { scrollY } = useScroll();
-
   const [initialHeader, setIntialheader] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    setIntialheader(!(scrollY.get() <= 30));
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    setIntialheader(!(currentScrollPos <= 0));
 
-    if (previous && latest > previous && latest > 150) {
-      setHidden(true);
+    if (currentScrollPos > prevScrollPos && currentScrollPos > 150) {
+      setVisible(false);
     } else {
-      setHidden(false);
+      setVisible(true);
     }
-  });
 
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   return (
     <motion.div
       ref={ref}
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: "-130%" },
-      }}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.25, ease: "linear" }}
-      className="w-full max-w-[2560px] transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]"
+      className={cn(
+        "w-full max-w-[2560px] transition-all transform-gpu flex flex-col items-center justify-center fixed z-[20]",
+        { "-translate-y-48": !visible }
+      )}
     >
       <div className="flex transition-all w-full justify-center px-4 md:px-8 lg:px-24 w-full">
         <div

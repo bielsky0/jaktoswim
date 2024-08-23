@@ -14,14 +14,24 @@ export default async function Contact() {
       {pageBuilder.map((section, idx) => {
         if (section._type === "contact")
           return (
-            <Layout
-              className="max-w-screen w-full px-0 md:px-0 lg:px-0"
-              key={`${section._type}-${idx}`}
-            >
-              <Layout className="pt-4 pb-12 md:py-12">
-                <SectionRenderer section={section} />
+            <>
+              <Layout
+                className="max-w-screen w-full px-0 md:px-0 lg:px-0"
+                key={`${section._type}-${idx}`}
+              >
+                <Layout className="pt-4 pb-12 md:py-12">
+                  <SectionRenderer section={section} />
+                </Layout>
               </Layout>
-            </Layout>
+
+              <Layout className="max-w-screen w-full px-0 md:px-0 lg:px-0">
+                <iframe
+                  className="w-full h-full min-h-[1280px]"
+                  id="hastify-calendar-iframe"
+                  src="https://jts.lupposystem.com/Calendar/Index?embedded=true"
+                ></iframe>
+              </Layout>
+            </>
           );
 
         if (section._type === "marquee")
